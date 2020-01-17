@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using MaterialSkin.Controls;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace Zaya
 {
@@ -89,15 +90,37 @@ namespace Zaya
 
         private void btnValiderInscription_Click(object sender, EventArgs e)
         {
-            Utilisateur ul = new Utilisateur();
-            ul.dateInscription = DateTime.Now;
-            ul.nom = txt_nom.Text;
-            ul.prenom = txt_prenom.Text;
-            ul.telephone = txt_phone.Text;
-            ul.email = txt_email.Text;
-            ul.username = txt_username.Text;
-         
+            try
+            {
+                Utilisateur ul = new Utilisateur();
+                ul.dateInscription = DateTime.Now;
+                if (txt_nom.Text.Trim().Length == 0)
+                    throw new Exception("Your last name should be contain 4 characters");
+                ul.nom = txt_nom.Text;
 
+                if (txt_prenom.Text.Trim().Length == 0)
+                    throw new Exception("Your first name should be contain 4 characters");
+                ul.prenom = txt_prenom.Text;
+                ///^[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{4})$/
+                showMatch(txt_phone.Text, @"^(+212)[5-7][0-9]{8,8}");
+                //throw new Exception("Your phone should be correct");
+                ul.telephone = txt_phone.Text;
+                ul.email = txt_email.Text;
+                ul.username = txt_username.Text;
+                if (rdHomme.Checked)
+                    ul.sexe = 'M';
+                else
+                    ul.sexe = 'F';
+                ul.pwd = DataBaseConfiguration.Context.encrypt(txt_password.Text);
+                DataBaseConfiguration.Context.Utilisateur.InsertOnSubmit(ul);
+                //DataBaseConfiguration.Context.SubmitChanges();
+                //this.Visible = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)
@@ -105,6 +128,15 @@ namespace Zaya
             using (LoginForm lf = new LoginForm())
             {
                 lf.ShowDialog();
+            }
+        }
+        private static void showMatch(string text, string expr)
+        {
+            MatchCollection mc = Regex.Matches(text, expr);
+
+            foreach (Match m in mc)
+            {
+                MessageBox.Show(m.ToString());
             }
         }
     }

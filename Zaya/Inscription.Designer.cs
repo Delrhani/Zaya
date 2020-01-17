@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnValiderInscription = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txt_phone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -38,7 +39,6 @@
             this.txt_email = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_username = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_password = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.rdHomme = new MaterialSkin.Controls.MaterialRadioButton();
             this.rdFemme = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel1.SuspendLayout();
@@ -58,6 +58,22 @@
             this.panel1.Size = new System.Drawing.Size(507, 50);
             this.panel1.TabIndex = 11;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(147, 12);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(186, 19);
+            this.materialLabel1.TabIndex = 7;
+            this.materialLabel1.Text = "I already have an account !";
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
+            // 
             // btnValiderInscription
             // 
             this.btnValiderInscription.BackColor = System.Drawing.Color.DarkGray;
@@ -69,7 +85,7 @@
             this.btnValiderInscription.Primary = true;
             this.btnValiderInscription.Size = new System.Drawing.Size(75, 31);
             this.btnValiderInscription.TabIndex = 20;
-            this.btnValiderInscription.Text = "Login";
+            this.btnValiderInscription.Text = "Sign Up";
             this.btnValiderInscription.UseVisualStyleBackColor = false;
             this.btnValiderInscription.Click += new System.EventHandler(this.btnValiderInscription_Click);
             // 
@@ -175,29 +191,14 @@
             this.txt_password.TabIndex = 28;
             this.txt_password.UseSystemPasswordChar = false;
             // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(147, 12);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(186, 19);
-            this.materialLabel1.TabIndex = 7;
-            this.materialLabel1.Text = "I already have an account !";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
-            // 
             // rdHomme
             // 
             this.rdHomme.AutoSize = true;
             this.rdHomme.BackColor = System.Drawing.Color.White;
+            this.rdHomme.Checked = true;
             this.rdHomme.Depth = 0;
             this.rdHomme.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdHomme.Location = new System.Drawing.Point(133, 202);
+            this.rdHomme.Location = new System.Drawing.Point(148, 196);
             this.rdHomme.Margin = new System.Windows.Forms.Padding(0);
             this.rdHomme.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdHomme.MouseState = MaterialSkin.MouseState.HOVER;
@@ -215,7 +216,7 @@
             this.rdFemme.BackColor = System.Drawing.Color.White;
             this.rdFemme.Depth = 0;
             this.rdFemme.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdFemme.Location = new System.Drawing.Point(227, 202);
+            this.rdFemme.Location = new System.Drawing.Point(248, 196);
             this.rdFemme.Margin = new System.Windows.Forms.Padding(0);
             this.rdFemme.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdFemme.MouseState = MaterialSkin.MouseState.HOVER;
@@ -223,7 +224,6 @@
             this.rdFemme.Ripple = true;
             this.rdFemme.Size = new System.Drawing.Size(75, 30);
             this.rdFemme.TabIndex = 30;
-            this.rdFemme.TabStop = true;
             this.rdFemme.Text = "Femme";
             this.rdFemme.UseVisualStyleBackColor = false;
             // 

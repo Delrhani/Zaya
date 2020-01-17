@@ -49,7 +49,7 @@
             this.txtLogin.SelectionLength = 0;
             this.txtLogin.SelectionStart = 0;
             this.txtLogin.Size = new System.Drawing.Size(208, 23);
-            this.txtLogin.TabIndex = 0;
+            this.txtLogin.TabIndex = 1;
             this.txtLogin.UseSystemPasswordChar = false;
             // 
             // txtPassword
@@ -59,12 +59,12 @@
             this.txtPassword.Location = new System.Drawing.Point(87, 162);
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.Size = new System.Drawing.Size(208, 23);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton2
@@ -77,7 +77,7 @@
             this.materialRaisedButton2.Name = "materialRaisedButton2";
             this.materialRaisedButton2.Primary = true;
             this.materialRaisedButton2.Size = new System.Drawing.Size(75, 28);
-            this.materialRaisedButton2.TabIndex = 3;
+            this.materialRaisedButton2.TabIndex = 4;
             this.materialRaisedButton2.Text = "Connect";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
             this.materialRaisedButton2.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -95,7 +95,7 @@
             this.materialCheckBox1.Name = "materialCheckBox1";
             this.materialCheckBox1.Ripple = true;
             this.materialCheckBox1.Size = new System.Drawing.Size(132, 30);
-            this.materialCheckBox1.TabIndex = 4;
+            this.materialCheckBox1.TabIndex = 3;
             this.materialCheckBox1.Text = "Forget pssword?";
             this.materialCheckBox1.UseVisualStyleBackColor = false;
             // 
@@ -134,7 +134,7 @@
             this.label3.Location = new System.Drawing.Point(249, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 17);
-            this.label3.TabIndex = 16;
+            this.label3.TabIndex = 5;
             this.label3.Text = "SignUp";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
