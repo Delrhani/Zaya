@@ -70,6 +70,18 @@
     <Compile Include="AdministrateurForms\PagePrincipale.Designer.cs">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommunForms\ModifierLecon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommunForms\ModifierLecon.Designer.cs">
+      <DependentUpon>ModifierLecon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommunForms\AjouterLecon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommunForms\AjouterLecon.Designer.cs">
+      <DependentUpon>AjouterLecon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LeconModel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdministrateurForms\PagePrincipale.resx">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunForms\ModifierLecon.resx">
+      <DependentUpon>ModifierLecon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunForms\AjouterLecon.resx">
+      <DependentUpon>AjouterLecon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LeconModel.resx">
       <DependentUpon>LeconModel.cs</DependentUpon>

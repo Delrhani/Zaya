@@ -74,5 +74,11 @@ namespace Zaya.AdministrateurForms
         {
 
         }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            CommunForms.AjouterLecon ajouterLecon = new CommunForms.AjouterLecon(this.administrateur);
+            ajouterLecon.ShowDialog();
+        }
     }
 }
