@@ -51,9 +51,7 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.txtNomComplet = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAjouter = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.btnQuizPlayed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -84,6 +82,30 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(200, 460);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(-8, 414);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(211, 3);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel3.Location = new System.Drawing.Point(-5, 429);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(208, 3);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel1.Location = new System.Drawing.Point(-4, 399);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(207, 3);
+            this.panel1.TabIndex = 0;
             // 
             // btnQuizPlayed
             // 
@@ -293,29 +315,15 @@
             this.txtNomComplet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtNomComplet.Click += new System.EventHandler(this.txtNomComplet_Click);
             // 
-            // panel1
+            // btnAjouter
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(-4, 399);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 3);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(-8, 414);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 3);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(-5, 429);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 3);
-            this.panel3.TabIndex = 1;
+            this.btnAjouter.Location = new System.Drawing.Point(725, 50);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(42, 23);
+            this.btnAjouter.TabIndex = 21;
+            this.btnAjouter.Text = "+";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // PagePrincipale
             // 
@@ -323,6 +331,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 468);
+            this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.txtNomComplet);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelSideMenu);
