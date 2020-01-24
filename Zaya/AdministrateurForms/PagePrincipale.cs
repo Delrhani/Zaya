@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 namespace Zaya.AdministrateurForms
 {
-    public partial class PagePrincipale : Form
+    public partial class PagePrincipale : MaterialSkin.Controls.MaterialForm
     {
         private Utilisateur administrateur;
         public PagePrincipale(Utilisateur utilisateur)
@@ -19,7 +19,7 @@ namespace Zaya.AdministrateurForms
 
         private void PagePrincipale_Load(object sender, EventArgs e)
         {
-            txtNomComplet.Text = administrateur.nom + " " + administrateur.prenom;
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -42,12 +42,12 @@ namespace Zaya.AdministrateurForms
 
         private void btnLesson_MouseHover(object sender, EventArgs e)
         {
-            btnLesson.BackColor = Color.FromArgb(171, 188, 200);
+            
         }
 
         private void btnQuiz_MouseHover(object sender, EventArgs e)
         {
-            btnQuiz.BackColor = Color.FromArgb(171, 188, 200);
+           
         }
 
         private void wd(object sender, PaintEventArgs e)
@@ -57,20 +57,30 @@ namespace Zaya.AdministrateurForms
 
         private void btnModels_Paint(object sender, PaintEventArgs e)
         {
-            btnModels.BackColor = Color.FromArgb(171, 188, 200);
+           
         }
 
         private void btnUnites_Paint(object sender, PaintEventArgs e)
         {
-            btnUnites.BackColor = Color.FromArgb(171, 188, 200);
+           
         }
 
         private void btnQuizPlayed_Paint(object sender, PaintEventArgs e)
         {
-            btnQuizPlayed.BackColor = Color.FromArgb(171, 188, 200);
+         
         }
 
         private void btnLesson_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

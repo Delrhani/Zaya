@@ -66,5 +66,10 @@ namespace Zaya
                 return personne.First();
             return null;
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

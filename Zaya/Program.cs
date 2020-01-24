@@ -16,7 +16,7 @@ namespace Zaya
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdministrateurForms.AjouterMatiere());
+            Application.Run(new LoginForm());
 
         }
     }

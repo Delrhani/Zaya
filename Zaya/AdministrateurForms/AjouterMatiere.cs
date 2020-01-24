@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Zaya.AdministrateurForms
 {
-    public partial class AjouterMatiere : Form
+    public partial class AjouterMatiere : MaterialSkin.Controls.MaterialForm
     {
         public AjouterMatiere()
         {
@@ -29,6 +29,12 @@ namespace Zaya.AdministrateurForms
             {
                 MessageBox.Show("Merci de saisir un nom de la matière", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void AjouterMatiere_Load(object sender, EventArgs e)
+        {
+            txtMatiere.Text = "Text";
+            txtMatiere.Text = "";
         }
     }
 }
