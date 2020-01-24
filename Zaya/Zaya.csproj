@@ -70,6 +70,18 @@
     <Compile Include="AdministrateurForms\PagePrincipale.Designer.cs">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommunForms\ModifierQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommunForms\ModifierQuestion.Designer.cs">
+      <DependentUpon>ModifierQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommunForms\AjouterQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommunForms\AjouterQuestion.Designer.cs">
+      <DependentUpon>AjouterQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommunForms\ModifierLecon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdministrateurForms\PagePrincipale.resx">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunForms\ModifierQuestion.resx">
+      <DependentUpon>ModifierQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunForms\AjouterQuestion.resx">
+      <DependentUpon>AjouterQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommunForms\ModifierLecon.resx">
       <DependentUpon>ModifierLecon.cs</DependentUpon>

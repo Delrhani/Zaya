@@ -37,7 +37,7 @@ namespace Zaya.CommunForms
 
         private void AjouterLecon_Load(object sender, EventArgs e)
         {
-            var resultat = from m in DataBaseConfiguration.Context.Matiere
+            var resultat = from m in DataBaseConfiguration.Context.Matieres
                            select new { m.libelle, m.idMatiere };
             cmbMatiere.ValueMember = "idMatiere";
             cmbMatiere.DisplayMember = "libelle";

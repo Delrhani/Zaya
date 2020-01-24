@@ -28,7 +28,7 @@ namespace Zaya.CommunForms
                 lecon.idMatiere = int.Parse(cmbMatiere.SelectedValue.ToString());
                 lecon.libelle = txtLibelle.Text;
                 lecon.idUtilisateur = utilisateur.idUtilisateur;
-                DataBaseConfiguration.Context.Lecon.InsertOnSubmit(lecon);
+                DataBaseConfiguration.Context.Lecons.InsertOnSubmit(lecon);
                 DataBaseConfiguration.Context.SubmitChanges();
             }
             else
@@ -40,7 +40,7 @@ namespace Zaya.CommunForms
 
         private void AjouterLecon_Load(object sender, EventArgs e)
         {
-            var resultat = from m in DataBaseConfiguration.Context.Matiere
+            var resultat = from m in DataBaseConfiguration.Context.Matieres
                            select new { m.libelle, m.idMatiere };
             cmbMatiere.ValueMember = "idMatiere";
             cmbMatiere.DisplayMember = "libelle";

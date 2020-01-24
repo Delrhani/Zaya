@@ -112,7 +112,7 @@ namespace Zaya
                 else
                     ul.sexe = 'F';
                 ul.pwd = DataBaseConfiguration.Context.encrypt(txt_password.Text);
-                DataBaseConfiguration.Context.Utilisateur.InsertOnSubmit(ul);
+                DataBaseConfiguration.Context.Utilisateurs.InsertOnSubmit(ul);
                 //DataBaseConfiguration.Context.SubmitChanges();
                 //this.Visible = false;
             }

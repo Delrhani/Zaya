@@ -32,5 +32,15 @@ namespace Zaya.Properties {
                 return ((string)(this["ZayaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-ELBAHJA;Initial Catalog=Zaya;User ID=sa")]
+        public string ZayaConnectionString1 {
+            get {
+                return ((string)(this["ZayaConnectionString1"]));
+            }
+        }
     }
 }
