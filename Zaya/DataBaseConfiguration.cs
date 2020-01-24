@@ -15,8 +15,8 @@ namespace Zaya
         private static string stringConnection;
         private static void InitContext()
         {
-            stringConnection = ConfigurationManager.ConnectionStrings[CONNECTION_STRING_NAME].ConnectionString.ToString();
-            stringConnection += ";password=123456";
+            stringConnection = ConfigurationManager.ConnectionStrings[CONNECTION_STRING_NAME].ConnectionString;
+            stringConnection += ";password=MEDmido0615640483";
             context = new ZayaDBDataContext(stringConnection);
         }
 
