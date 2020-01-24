@@ -49,6 +49,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.txtNomComplet = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.btnQuizPlayed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -79,32 +84,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(200, 460);
             this.panelSideMenu.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
-            this.panel2.Location = new System.Drawing.Point(-8, 414);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 3);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
-            this.panel3.Location = new System.Drawing.Point(-5, 429);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 3);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
-            this.panel1.Location = new System.Drawing.Point(-4, 399);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 3);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnQuizPlayed
             // 
@@ -289,12 +268,63 @@
             this.panelLogo.Size = new System.Drawing.Size(200, 133);
             this.panelLogo.TabIndex = 19;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(766, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnClose.TabIndex = 18;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // txtNomComplet
+            // 
+            this.txtNomComplet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomComplet.ForeColor = System.Drawing.Color.Black;
+            this.txtNomComplet.Location = new System.Drawing.Point(203, 0);
+            this.txtNomComplet.Name = "txtNomComplet";
+            this.txtNomComplet.Size = new System.Drawing.Size(198, 38);
+            this.txtNomComplet.TabIndex = 20;
+            this.txtNomComplet.Text = "Administrateur";
+            this.txtNomComplet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtNomComplet.Click += new System.EventHandler(this.txtNomComplet_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel1.Location = new System.Drawing.Point(-4, 399);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(207, 3);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(-8, 414);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(211, 3);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel3.Location = new System.Drawing.Point(-5, 429);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(208, 3);
+            this.panel3.TabIndex = 1;
+            // 
             // PagePrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 523);
+            this.ClientSize = new System.Drawing.Size(800, 468);
+            this.Controls.Add(this.txtNomComplet);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelSideMenu);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "PagePrincipale";
@@ -338,5 +368,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnAjouter;
     }
 }
