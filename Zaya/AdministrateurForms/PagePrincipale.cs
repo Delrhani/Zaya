@@ -19,7 +19,10 @@ namespace Zaya.AdministrateurForms
 
         private void PagePrincipale_Load(object sender, EventArgs e)
         {
-            
+            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.Green900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -79,6 +82,11 @@ namespace Zaya.AdministrateurForms
         {
             CommunForms.AjouterLecon ajouterLecon = new CommunForms.AjouterLecon(this.administrateur);
             ajouterLecon.ShowDialog();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            new CommunForms.AjouterLecon(administrateur).ShowDialog();
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Zaya.CommunForms
 {
-    public partial class AjouterLecon : Form
+    public partial class AjouterLecon : MaterialSkin.Controls.MaterialForm
     {
         private Utilisateur utilisateur;
         public AjouterLecon(Utilisateur utilisateur)
@@ -46,5 +46,6 @@ namespace Zaya.CommunForms
             cmbMatiere.DisplayMember = "libelle";
             cmbMatiere.DataSource = resultat;
         }
+        
     }
 }
