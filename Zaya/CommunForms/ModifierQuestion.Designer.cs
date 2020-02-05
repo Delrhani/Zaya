@@ -147,7 +147,7 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // AjouterQuestion
+            // ModifierQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,7 +164,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AjouterQuestion";
+            this.Name = "ModifierQuestion";
             this.Text = "AjouterQuestion";
             this.Load += new System.EventHandler(this.AjouterQuestion_Load);
             this.ResumeLayout(false);

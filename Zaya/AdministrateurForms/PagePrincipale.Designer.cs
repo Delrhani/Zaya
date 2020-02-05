@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagePrincipale));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnQuizPlayed = new System.Windows.Forms.Panel();
@@ -48,10 +49,8 @@
             this.btnModels = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.PictureBox();
-            this.txtNomComplet = new System.Windows.Forms.Label();
             this.btnAjouter = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.btnQuizPlayed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -90,6 +89,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(211, 3);
             this.panel2.TabIndex = 1;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelLogo.Location = new System.Drawing.Point(0, 2);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(200, 133);
+            this.panelLogo.TabIndex = 19;
             // 
             // panel3
             // 
@@ -282,39 +289,6 @@
             this.label3.Text = "Models";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelLogo.Location = new System.Drawing.Point(0, 2);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 133);
-            this.panelLogo.TabIndex = 19;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(766, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnClose.TabIndex = 18;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // txtNomComplet
-            // 
-            this.txtNomComplet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomComplet.ForeColor = System.Drawing.Color.Black;
-            this.txtNomComplet.Location = new System.Drawing.Point(203, 0);
-            this.txtNomComplet.Name = "txtNomComplet";
-            this.txtNomComplet.Size = new System.Drawing.Size(198, 38);
-            this.txtNomComplet.TabIndex = 20;
-            this.txtNomComplet.Text = "Administrateur";
-            this.txtNomComplet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtNomComplet.Click += new System.EventHandler(this.txtNomComplet_Click);
-            // 
             // btnAjouter
             // 
             this.btnAjouter.Location = new System.Drawing.Point(725, 50);
@@ -325,15 +299,24 @@
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(241, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Jouer une quiz";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PagePrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 468);
+            this.ClientSize = new System.Drawing.Size(800, 523);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.txtNomComplet);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelSideMenu);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "PagePrincipale";
@@ -378,5 +361,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button button1;
     }
 }

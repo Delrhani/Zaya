@@ -37,7 +37,7 @@ namespace Zaya.CommunForms
         private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
         {
             var resultat = from l in DataBaseConfiguration.Context.Lecons
-                           where l.idLecon == int.Parse(cmbMatiere.SelectedValue.ToString())
+                           where l.idMatiere == int.Parse(cmbMatiere.SelectedValue.ToString())
                            select new { l.libelle, l.idLecon };
             cmbLecon.DisplayMember = "libelle";
             cmbLecon.ValueMember = "idLecon";

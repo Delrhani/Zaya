@@ -10,11 +10,11 @@ namespace Zaya.AdministrateurForms
 {
     public partial class PagePrincipale : MaterialSkin.Controls.MaterialForm
     {
-        private Utilisateur administrateur;
+        private Utilisateur utilisateur;
         public PagePrincipale(Utilisateur utilisateur)
         {
             InitializeComponent();
-            this.administrateur = utilisateur;
+            this.utilisateur = utilisateur;
         }
 
         private void PagePrincipale_Load(object sender, EventArgs e)
@@ -77,8 +77,14 @@ namespace Zaya.AdministrateurForms
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            CommunForms.AjouterLecon ajouterLecon = new CommunForms.AjouterLecon(this.administrateur);
+            CommunForms.AjouterLecon ajouterLecon = new CommunForms.AjouterLecon(this.utilisateur);
             ajouterLecon.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new CommunForms.ChoisirMatiere(utilisateur).ShowDialog();
+
         }
     }
 }

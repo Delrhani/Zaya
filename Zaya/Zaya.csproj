@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin">
       <HintPath>..\..\FinalProject\bin\Debug\MaterialSkin.dll</HintPath>
     </Reference>
@@ -47,7 +50,9 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +81,18 @@
     </Compile>
     <Compile Include="AdministrateurForms\PagePrincipale.Designer.cs">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommunForms\ChoisirMatiere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommunForms\ChoisirMatiere.Designer.cs">
+      <DependentUpon>ChoisirMatiere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommunForms\JouerQuiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommunForms\JouerQuiz.Designer.cs">
+      <DependentUpon>JouerQuiz.cs</DependentUpon>
     </Compile>
     <Compile Include="CommunForms\ModifierQuestion.cs">
       <SubType>Form</SubType>
@@ -107,6 +124,12 @@
     <Compile Include="Controls\LeconModel.Designer.cs">
       <DependentUpon>LeconModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RadioButtonItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RadioButtonItems.Designer.cs">
+      <DependentUpon>RadioButtonItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseConfiguration.cs" />
     <Compile Include="Inscription.cs">
       <SubType>Form</SubType>
@@ -122,6 +145,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UtilisateurForms\PagePrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +168,12 @@
     <EmbeddedResource Include="AdministrateurForms\PagePrincipale.resx">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommunForms\ChoisirMatiere.resx">
+      <DependentUpon>ChoisirMatiere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommunForms\JouerQuiz.resx">
+      <DependentUpon>JouerQuiz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommunForms\ModifierQuestion.resx">
       <DependentUpon>ModifierQuestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LeconModel.resx">
       <DependentUpon>LeconModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RadioButtonItems.resx">
+      <DependentUpon>RadioButtonItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
@@ -202,6 +237,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
