@@ -1,176 +1,176 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14, 11.75" name="ZayaDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.75, 9.75" name="ZayaDB">
   <DataContextMoniker Name="/ZayaDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="5bb6f0b3-c4ff-467c-a2cb-f00df6b12f44" absoluteBounds="6.25, 2.375, 2, 1.9631982421875005">
+    <classShape Id="701511a6-a465-40ed-9847-5add461d6e2a" absoluteBounds="9, 4.875, 2, 1.9631982421875005">
       <DataClassMoniker Name="/ZayaDBDataContext/Commentaire" />
       <nestedChildShapes>
-        <elementListCompartment Id="8cf14acc-e9f9-469c-8a32-0b5dcb9ea908" absoluteBounds="6.265, 2.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="67860299-7751-4314-8c65-cc15c43b7ba4" absoluteBounds="9.015, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="40942942-59d7-4b8b-880b-344306733de5" absoluteBounds="0.75, 1.5, 2, 2.7324039713541666">
-      <DataClassMoniker Name="/ZayaDBDataContext/Utilisateur" />
-      <nestedChildShapes>
-        <elementListCompartment Id="06789f4d-af02-419c-846f-613d80fb524d" absoluteBounds="0.765, 1.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="574b4aeb-5f92-4bed-a672-c52cf93a8549" absoluteBounds="3.5, 5, 2, 1.7708968098958327">
+    <classShape Id="60532312-102c-4387-87b1-44d6f8edd397" absoluteBounds="6.25, 5, 2, 1.7708968098958327">
       <DataClassMoniker Name="/ZayaDBDataContext/Lecon" />
       <nestedChildShapes>
-        <elementListCompartment Id="e0ce479e-3f29-4c6b-9113-7de784f551a5" absoluteBounds="3.515, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f53c18ee-924c-4b26-bd69-c1df63d9892f" absoluteBounds="6.265, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5f4d4237-da9a-4302-930f-e8970f0ee0fa" absoluteBounds="0.75, 5.25, 2, 1.1939925130208344">
+    <classShape Id="6b32285a-d731-452e-b63c-e9dc17ea8ed4" absoluteBounds="3.5, 2.25, 2, 1.1939925130208335">
       <DataClassMoniker Name="/ZayaDBDataContext/Matiere" />
       <nestedChildShapes>
-        <elementListCompartment Id="f721ab8f-f296-4f05-81aa-8e3c475f8e51" absoluteBounds="0.765, 5.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9188bd00-2dbb-4024-9034-1c5f643b6d3a" absoluteBounds="3.515, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5cb2a929-387e-4288-aa66-63644f725460" absoluteBounds="6.25, 5.125, 2, 1.5785953776041666">
+    <classShape Id="6c36875f-8f58-4ec6-8eb0-2975da77ee67" absoluteBounds="9, 2.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/ZayaDBDataContext/Question" />
       <nestedChildShapes>
-        <elementListCompartment Id="c573cb0e-38f6-45c9-ac5f-d66e3ed732d4" absoluteBounds="6.265, 5.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6e548eea-846d-48ba-a8be-d56c6433d84e" absoluteBounds="9.015, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ac3e94ce-c855-4b80-8f01-0dc751ac6efc" absoluteBounds="3.5, 1.875, 2, 1.9631982421875003">
+    <classShape Id="1b4a1b05-5b13-4b65-ae66-c5440bcc1f07" absoluteBounds="6.25, 1.875, 2, 1.9631982421875003">
       <DataClassMoniker Name="/ZayaDBDataContext/Quiz" />
       <nestedChildShapes>
-        <elementListCompartment Id="2781e09f-a8a1-4097-97c4-d2d5d14c2684" absoluteBounds="3.515, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4c63fa53-626a-49df-854f-1cf83c140d55" absoluteBounds="6.265, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="90c84ed3-b51e-4f68-ab0e-7dbb47e5c5fb" absoluteBounds="9, 7.25, 2, 1.5785953776041666">
+    <classShape Id="8dc36fc4-7474-4a96-ab51-b6f20072651d" absoluteBounds="11.75, 4.25, 2, 1.5785953776041666">
       <DataClassMoniker Name="/ZayaDBDataContext/Reponse" />
       <nestedChildShapes>
-        <elementListCompartment Id="6bf75f34-b9ec-40e1-b0d8-7729249b8141" absoluteBounds="9.015, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cd1cbd13-0d51-4848-ba57-07fcfb79dd4e" absoluteBounds="11.765, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b6ccea36-2e87-46f4-9379-95a4c1d7b65e" absoluteBounds="11.75, 5.375, 2, 1.5785953776041666">
+    <classShape Id="7009dd07-ef00-40c0-88c5-ab18dfb29884" absoluteBounds="14.5, 2.625, 2, 1.578595377604167">
       <DataClassMoniker Name="/ZayaDBDataContext/ReponseQuiz" />
       <nestedChildShapes>
-        <elementListCompartment Id="f7247766-a1b2-4982-aaf2-9c2159e32132" absoluteBounds="11.765, 5.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ff88a38c-6a95-48dc-9aca-cb8237bfa65a" absoluteBounds="14.515, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a3305719-0727-4ca2-8ef5-9024915cc8f5" absoluteBounds="9, 3.625, 2, 1.3862939453125005">
+    <classShape Id="e96ca7c6-7580-4c69-bec1-e972fe455fe5" absoluteBounds="11.75, 1.125, 2, 1.3862939453125003">
       <DataClassMoniker Name="/ZayaDBDataContext/ResultatQuiz" />
       <nestedChildShapes>
-        <elementListCompartment Id="760b6644-4f21-466a-b139-80cdc89c61d1" absoluteBounds="9.015, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8deceb71-f528-4c7a-b032-b6d85e0a51d3" absoluteBounds="11.765, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="495985e4-5f62-4395-928b-4fe41fbab59f" absoluteBounds="3.5, 10.25, 2, 1.1939925130208344">
+    <classShape Id="2964debe-8f6e-4b95-9130-9733aa963003" absoluteBounds="6.25, 8.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/ZayaDBDataContext/TypeQuestion" />
       <nestedChildShapes>
-        <elementListCompartment Id="c3e9422c-73f9-4d3b-b353-424a11306601" absoluteBounds="3.515, 10.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dc774b7b-aba5-42bf-a1f0-a015307008de" absoluteBounds="6.265, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="40ea5fb9-4804-4229-b300-3f6c15663a6e" absoluteBounds="1.5, 8.25, 2, 1.1939925130208344">
+    <classShape Id="a75a7882-38c3-4949-a24b-f8b93352666b" absoluteBounds="0.75, 5.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/ZayaDBDataContext/TypeUtilisateur" />
       <nestedChildShapes>
-        <elementListCompartment Id="3883f323-b1b0-44bc-8920-3b3485d69081" absoluteBounds="1.5150000000000001, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d3aaddde-55c3-48e7-92d5-e438519c776c" absoluteBounds="0.765, 5.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 4.06655110677083); (3.11979166666667 : 4.06655110677083 : JumpStart); (3.36458333333333 : 4.06655110677083 : JumpEnd); (5.79166666666667 : 4.06655110677083 : JumpStart); (5.95833333333333 : 4.06655110677083 : JumpEnd); (6.25 : 4.06655110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/ZayaDBDataContext/Utilisateur/Utilisateur_Commentaire" />
-      <nodes>
-        <classShapeMoniker Id="40942942-59d7-4b8b-880b-344306733de5" />
-        <classShapeMoniker Id="5bb6f0b3-c4ff-467c-a2cb-f00df6b12f44" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5); (5.875 : 4.625); (5.875 : 3.18952355338542); (6.25 : 3.18952355338542)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <classShape Id="55fd2b64-d2f7-4926-ab0f-990703f5d0c7" absoluteBounds="3.5, 4.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ZayaDBDataContext/Utilisateur" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80b65cc4-e871-4547-9d5c-2872e1cd5813" absoluteBounds="3.515, 4.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 5.88544840494792); (8.63541666666667 : 5.88544840494792 : JumpStart); (8.80208333333333 : 5.88544840494792 : JumpEnd); (9 : 5.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Lecon/Lecon_Commentaire" />
       <nodes>
-        <classShapeMoniker Id="574b4aeb-5f92-4bed-a672-c52cf93a8549" />
-        <classShapeMoniker Id="5bb6f0b3-c4ff-467c-a2cb-f00df6b12f44" />
+        <classShapeMoniker Id="60532312-102c-4387-87b1-44d6f8edd397" />
+        <classShapeMoniker Id="701511a6-a465-40ed-9847-5add461d6e2a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.23240397135417); (3.125 : 4.60740397135417); (3.125 : 5.88544840494792); (3.5 : 5.88544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/ZayaDBDataContext/Utilisateur/Utilisateur_Lecon" />
-      <nodes>
-        <classShapeMoniker Id="40942942-59d7-4b8b-880b-344306733de5" />
-        <classShapeMoniker Id="574b4aeb-5f92-4bed-a672-c52cf93a8549" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.50522420247396); (3.04166666666667 : 5.50522420247396 : JumpStart); (3.28645833333333 : 5.50522420247396 : JumpEnd); (3.5 : 5.50522420247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.44307305724159); (5.875 : 3.81807305724159); (5.875 : 5.88544840494792); (6.25 : 5.88544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Matiere/Matiere_Lecon" />
       <nodes>
-        <classShapeMoniker Id="5f4d4237-da9a-4302-930f-e8970f0ee0fa" />
-        <classShapeMoniker Id="574b4aeb-5f92-4bed-a672-c52cf93a8549" />
+        <classShapeMoniker Id="6b32285a-d731-452e-b63c-e9dc17ea8ed4" />
+        <classShapeMoniker Id="60532312-102c-4387-87b1-44d6f8edd397" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.91429768880208); (6.25 : 5.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 5); (8.625 : 4.625); (8.625 : 2.91429768880208); (9 : 2.91429768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Lecon/Lecon_Question" />
       <nodes>
-        <classShapeMoniker Id="574b4aeb-5f92-4bed-a672-c52cf93a8549" />
-        <classShapeMoniker Id="5cb2a929-387e-4288-aa66-63644f725460" />
+        <classShapeMoniker Id="60532312-102c-4387-87b1-44d6f8edd397" />
+        <classShapeMoniker Id="6c36875f-8f58-4ec6-8eb0-2975da77ee67" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.71976177669271); (6.25 : 2.71976177669271)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 3.77628098993389); (8.56607443490112 : 4.09235542483501 : JumpStart); (8.77767556509888 : 4.30395655503277 : JumpEnd); (8.8125 : 4.33878098993389); (8.8125 : 5.34897220247396); (9 : 5.34897220247396)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Quiz/Quiz_Commentaire" />
       <nodes>
-        <classShapeMoniker Id="ac3e94ce-c855-4b80-8f01-0dc751ac6efc" />
-        <classShapeMoniker Id="5bb6f0b3-c4ff-467c-a2cb-f00df6b12f44" />
+        <classShapeMoniker Id="1b4a1b05-5b13-4b65-ae66-c5440bcc1f07" />
+        <classShapeMoniker Id="701511a6-a465-40ed-9847-5add461d6e2a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.28214495227364); (3.06607443490112 : 4.96607051737251 : JumpStart); (3.26205056509888 : 4.77009438717476 : JumpEnd); (3.28125 : 4.75089495227364); (3.28125 : 2.85659912109375); (3.5 : 2.85659912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.81528402862079); (6.25 : 2.81528402862079)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Matiere/Matiere_Quiz" />
       <nodes>
-        <classShapeMoniker Id="5f4d4237-da9a-4302-930f-e8970f0ee0fa" />
-        <classShapeMoniker Id="ac3e94ce-c855-4b80-8f01-0dc751ac6efc" />
+        <classShapeMoniker Id="6b32285a-d731-452e-b63c-e9dc17ea8ed4" />
+        <classShapeMoniker Id="1b4a1b05-5b13-4b65-ae66-c5440bcc1f07" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.30329956054688); (3.5 : 2.30329956054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/ZayaDBDataContext/Utilisateur/Utilisateur_Quiz" />
-      <nodes>
-        <classShapeMoniker Id="40942942-59d7-4b8b-880b-344306733de5" />
-        <classShapeMoniker Id="ac3e94ce-c855-4b80-8f01-0dc751ac6efc" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 5.91429768880208); (10 : 5.91429768880208); (10 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11 : 3.70238007346755); (11.375 : 4.07738007346755); (11.375 : 3.875); (11.75 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ZayaDBDataContext/Question/Question_Reponse" />
       <nodes>
-        <classShapeMoniker Id="5cb2a929-387e-4288-aa66-63644f725460" />
-        <classShapeMoniker Id="90c84ed3-b51e-4f68-ab0e-7dbb47e5c5fb" />
+        <classShapeMoniker Id="6c36875f-8f58-4ec6-8eb0-2975da77ee67" />
+        <classShapeMoniker Id="8dc36fc4-7474-4a96-ab51-b6f20072651d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 8.03929768880208); (12.75 : 8.03929768880208); (12.75 : 6.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 5.03929768880208); (15.5 : 5.03929768880208); (15.5 : 4.20359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Reponse/Reponse_ReponseQuiz" />
       <nodes>
-        <classShapeMoniker Id="90c84ed3-b51e-4f68-ab0e-7dbb47e5c5fb" />
-        <classShapeMoniker Id="b6ccea36-2e87-46f4-9379-95a4c1d7b65e" />
+        <classShapeMoniker Id="8dc36fc4-7474-4a96-ab51-b6f20072651d" />
+        <classShapeMoniker Id="7009dd07-ef00-40c0-88c5-ab18dfb29884" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 4.31814697265625); (12.75 : 4.31814697265625); (12.75 : 5.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 1.81814697265625); (15.5 : 1.81814697265625); (15.5 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/ResultatQuiz/ResultatQuiz_ReponseQuiz" />
       <nodes>
-        <classShapeMoniker Id="a3305719-0727-4ca2-8ef5-9024915cc8f5" />
-        <classShapeMoniker Id="b6ccea36-2e87-46f4-9379-95a4c1d7b65e" />
+        <classShapeMoniker Id="e96ca7c6-7580-4c69-bec1-e972fe455fe5" />
+        <classShapeMoniker Id="7009dd07-ef00-40c0-88c5-ab18dfb29884" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 5.48839634440104); (9.5 : 5.48839634440104); (9.5 : 5.0112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11 : 2.31814697265625); (11.75 : 2.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Question/Question_ResultatQuiz" />
       <nodes>
-        <classShapeMoniker Id="5cb2a929-387e-4288-aa66-63644f725460" />
-        <classShapeMoniker Id="a3305719-0727-4ca2-8ef5-9024915cc8f5" />
+        <classShapeMoniker Id="6c36875f-8f58-4ec6-8eb0-2975da77ee67" />
+        <classShapeMoniker Id="e96ca7c6-7580-4c69-bec1-e972fe455fe5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.09375); (10 : 2.09375); (10 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 1.96875); (11.75 : 1.96875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/Quiz/Quiz_ResultatQuiz" />
       <nodes>
-        <classShapeMoniker Id="ac3e94ce-c855-4b80-8f01-0dc751ac6efc" />
-        <classShapeMoniker Id="a3305719-0727-4ca2-8ef5-9024915cc8f5" />
+        <classShapeMoniker Id="1b4a1b05-5b13-4b65-ae66-c5440bcc1f07" />
+        <classShapeMoniker Id="e96ca7c6-7580-4c69-bec1-e972fe455fe5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 10.8469962565104); (7.25 : 10.8469962565104); (7.25 : 6.70359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 8.28122649649439); (8.71875 : 7.81247649649439); (8.71875 : 3.34019853320312); (9 : 3.34019853320312)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/TypeQuestion/TypeQuestion_Question" />
       <nodes>
-        <classShapeMoniker Id="495985e4-5f62-4395-928b-4fe41fbab59f" />
-        <classShapeMoniker Id="5cb2a929-387e-4288-aa66-63644f725460" />
+        <classShapeMoniker Id="2964debe-8f6e-4b95-9130-9733aa963003" />
+        <classShapeMoniker Id="6c36875f-8f58-4ec6-8eb0-2975da77ee67" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.203125 : 8.25); (3.203125 : 3.46157511393229); (2.75 : 3.46157511393229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.90625); (5.79166666666667 : 4.90625 : JumpStart); (5.95833333333333 : 4.90625 : JumpEnd); (8.26041666666667 : 4.90625 : JumpStart); (8.42708333333333 : 4.90625 : JumpEnd); (8.63541666666667 : 4.90625 : JumpStart); (8.89583333333333 : 4.90625 : JumpEnd); (9 : 4.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ZayaDBDataContext/Utilisateur/Utilisateur_Commentaire" />
+      <nodes>
+        <classShapeMoniker Id="55fd2b64-d2f7-4926-ab0f-990703f5d0c7" />
+        <classShapeMoniker Id="701511a6-a465-40ed-9847-5add461d6e2a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.38022420247396); (5.79166666666667 : 5.38022420247396 : JumpStart); (5.95833333333333 : 5.38022420247396 : JumpEnd); (6.25 : 5.38022420247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ZayaDBDataContext/Utilisateur/Utilisateur_Lecon" />
+      <nodes>
+        <classShapeMoniker Id="55fd2b64-d2f7-4926-ab0f-990703f5d0c7" />
+        <classShapeMoniker Id="60532312-102c-4387-87b1-44d6f8edd397" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.56153746153846); (5.81607443490112 : 4.24546302663734 : JumpStart); (5.93392556509888 : 4.12761189643958 : JumpEnd); (6.0625 : 3.99903746153846); (6.0625 : 3.35799313540415); (6.25 : 3.35799313540415)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ZayaDBDataContext/Utilisateur/Utilisateur_Quiz" />
+      <nodes>
+        <classShapeMoniker Id="55fd2b64-d2f7-4926-ab0f-990703f5d0c7" />
+        <classShapeMoniker Id="1b4a1b05-5b13-4b65-ae66-c5440bcc1f07" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.84699625651042); (3.5 : 5.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ZayaDBDataContext/TypeUtilisateur/TypeUtilisateur_Utilisateur" />
       <nodes>
-        <classShapeMoniker Id="40ea5fb9-4804-4229-b300-3f6c15663a6e" />
-        <classShapeMoniker Id="40942942-59d7-4b8b-880b-344306733de5" />
+        <classShapeMoniker Id="a75a7882-38c3-4949-a24b-f8b93352666b" />
+        <classShapeMoniker Id="55fd2b64-d2f7-4926-ab0f-990703f5d0c7" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

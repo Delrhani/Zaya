@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Zaya.CommunForms
 {
-    public partial class ModifierLecon : Form
+    public partial class ModifierLecon : MaterialSkin.Controls.MaterialForm
     {
         private Lecon lecon;
         public ModifierLecon(Lecon lecon)
@@ -45,6 +45,11 @@ namespace Zaya.CommunForms
             cmbMatiere.SelectedValue = lecon.idMatiere;
             txtLibelle.Text = lecon.libelle;
             txtLecon.Text = lecon.textLecon;
+        }
+
+        private void txtLecon_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
