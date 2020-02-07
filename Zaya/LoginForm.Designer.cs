@@ -42,6 +42,7 @@
             this.txtLogin.Depth = 0;
             this.txtLogin.Hint = "Login";
             this.txtLogin.Location = new System.Drawing.Point(87, 116);
+            this.txtLogin.MaxLength = 32767;
             this.txtLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.PasswordChar = '\0';
@@ -50,6 +51,7 @@
             this.txtLogin.SelectionStart = 0;
             this.txtLogin.Size = new System.Drawing.Size(208, 23);
             this.txtLogin.TabIndex = 1;
+            this.txtLogin.TabStop = false;
             this.txtLogin.UseSystemPasswordChar = false;
             // 
             // txtPassword
@@ -57,6 +59,7 @@
             this.txtPassword.Depth = 0;
             this.txtPassword.Hint = "Password";
             this.txtPassword.Location = new System.Drawing.Point(87, 162);
+            this.txtPassword.MaxLength = 32767;
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
@@ -65,18 +68,22 @@
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.Size = new System.Drawing.Size(208, 23);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabStop = false;
             this.txtPassword.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton2
             // 
+            this.materialRaisedButton2.AutoSize = true;
+            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialRaisedButton2.Icon = null;
             this.materialRaisedButton2.Location = new System.Drawing.Point(278, 235);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
             this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(75, 28);
+            this.materialRaisedButton2.Size = new System.Drawing.Size(84, 36);
             this.materialRaisedButton2.TabIndex = 4;
             this.materialRaisedButton2.Text = "Connect";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
@@ -156,7 +163,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

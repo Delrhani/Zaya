@@ -23,7 +23,7 @@ namespace Zaya.AdministrateurForms
             { 
                 Matiere matiere = new Matiere();
                 matiere.libelle = txtMatiere.Text;
-                DataBaseConfiguration.Context.Matieres.InsertOnSubmit(matiere);
+                DataBaseConfiguration.Context.Matiere.InsertOnSubmit(matiere);
                 DataBaseConfiguration.Context.SubmitChanges();
             } else
             {

@@ -51,6 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAjouterQuestion = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.btnQuizPlayed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -309,12 +310,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnAjouterQuestion
+            // 
+            this.btnAjouterQuestion.Location = new System.Drawing.Point(506, 97);
+            this.btnAjouterQuestion.Name = "btnAjouterQuestion";
+            this.btnAjouterQuestion.Size = new System.Drawing.Size(189, 23);
+            this.btnAjouterQuestion.TabIndex = 23;
+            this.btnAjouterQuestion.Text = "Ajouter Question";
+            this.btnAjouterQuestion.UseVisualStyleBackColor = true;
+            this.btnAjouterQuestion.Click += new System.EventHandler(this.btnAjouterQuestion_Click);
+            // 
             // PagePrincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 523);
+            this.Controls.Add(this.btnAjouterQuestion);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.panelSideMenu);
@@ -362,5 +374,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAjouterQuestion;
     }
 }

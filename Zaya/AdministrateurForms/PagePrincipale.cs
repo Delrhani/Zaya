@@ -83,8 +83,12 @@ namespace Zaya.AdministrateurForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new CommunForms.ChoisirMatiere(utilisateur).ShowDialog();
+            new CommunForms.MenuQuiz(utilisateur).ShowDialog();
+        }
 
+        private void btnAjouterQuestion_Click(object sender, EventArgs e)
+        {
+            new CommunForms.AjouterQuestion().ShowDialog();
         }
     }
 }

@@ -32,11 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JouerQuiz));
             this.tempEstime = new Bunifu.Framework.UI.BunifuProgressBar();
             this.panelQuestion = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtQuestion = new System.Windows.Forms.Label();
             this.panelReponse = new System.Windows.Forms.Panel();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.txtQuestion = new System.Windows.Forms.Label();
+            this.btnSuivant = new System.Windows.Forms.Button();
+            this.score = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelQuestion.SuspendLayout();
             this.SuspendLayout();
@@ -52,25 +51,24 @@
             this.tempEstime.Size = new System.Drawing.Size(575, 10);
             this.tempEstime.TabIndex = 2;
             this.tempEstime.Value = 100;
+            this.tempEstime.progressChanged += new System.EventHandler(this.tempEstime_progressChanged);
             // 
             // panelQuestion
             // 
             this.panelQuestion.Controls.Add(this.panelReponse);
             this.panelQuestion.Controls.Add(this.txtQuestion);
+            this.panelQuestion.Controls.Add(this.score);
             this.panelQuestion.Location = new System.Drawing.Point(12, 25);
             this.panelQuestion.Name = "panelQuestion";
-            this.panelQuestion.Size = new System.Drawing.Size(506, 213);
+            this.panelQuestion.Size = new System.Drawing.Size(575, 213);
             this.panelQuestion.TabIndex = 3;
             // 
-            // button1
+            // panelReponse
             // 
-            this.button1.Location = new System.Drawing.Point(443, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Suivant";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panelReponse.Location = new System.Drawing.Point(3, 25);
+            this.panelReponse.Name = "panelReponse";
+            this.panelReponse.Size = new System.Drawing.Size(500, 185);
+            this.panelReponse.TabIndex = 1;
             // 
             // txtQuestion
             // 
@@ -81,48 +79,41 @@
             this.txtQuestion.TabIndex = 0;
             this.txtQuestion.Text = "Comment déclarer un variable ?";
             // 
-            // panelReponse
+            // btnSuivant
             // 
-            this.panelReponse.Location = new System.Drawing.Point(3, 25);
-            this.panelReponse.Name = "panelReponse";
-            this.panelReponse.Size = new System.Drawing.Size(500, 185);
-            this.panelReponse.TabIndex = 1;
+            this.btnSuivant.Location = new System.Drawing.Point(512, 244);
+            this.btnSuivant.Name = "btnSuivant";
+            this.btnSuivant.Size = new System.Drawing.Size(75, 23);
+            this.btnSuivant.TabIndex = 4;
+            this.btnSuivant.Text = "Suivant";
+            this.btnSuivant.UseVisualStyleBackColor = true;
+            this.btnSuivant.Click += new System.EventHandler(this.btnSuivant_Click);
             // 
-            // btnStart
+            // score
             // 
-            this.btnStart.Location = new System.Drawing.Point(362, 244);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
-            this.btnStart.TabIndex = 5;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(521, 198);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(69, 69);
-            this.bunifuCircleProgressbar1.TabIndex = 1;
-            this.bunifuCircleProgressbar1.Value = 10;
+            this.score.animated = false;
+            this.score.animationIterval = 5;
+            this.score.animationSpeed = 300;
+            this.score.BackColor = System.Drawing.Color.White;
+            this.score.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("score.BackgroundImage")));
+            this.score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score.ForeColor = System.Drawing.Color.SeaGreen;
+            this.score.LabelVisible = true;
+            this.score.LineProgressThickness = 8;
+            this.score.LineThickness = 5;
+            this.score.Location = new System.Drawing.Point(506, 25);
+            this.score.Margin = new System.Windows.Forms.Padding(0);
+            this.score.MaxValue = 100;
+            this.score.Name = "score";
+            this.score.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.score.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.score.Size = new System.Drawing.Size(69, 69);
+            this.score.TabIndex = 1;
+            this.score.Value = 0;
             // 
             // timer
             // 
-            this.timer.Interval = 10;
+            this.timer.Interval = 3000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // JouerQuiz
@@ -131,11 +122,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(599, 276);
-            this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSuivant);
             this.Controls.Add(this.panelQuestion);
             this.Controls.Add(this.tempEstime);
-            this.Controls.Add(this.bunifuCircleProgressbar1);
             this.Name = "JouerQuiz";
             this.Text = "JouerQuiz";
             this.Load += new System.EventHandler(this.JouerQuiz_Load);
@@ -147,13 +136,12 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar score;
         private Bunifu.Framework.UI.BunifuProgressBar tempEstime;
         private System.Windows.Forms.Panel panelQuestion;
         private System.Windows.Forms.Label txtQuestion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSuivant;
         private System.Windows.Forms.Panel panelReponse;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer timer;
     }
 }

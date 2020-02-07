@@ -27,7 +27,7 @@ namespace Zaya.CommunForms
 
         private void AjouterQuestion_Load(object sender, EventArgs e)
         {
-            var resultat = from m in DataBaseConfiguration.Context.Matieres
+            var resultat = from m in DataBaseConfiguration.Context.Matiere
                            select new { m.libelle, m.idMatiere };
             cmbMatiere.DisplayMember = "libelle";
             cmbMatiere.ValueMember = "idMatiere";
@@ -36,7 +36,7 @@ namespace Zaya.CommunForms
 
         private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var resultat = from l in DataBaseConfiguration.Context.Lecons
+            var resultat = from l in DataBaseConfiguration.Context.Lecon
                            where l.idMatiere == int.Parse(cmbMatiere.SelectedValue.ToString())
                            select new { l.libelle, l.idLecon };
             cmbLecon.DisplayMember = "libelle";
@@ -57,7 +57,7 @@ namespace Zaya.CommunForms
                 }
                 else if(listeReponse.Items.Count == 1)
                 {
-                    question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestions
+                    question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestion
                                               where t.libelle == "text"
                                               select new { t.idTypeQuestion }).First().idTypeQuestion; 
                 }
@@ -65,13 +65,13 @@ namespace Zaya.CommunForms
                 {
                     if(listeReponse.CheckedItems.Count == 1)
                     {
-                        question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestions
+                        question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestion
                                                    where t.libelle == "single"
                                                    select new { t.idTypeQuestion }).First().idTypeQuestion;
                     }
                     else
                     {
-                        question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestions
+                        question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestion
                                                    where t.libelle == "multiple"
                                                    select new { t.idTypeQuestion }).First().idTypeQuestion;
                     }
@@ -81,9 +81,9 @@ namespace Zaya.CommunForms
                     Reponse reponse = new Reponse();
                     reponse.txtReponse = v.ToString();
                     reponse.valider = listeReponse.GetItemChecked(listeReponse.Items.IndexOf(v));
-                    question.Reponses.Add(reponse);
+                    question.Reponse.Add(reponse);
                 }
-                DataBaseConfiguration.Context.Questions.InsertOnSubmit(question);
+                DataBaseConfiguration.Context.Question.InsertOnSubmit(question);
                 DataBaseConfiguration.Context.SubmitChanges();
             }
             else

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Zaya.CommunForms
 {
-    public partial class ChoisirMatiere : Form
+    public partial class MenuQuiz : Form
     {
         private Utilisateur utilisateur;
-        public ChoisirMatiere(Utilisateur utilisateur)
+        public MenuQuiz(Utilisateur utilisateur)
         {
             InitializeComponent();
             this.utilisateur = utilisateur;
@@ -21,16 +21,16 @@ namespace Zaya.CommunForms
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            Matiere matiere = (from m in DataBaseConfiguration.Context.Matieres
+            Matiere matiere = (from m in DataBaseConfiguration.Context.Matiere
                                where m.idMatiere == (int)lsMatiere.SelectedValue
                                select m).First();
-            new JouerQuiz(utilisateur, matiere).Show();
+            new JouerQuiz(utilisateur, matiere, JouerQuiz.Difficulte.Facile).Show();
             this.Visible = false;
         }
 
-        private void ChoisirMatiere_Load(object sender, EventArgs e)
+        private void MenuQuiz_Load(object sender, EventArgs e)
         {
-            var v = from m in DataBaseConfiguration.Context.Matieres
+            var v = from m in DataBaseConfiguration.Context.Matiere
                     select new { m.idMatiere, m.libelle };
             lsMatiere.ValueMember = "idMatiere";
             lsMatiere.DisplayMember = "libelle";

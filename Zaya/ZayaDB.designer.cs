@@ -2162,7 +2162,12 @@ namespace Zaya
 			this.SendPropertyChanging();
 			entity.ResultatQuiz = null;
 		}
-	}
+
+        public static implicit operator EntitySet<object>(ResultatQuiz v)
+        {
+            throw new NotImplementedException();
+        }
+    }
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TypeQuestion")]
 	public partial class TypeQuestion : INotifyPropertyChanging, INotifyPropertyChanged

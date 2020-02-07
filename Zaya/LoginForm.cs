@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Zaya
 {
     public partial class LoginForm : MaterialSkin.Controls.MaterialForm
     {
+        private Thread thread;
+        private Form frm;
         public LoginForm()
         {
             InitializeComponent();
 
-
+            frm = null;
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
@@ -36,7 +39,6 @@ namespace Zaya
         {
             Utilisateur utilisateur = connect();
 
-            Form frm = null;
             if (utilisateur == null)
             {
                 MessageBox.Show("Le login ou le mot de passe est incorrect ", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -51,25 +53,28 @@ namespace Zaya
                     frm = new UtilisateurForms.PagePrincipale(utilisateur);
                     break;
             }
-            frm.Show();
-            Visible = false;
+            this.Close();
+            thread = new Thread(PagePricipale);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
+
+        private void PagePricipale(object obj)
+        {
+            Application.Run(frm);
+        }
+
 
         private Utilisateur connect()
         {
             string login = txtLogin.Text;
             string password = txtPassword.Text;
-            var personne = (from c in DataBaseConfiguration.Context.Utilisateurs
+            var personne = (from c in DataBaseConfiguration.Context.Utilisateur
                         where ((c.username.Equals(login) || c.telephone.Equals(login) || c.email.Equals(login)) && c.pwd.Equals(DataBaseConfiguration.Context.encrypt(password)))
                         select c);
             if(personne.Count() > 0)
                 return personne.First();
             return null;
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
