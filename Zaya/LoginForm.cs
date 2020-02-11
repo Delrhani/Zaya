@@ -70,9 +70,9 @@ namespace Zaya
             string login = txtLogin.Text;
             string password = txtPassword.Text;
             var personne = (from c in DataBaseConfiguration.Context.Utilisateur
-                        where ((c.username.Equals(login) || c.telephone.Equals(login) || c.email.Equals(login)) && c.pwd.Equals(DataBaseConfiguration.Context.encrypt(password)))
-                        select c);
-            if(personne.Count() > 0)
+                            where ((c.username.Equals(login) || c.telephone.Equals(login) || c.email.Equals(login)) && c.pwd.Equals(DataBaseConfiguration.Context.encrypt(password)))
+                            select c);
+            if (personne.Count() > 0)
                 return personne.First();
             return null;
         }
