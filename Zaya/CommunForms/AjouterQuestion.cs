@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Zaya.CommunForms
 {
-    public partial class AjouterQuestion : Form
+    public partial class AjouterQuestion : MaterialSkin.Controls.MaterialForm
     {
         public AjouterQuestion()
         {
@@ -37,7 +37,11 @@ namespace Zaya.CommunForms
         private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
         {
             var resultat = from l in DataBaseConfiguration.Context.Lecon
+<<<<<<< HEAD
+                           where l.idLecon == int.Parse(cmbMatiere.SelectedValue.ToString())
+=======
                            where l.idMatiere == int.Parse(cmbMatiere.SelectedValue.ToString())
+>>>>>>> d42fbf3c806e7058be98bcf9cea3a220b1e48f92
                            select new { l.libelle, l.idLecon };
             cmbLecon.DisplayMember = "libelle";
             cmbLecon.ValueMember = "idLecon";
@@ -90,6 +94,11 @@ namespace Zaya.CommunForms
             {
                 MessageBox.Show("Please add a question", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -231,6 +231,7 @@
             this.btnLesson.Name = "btnLesson";
             this.btnLesson.Size = new System.Drawing.Size(200, 40);
             this.btnLesson.TabIndex = 19;
+            this.btnLesson.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLesson_Paint_1);
             // 
             // pictureBox1
             // 

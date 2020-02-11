@@ -8,9 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 namespace Zaya.AdministrateurForms
 {
-    public partial class PagePrincipale : MaterialSkin.Controls.MaterialForm
+    public partial class PagePrincipale : Form
     {
+<<<<<<< HEAD
+       
+        private Utilisateur administrateur;
+=======
         private Utilisateur utilisateur;
+>>>>>>> d42fbf3c806e7058be98bcf9cea3a220b1e48f92
         public PagePrincipale(Utilisateur utilisateur)
         {
             InitializeComponent();
@@ -19,7 +24,11 @@ namespace Zaya.AdministrateurForms
 
         private void PagePrincipale_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+           
+=======
             
+>>>>>>> d42fbf3c806e7058be98bcf9cea3a220b1e48f92
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -89,6 +98,11 @@ namespace Zaya.AdministrateurForms
         private void btnAjouterQuestion_Click(object sender, EventArgs e)
         {
             new CommunForms.AjouterQuestion().ShowDialog();
+        }
+
+        private void btnLesson_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
