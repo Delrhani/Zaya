@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ePOSOne.btnProduct
+namespace Zaya.CommunForms
 {
     public class Button_WOC : Button
     {

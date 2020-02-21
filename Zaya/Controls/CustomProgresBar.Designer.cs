@@ -42,7 +42,7 @@
             this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(247, 12);
+            this.circularProgressBar1.Location = new System.Drawing.Point(232, 28);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Maximum = 90;
             this.circularProgressBar1.Name = "circularProgressBar1";
@@ -50,7 +50,7 @@
             this.circularProgressBar1.OuterMargin = -10;
             this.circularProgressBar1.OuterWidth = 9;
             this.circularProgressBar1.ProgressColor = System.Drawing.Color.DodgerBlue;
-            this.circularProgressBar1.ProgressWidth = 25;
+            this.circularProgressBar1.ProgressWidth = 10;
             this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.circularProgressBar1.Size = new System.Drawing.Size(131, 121);
             this.circularProgressBar1.StartAngle = 270;

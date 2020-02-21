@@ -57,12 +57,9 @@ namespace Zaya.AdministrateurForms
 
         private void btnQuiz_MouseClick(object sender, MouseEventArgs e)
         {
-           panelLeft.Height = btnQuiz.Height;
+            panelLeft.Height = btnQuiz.Height;
             panelLeft.Top = btnQuiz.Top;
-           txtNavigation.Text = "Quiz";
-
-            HistoriqueQuiz hq = new HistoriqueQuiz();
-            hq.ShowDialog();
+            txtNavigation.Text = "Quiz";
         }
 
         private void btnModels_MouseClick(object sender, MouseEventArgs e)
@@ -70,8 +67,6 @@ namespace Zaya.AdministrateurForms
             panelLeft.Height = btnModels.Height;
             panelLeft.Top = btnModels.Top;
             txtNavigation.Text = "Modules";
-            panelLeft.Height = btnUtilisateurs.Height;
-            panelLeft.Top = btnUtilisateurs.Top;
             ListBox listBox = new ListBox();
             var v = from m in DataBaseConfiguration.Context.Matiere
                     select new { m.libelle, m.idMatiere };
@@ -107,7 +102,6 @@ namespace Zaya.AdministrateurForms
         private void btnQuiz_MouseLeave(object sender, EventArgs e)
         {
             btnQuiz.BackColor = TRANSPARENT_COLOR;
-
         }
 
         private void btnModels_MouseLeave(object sender, EventArgs e)
@@ -179,8 +173,7 @@ namespace Zaya.AdministrateurForms
 
         private void btnQuiz_Click(object sender, EventArgs e)
         {
-            HistoriqueQuiz hq = new HistoriqueQuiz();
-            hq.ShowDialog();
+            
         }
     }
 }

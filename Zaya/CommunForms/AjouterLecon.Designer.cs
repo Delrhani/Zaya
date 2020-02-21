@@ -42,8 +42,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
-            this.btnValider = new ePOSOne.btnProduct.Button_WOC();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnValider = new Zaya.CommunForms.Button_WOC();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -178,6 +178,16 @@
             this.cmbMatiere.Size = new System.Drawing.Size(224, 29);
             this.cmbMatiere.TabIndex = 13;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(325, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnValider
             // 
             this.btnValider.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
@@ -188,23 +198,13 @@
             this.btnValider.Location = new System.Drawing.Point(362, 376);
             this.btnValider.Name = "btnValider";
             this.btnValider.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnValider.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.btnValider.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnValider.OnHoverButtonColor = System.Drawing.Color.Silver;
+            this.btnValider.OnHoverTextColor = System.Drawing.Color.Black;
             this.btnValider.Size = new System.Drawing.Size(115, 31);
             this.btnValider.TabIndex = 14;
             this.btnValider.Text = "Valider";
             this.btnValider.TextColor = System.Drawing.Color.White;
             this.btnValider.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(325, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
             // 
             // AjouterLecon
             // 
@@ -245,7 +245,7 @@
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroComboBox cmbMatiere;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ePOSOne.btnProduct.Button_WOC btnValider;
+        private Zaya.CommunForms.Button_WOC btnValider;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

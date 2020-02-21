@@ -21,16 +21,11 @@ namespace Zaya
         public LoginForm()
         {
             InitializeComponent();
-            
-          
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            using (InscriptionForm If = new InscriptionForm())
-            {
-                If.ShowDialog();
-            }
+            new InscriptionForm().ShowDialog();
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)

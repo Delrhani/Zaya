@@ -150,5 +150,10 @@ namespace Zaya.CommunForms
         {
 
         }
+
+        private void btnAjouter_ForeColorChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

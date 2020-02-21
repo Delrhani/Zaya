@@ -220,12 +220,6 @@
     <Compile Include="Controls\HistoriqueLigne.Designer.cs">
       <DependentUpon>HistoriqueLigne.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\HistoriqueQuiz.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\HistoriqueQuiz.Designer.cs">
-      <DependentUpon>HistoriqueQuiz.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\ProgressBarEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -288,12 +282,6 @@
     </Compile>
     <Compile Include="Controls\CustomChecks.Designer.cs">
       <DependentUpon>CustomChecks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\CustomListBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\CustomListBox.Designer.cs">
-      <DependentUpon>CustomListBox.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomCheckedListBox.cs">
       <SubType>Component</SubType>
@@ -391,9 +379,6 @@
     <EmbeddedResource Include="Controls\HistoriqueLigne.resx">
       <DependentUpon>HistoriqueLigne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HistoriqueQuiz.resx">
-      <DependentUpon>HistoriqueQuiz.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\LeconModel.resx">
       <DependentUpon>LeconModel.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,9 +387,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomChecks.resx">
       <DependentUpon>CustomChecks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CustomListBox.resx">
-      <DependentUpon>CustomListBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

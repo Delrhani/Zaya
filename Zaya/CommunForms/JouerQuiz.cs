@@ -215,5 +215,10 @@ namespace Zaya.CommunForms
             this.Close();
 
         }
+
+        private void custumProgresssBar2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
