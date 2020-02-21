@@ -36,12 +36,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,10 +68,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(143, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 19);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Matière :";
             // 
@@ -137,6 +137,14 @@
             this.panel1.Size = new System.Drawing.Size(112, 243);
             this.panel1.TabIndex = 12;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
+            this.panel6.Location = new System.Drawing.Point(-1, 181);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(114, 2);
+            this.panel6.TabIndex = 6;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
@@ -179,14 +187,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
-            this.panel6.Location = new System.Drawing.Point(-1, 181);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(114, 2);
-            this.panel6.TabIndex = 6;
-            // 
             // ModifierMatiere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,7 +202,7 @@
             this.Controls.Add(this.txtMatiere);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModifierMatiere";
-            this.Text = "ModifierMatiere";
+            this.Text = "Modifier matiére";
             this.Load += new System.EventHandler(this.ModifierMatiere_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

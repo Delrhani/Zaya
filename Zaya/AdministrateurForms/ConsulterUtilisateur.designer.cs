@@ -208,7 +208,7 @@
             this.Controls.Add(this.txt_nom);
             this.Controls.Add(this.txt_phone);
             this.Name = "ConsulterUtilisateur";
-            this.Text = "ConsulterUtilisateur";
+            this.Text = "Consulter un utilisateur";
             this.Load += new System.EventHandler(this.ConsulterUtilisateur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

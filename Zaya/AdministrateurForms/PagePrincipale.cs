@@ -40,11 +40,39 @@ namespace Zaya.AdministrateurForms
             panelLeft.Height = btnLesson.Height;
             panelLeft.Top = btnLesson.Top;
             txtNavigation.Text = "Leçons";
-            var v = from l in DataBaseConfiguration.Context.Lecon
-                    select l;
+            
             panelContenu.Controls.Clear();
+            ComboBox cmbMatieres = new ComboBox();
+            var res = (from m in DataBaseConfiguration.Context.Matiere
+                         select new { m.idMatiere, m.libelle }).ToList();
+            res.Insert(0, new { idMatiere = 0, libelle = "Tout" });
+
+            cmbMatieres.ValueMember = "idMatiere";
+            cmbMatieres.DisplayMember = "libelle";
+            cmbMatieres.DataSource = res;
+            cmbMatieres.SelectedIndex = 0;
+
             int y = 0;
-            foreach(Lecon l in v)
+            Point p = cmbMatieres.Location;
+            p.X = panelContenu.Width - cmbMatieres.Width - 50;
+            cmbMatieres.Location = p;
+            y += p.Y + 20;
+            cmbMatieres.SelectedIndexChanged += (s, e1) => {
+                for (int i = panelContenu.Controls.Count - 1; i >= 1; i--)
+                {
+                    panelContenu.Controls.RemoveAt(i);
+                }
+                InitListeLecon(y, cmbMatieres.SelectedIndex);
+            };
+            panelContenu.Controls.Add(cmbMatieres);
+        }
+
+        private void InitListeLecon(int y, int selectedIndex)
+        {
+            var v = from l in DataBaseConfiguration.Context.Lecon
+                    where selectedIndex >= 1 ? l.idMatiere == selectedIndex : l.idMatiere >= 1
+                    select l;
+            foreach (Lecon l in v)
             {
                 LeconModel leconModel = new LeconModel(l);
                 Point p = leconModel.Location;

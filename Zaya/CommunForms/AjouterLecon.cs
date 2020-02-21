@@ -47,16 +47,6 @@ namespace Zaya.CommunForms
             cmbMatiere.DataSource = resultat;
         }
 
-        private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnValider_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
