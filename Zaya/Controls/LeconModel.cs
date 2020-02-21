@@ -12,7 +12,8 @@ namespace Zaya.Controls
 {
     public partial class LeconModel : UserControl
     {
-        private string title;
+        private Lecon lecon;
+        /*private string title;
         private string professeurName;
         private string lesson;
 
@@ -24,7 +25,10 @@ namespace Zaya.Controls
             }
             set 
             {
+                value = value.Substring(0, 65);
+                value = value.Substring(0, value.LastIndexOf(' '));
                 title = value;
+
                 BindingData();
             }
         }
@@ -71,7 +75,7 @@ namespace Zaya.Controls
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+            
         }
 
 
@@ -79,6 +83,44 @@ namespace Zaya.Controls
         {
             get { return txtTitle; }
         }
+        */
+        public LeconModel(Lecon lecon) : this()
+        {
+            this.lecon = lecon;
+            BindingData();
+        }
 
+        public LeconModel()
+        {
+            InitializeComponent();
+        }
+
+        private void BindingData()
+        {
+            string value = lecon.textLecon;
+            if (lecon.textLecon.Length > 65)
+            {
+                value = value.Substring(0, 65);
+                value = value.Substring(0, value.LastIndexOf(' '));
+            }
+            this.txtTitle.Text = lecon.libelle;
+            this.txtNomProfesseur.Text = lecon.Utilisateur.nom + ' ' + lecon.Utilisateur.prenom;
+            this.txtLesson.Text = lecon.textLecon;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            new CommunForms.DetailsLecon(lecon).ShowDialog();
+        }
+
+        private void txtNomProfesseur_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

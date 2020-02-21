@@ -36,15 +36,14 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(132, 77);
+            this.label1.Location = new System.Drawing.Point(148, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 19);
             this.label1.TabIndex = 0;
@@ -62,22 +61,24 @@
             // 
             this.txtMatiere.BackColor = System.Drawing.Color.White;
             this.txtMatiere.Depth = 0;
-            this.txtMatiere.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatiere.Font = new System.Drawing.Font("Microsoft Tai Le", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatiere.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtMatiere.Hint = "Type Subject";
-            this.txtMatiere.Location = new System.Drawing.Point(214, 77);
+            this.txtMatiere.Location = new System.Drawing.Point(234, 51);
             this.txtMatiere.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMatiere.Name = "txtMatiere";
             this.txtMatiere.PasswordChar = '\0';
             this.txtMatiere.SelectedText = "";
             this.txtMatiere.SelectionLength = 0;
             this.txtMatiere.SelectionStart = 0;
-            this.txtMatiere.Size = new System.Drawing.Size(235, 23);
+            this.txtMatiere.Size = new System.Drawing.Size(220, 23);
             this.txtMatiere.TabIndex = 4;
+            this.txtMatiere.Text = "Type Subject";
             this.txtMatiere.UseSystemPasswordChar = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(472, 3);
+            this.button1.Location = new System.Drawing.Point(472, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(20, 23);
             this.button1.TabIndex = 5;
@@ -92,7 +93,8 @@
             this.btnValider.BackColor = System.Drawing.Color.Transparent;
             this.btnValider.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnValider.Location = new System.Drawing.Point(187, 158);
+            this.btnValider.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValider.Location = new System.Drawing.Point(187, 151);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(206, 27);
             this.btnValider.TabIndex = 7;
@@ -107,7 +109,8 @@
             this.btnAnnuler.BackColor = System.Drawing.Color.Transparent;
             this.btnAnnuler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnnuler.Location = new System.Drawing.Point(187, 197);
+            this.btnAnnuler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnuler.Location = new System.Drawing.Point(187, 188);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(206, 27);
             this.btnAnnuler.TabIndex = 8;
@@ -121,7 +124,7 @@
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(145, 132);
+            this.materialDivider1.Location = new System.Drawing.Point(141, 113);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(326, 1);
@@ -131,6 +134,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -139,32 +143,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(106, 243);
             this.panel1.TabIndex = 10;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox1
+            // panel5
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
+            this.panel5.Location = new System.Drawing.Point(0, 182);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(114, 2);
+            this.panel5.TabIndex = 6;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(-3, 196);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(114, 2);
             this.panel4.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(0, -13);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(114, 4);
-            this.panel5.TabIndex = 2;
             // 
             // panel2
             // 
@@ -181,6 +176,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 4);
             this.panel3.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(88, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // AjouterMatiere
             // 
@@ -201,9 +206,8 @@
             this.Name = "AjouterMatiere";
             this.Load += new System.EventHandler(this.AjouterMatiere_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,8 +224,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
     }
 }

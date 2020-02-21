@@ -51,5 +51,15 @@ namespace Zaya.CommunForms
         {
 
         }
+
+        private void btnValider_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

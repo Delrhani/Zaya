@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Animations;
+using MaterialSkin.Animations;
+using MaterialSkin;
 
 namespace Zaya.AdministrateurForms
 {
@@ -70,12 +73,17 @@ namespace Zaya.AdministrateurForms
 
         private void button1_MouseMove(object sender, MouseEventArgs e)
         {
-            button1.BackColor = Color.DarkRed;
+            button1.BackColor = Color.Red;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             button1.BackColor = Color.Transparent;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

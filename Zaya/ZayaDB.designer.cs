@@ -66,7 +66,7 @@ namespace Zaya
     #endregion
 		
 		public ZayaDBDataContext() : 
-				base(global::Zaya.Properties.Settings.Default.ZayaConnectionString1, mappingSource)
+				base(global::Zaya.Properties.Settings.Default.ZayaConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -511,6 +511,8 @@ namespace Zaya
 		
 		private int _idMatiere;
 		
+		private System.DateTime _dateAjoute;
+		
 		private EntitySet<Commentaire> _Commentaire;
 		
 		private EntitySet<Question> _Question;
@@ -533,6 +535,8 @@ namespace Zaya
     partial void OntextLeconChanged();
     partial void OnidMatiereChanging(int value);
     partial void OnidMatiereChanged();
+    partial void OndateAjouteChanging(System.DateTime value);
+    partial void OndateAjouteChanged();
     #endregion
 		
 		public Lecon()
@@ -648,6 +652,26 @@ namespace Zaya
 					this._idMatiere = value;
 					this.SendPropertyChanged("idMatiere");
 					this.OnidMatiereChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateAjoute", DbType="Date NOT NULL")]
+		public System.DateTime dateAjoute
+		{
+			get
+			{
+				return this._dateAjoute;
+			}
+			set
+			{
+				if ((this._dateAjoute != value))
+				{
+					this.OndateAjouteChanging(value);
+					this.SendPropertyChanging();
+					this._dateAjoute = value;
+					this.SendPropertyChanged("dateAjoute");
+					this.OndateAjouteChanged();
 				}
 			}
 		}
@@ -2162,12 +2186,7 @@ namespace Zaya
 			this.SendPropertyChanging();
 			entity.ResultatQuiz = null;
 		}
-
-        public static implicit operator EntitySet<object>(ResultatQuiz v)
-        {
-            throw new NotImplementedException();
-        }
-    }
+	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TypeQuestion")]
 	public partial class TypeQuestion : INotifyPropertyChanging, INotifyPropertyChanged

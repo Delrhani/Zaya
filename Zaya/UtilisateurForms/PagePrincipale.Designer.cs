@@ -35,10 +35,11 @@
             // 
             this.customPanel1.ColorBottom = System.Drawing.Color.Empty;
             this.customPanel1.ColorTop = System.Drawing.Color.Empty;
-            this.customPanel1.Location = new System.Drawing.Point(12, 12);
+            this.customPanel1.Location = new System.Drawing.Point(114, 32);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(512, 181);
+            this.customPanel1.Size = new System.Drawing.Size(579, 381);
             this.customPanel1.TabIndex = 0;
+            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // PagePrincipale
             // 

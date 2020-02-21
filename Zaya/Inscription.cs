@@ -13,16 +13,13 @@ using System.Text.RegularExpressions;
 
 namespace Zaya
 {
-    public partial class InscriptionForm : MaterialSkin.Controls.MaterialForm
+    public partial class InscriptionForm : Form
 
     {
         public InscriptionForm()
         {
             InitializeComponent();
-            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
-            skinManager.AddFormToManage(this);
-            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+        
 
         }
 
@@ -102,7 +99,7 @@ namespace Zaya
                     throw new Exception("Your first name should be contain 4 characters");
                 ul.prenom = txt_prenom.Text;
                 ///^[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{4})$/
-                showMatch(txt_phone.Text, @"^(+212)[5-7][0-9]{8,8}");
+                //showMatch(txt_phone.Text, @"^(+212)[5-7][0-9]{8,8}");
                 //throw new Exception("Your phone should be correct");
                 ul.telephone = txt_phone.Text;
                 ul.email = txt_email.Text;
@@ -111,10 +108,14 @@ namespace Zaya
                     ul.sexe = 'M';
                 else
                     ul.sexe = 'F';
+
+                ul.TypeUtilisateur = (from t in DataBaseConfiguration.Context.TypeUtilisateur
+                                      where t.libelle != "Administrateur"
+                                      select t).First();
                 ul.pwd = DataBaseConfiguration.Context.encrypt(txt_password.Text);
                 DataBaseConfiguration.Context.Utilisateur.InsertOnSubmit(ul);
-                //DataBaseConfiguration.Context.SubmitChanges();
-                //this.Visible = false;
+                DataBaseConfiguration.Context.SubmitChanges();
+                this.Visible = false;
             }
             catch(Exception ex)
             {

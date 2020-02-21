@@ -22,8 +22,13 @@ namespace Zaya.UtilisateurForms
 
         private void PagePrincipale_Load(object sender, EventArgs e)
         {
-            customPanel1.ColorTop = Color.FromArgb(255, 221, 73, 57);
+            customPanel1.ColorTop = Color.FromArgb(35, 186, 201, 57);
             customPanel1.ColorBottom = Color.FromArgb(255, 253, 187, 45);
+        }
+
+        private void customPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

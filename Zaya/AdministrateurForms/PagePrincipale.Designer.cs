@@ -29,323 +29,371 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagePrincipale));
-            this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnQuizPlayed = new System.Windows.Forms.Panel();
+            this.btnDeconnecte = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnUtilisateurs = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.btnQuiz = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnUnites = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnLesson = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnModels = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAjouter = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLesson = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAjouterQuestion = new System.Windows.Forms.Button();
-            this.panelSideMenu.SuspendLayout();
-            this.btnQuizPlayed.SuspendLayout();
+            this.panelContenu = new System.Windows.Forms.Panel();
+            this.txtNavigation = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.btnDeconnecte.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.btnUtilisateurs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.btnQuiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.btnUnites.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.btnLesson.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnModels.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnLesson.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelSideMenu
-            // 
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelSideMenu.Controls.Add(this.panel2);
-            this.panelSideMenu.Controls.Add(this.panelLogo);
-            this.panelSideMenu.Controls.Add(this.panel3);
-            this.panelSideMenu.Controls.Add(this.panel1);
-            this.panelSideMenu.Controls.Add(this.btnQuizPlayed);
-            this.panelSideMenu.Controls.Add(this.btnQuiz);
-            this.panelSideMenu.Controls.Add(this.btnUnites);
-            this.panelSideMenu.Controls.Add(this.btnLesson);
-            this.panelSideMenu.Controls.Add(this.btnModels);
-            this.panelSideMenu.Location = new System.Drawing.Point(0, 63);
-            this.panelSideMenu.Margin = new System.Windows.Forms.Padding(0);
-            this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(200, 460);
-            this.panelSideMenu.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(-8, 414);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 3);
-            this.panel2.TabIndex = 1;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelLogo.Location = new System.Drawing.Point(0, 2);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 133);
-            this.panelLogo.TabIndex = 19;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(-5, 429);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 3);
-            this.panel3.TabIndex = 1;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(-4, 399);
+            this.panel1.Controls.Add(this.btnDeconnecte);
+            this.panel1.Controls.Add(this.btnUtilisateurs);
+            this.panel1.Controls.Add(this.panelLeft);
+            this.panel1.Controls.Add(this.btnQuiz);
+            this.panel1.Controls.Add(this.btnModels);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnLesson);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 3);
+            this.panel1.Size = new System.Drawing.Size(256, 613);
             this.panel1.TabIndex = 0;
             // 
-            // btnQuizPlayed
+            // btnDeconnecte
             // 
-            this.btnQuizPlayed.BackColor = System.Drawing.Color.LightGray;
-            this.btnQuizPlayed.Controls.Add(this.pictureBox5);
-            this.btnQuizPlayed.Controls.Add(this.label5);
-            this.btnQuizPlayed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuizPlayed.Location = new System.Drawing.Point(0, 298);
-            this.btnQuizPlayed.Margin = new System.Windows.Forms.Padding(0);
-            this.btnQuizPlayed.Name = "btnQuizPlayed";
-            this.btnQuizPlayed.Size = new System.Drawing.Size(200, 40);
-            this.btnQuizPlayed.TabIndex = 23;
+            this.btnDeconnecte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnDeconnecte.Controls.Add(this.label4);
+            this.btnDeconnecte.Controls.Add(this.pictureBox4);
+            this.btnDeconnecte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeconnecte.Location = new System.Drawing.Point(7, 545);
+            this.btnDeconnecte.Name = "btnDeconnecte";
+            this.btnDeconnecte.Size = new System.Drawing.Size(234, 56);
+            this.btnDeconnecte.TabIndex = 29;
+            this.btnDeconnecte.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDeconnecte_MouseClick);
+            this.btnDeconnecte.MouseLeave += new System.EventHandler(this.btnDeconnecte_MouseLeave);
+            this.btnDeconnecte.MouseHover += new System.EventHandler(this.btnDeconnecte_MouseHover);
             // 
-            // pictureBox5
+            // label4
             // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(7, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(38, 37);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 21;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(47, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 38);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Quiz Played";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnQuiz
-            // 
-            this.btnQuiz.BackColor = System.Drawing.Color.LightGray;
-            this.btnQuiz.Controls.Add(this.pictureBox2);
-            this.btnQuiz.Controls.Add(this.label2);
-            this.btnQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuiz.Location = new System.Drawing.Point(0, 178);
-            this.btnQuiz.Margin = new System.Windows.Forms.Padding(0);
-            this.btnQuiz.Name = "btnQuiz";
-            this.btnQuiz.Size = new System.Drawing.Size(200, 40);
-            this.btnQuiz.TabIndex = 20;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(5, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(47, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 38);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Quiz";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // btnUnites
-            // 
-            this.btnUnites.BackColor = System.Drawing.Color.LightGray;
-            this.btnUnites.Controls.Add(this.pictureBox4);
-            this.btnUnites.Controls.Add(this.label4);
-            this.btnUnites.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUnites.Location = new System.Drawing.Point(0, 258);
-            this.btnUnites.Margin = new System.Windows.Forms.Padding(0);
-            this.btnUnites.Name = "btnUnites";
-            this.btnUnites.Size = new System.Drawing.Size(200, 40);
-            this.btnUnites.TabIndex = 22;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label4.Location = new System.Drawing.Point(45, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 49);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Déconnecté";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDeconnecte_MouseClick);
+            this.label4.MouseLeave += new System.EventHandler(this.btnDeconnecte_MouseLeave);
+            this.label4.MouseHover += new System.EventHandler(this.btnDeconnecte_MouseHover);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(7, 0);
+            this.pictureBox4.Location = new System.Drawing.Point(4, 6);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(34, 40);
+            this.pictureBox4.Size = new System.Drawing.Size(38, 47);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 20;
+            this.pictureBox4.TabIndex = 21;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDeconnecte_MouseClick);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.btnDeconnecte_MouseLeave);
+            this.pictureBox4.MouseHover += new System.EventHandler(this.btnDeconnecte_MouseHover);
             // 
-            // label4
+            // btnUtilisateurs
             // 
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(47, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 38);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Unites";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUtilisateurs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnUtilisateurs.Controls.Add(this.pictureBox5);
+            this.btnUtilisateurs.Controls.Add(this.label5);
+            this.btnUtilisateurs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUtilisateurs.Location = new System.Drawing.Point(3, 334);
+            this.btnUtilisateurs.Name = "btnUtilisateurs";
+            this.btnUtilisateurs.Size = new System.Drawing.Size(234, 56);
+            this.btnUtilisateurs.TabIndex = 27;
+            this.btnUtilisateurs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnUtilisateurs_MouseClick);
+            this.btnUtilisateurs.MouseLeave += new System.EventHandler(this.btnUtilisateurs_MouseLeave);
+            this.btnUtilisateurs.MouseHover += new System.EventHandler(this.btnUtilisateurs_MouseHover);
             // 
-            // btnLesson
+            // pictureBox5
             // 
-            this.btnLesson.BackColor = System.Drawing.Color.LightGray;
-            this.btnLesson.Controls.Add(this.pictureBox1);
-            this.btnLesson.Controls.Add(this.label1);
-            this.btnLesson.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLesson.Location = new System.Drawing.Point(0, 138);
-            this.btnLesson.Name = "btnLesson";
-            this.btnLesson.Size = new System.Drawing.Size(200, 40);
-            this.btnLesson.TabIndex = 19;
-            this.btnLesson.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLesson_Paint_1);
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(38, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 21;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnUtilisateurs_MouseClick);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.btnUtilisateurs_MouseLeave);
+            this.pictureBox5.MouseHover += new System.EventHandler(this.btnUtilisateurs_MouseHover);
             // 
-            // pictureBox1
+            // label5
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label5.Location = new System.Drawing.Point(47, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 50);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Utilisateurs";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnUtilisateurs_MouseClick);
+            this.label5.MouseLeave += new System.EventHandler(this.btnUtilisateurs_MouseLeave);
+            this.label5.MouseHover += new System.EventHandler(this.btnUtilisateurs_MouseHover);
             // 
-            // label1
+            // panelLeft
             // 
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(47, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 38);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Lessons";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
+            this.panelLeft.Location = new System.Drawing.Point(243, 153);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(10, 56);
+            this.panelLeft.TabIndex = 4;
+            // 
+            // btnQuiz
+            // 
+            this.btnQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnQuiz.Controls.Add(this.pictureBox2);
+            this.btnQuiz.Controls.Add(this.label2);
+            this.btnQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuiz.Location = new System.Drawing.Point(3, 212);
+            this.btnQuiz.Name = "btnQuiz";
+            this.btnQuiz.Size = new System.Drawing.Size(234, 56);
+            this.btnQuiz.TabIndex = 25;
+            this.btnQuiz.Click += new System.EventHandler(this.btnQuiz_Click);
+            this.btnQuiz.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnQuiz_MouseClick);
+            this.btnQuiz.MouseLeave += new System.EventHandler(this.btnQuiz_MouseLeave);
+            this.btnQuiz.MouseHover += new System.EventHandler(this.btnQuiz_MouseHover);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnQuiz_MouseClick);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.btnQuiz_MouseLeave);
+            this.pictureBox2.MouseHover += new System.EventHandler(this.btnQuiz_MouseHover);
+            // 
+            // label2
+            // 
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label2.Location = new System.Drawing.Point(47, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 48);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Quiz";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnQuiz_MouseClick);
+            this.label2.MouseLeave += new System.EventHandler(this.btnQuiz_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.btnQuiz_MouseHover);
             // 
             // btnModels
             // 
-            this.btnModels.BackColor = System.Drawing.Color.LightGray;
-            this.btnModels.Controls.Add(this.pictureBox3);
+            this.btnModels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnModels.Controls.Add(this.pictureBox6);
             this.btnModels.Controls.Add(this.label3);
             this.btnModels.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModels.Location = new System.Drawing.Point(0, 218);
-            this.btnModels.Margin = new System.Windows.Forms.Padding(0);
+            this.btnModels.Location = new System.Drawing.Point(3, 272);
             this.btnModels.Name = "btnModels";
-            this.btnModels.Size = new System.Drawing.Size(200, 40);
-            this.btnModels.TabIndex = 21;
+            this.btnModels.Size = new System.Drawing.Size(234, 56);
+            this.btnModels.TabIndex = 26;
+            this.btnModels.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnModels_MouseClick);
+            this.btnModels.MouseLeave += new System.EventHandler(this.btnModels_MouseLeave);
+            this.btnModels.MouseHover += new System.EventHandler(this.btnModels_MouseHover);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(38, 50);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 21;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnModels_MouseClick);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.btnModels_MouseLeave);
+            this.pictureBox6.MouseHover += new System.EventHandler(this.btnModels_MouseHover);
+            // 
+            // label3
+            // 
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label3.Location = new System.Drawing.Point(47, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 50);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Modules";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnModels_MouseClick);
+            this.label3.MouseLeave += new System.EventHandler(this.btnModels_MouseLeave);
+            this.label3.MouseHover += new System.EventHandler(this.btnModels_MouseHover);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(256, 88);
+            this.panel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLesson
+            // 
+            this.btnLesson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnLesson.Controls.Add(this.pictureBox3);
+            this.btnLesson.Controls.Add(this.label1);
+            this.btnLesson.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLesson.Location = new System.Drawing.Point(0, 153);
+            this.btnLesson.Name = "btnLesson";
+            this.btnLesson.Size = new System.Drawing.Size(237, 56);
+            this.btnLesson.TabIndex = 24;
+            this.btnLesson.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLesson_Paint);
+            this.btnLesson.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnLesson_Click);
+            this.btnLesson.MouseLeave += new System.EventHandler(this.btnLesson_MouseLeave);
+            this.btnLesson.MouseHover += new System.EventHandler(this.btnLesson_MouseHover);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 34);
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 21;
+            this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnLesson_Click);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.btnLesson_MouseLeave);
+            this.pictureBox3.MouseHover += new System.EventHandler(this.btnLesson_MouseHover);
             // 
-            // label3
+            // label1
             // 
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(47, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 38);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Models";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label1.Location = new System.Drawing.Point(58, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 50);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Leçons";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnLesson_Click);
+            this.label1.MouseLeave += new System.EventHandler(this.btnLesson_MouseLeave);
+            this.label1.MouseHover += new System.EventHandler(this.btnLesson_MouseHover);
             // 
-            // btnAjouter
+            // flowLayoutPanel1
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(725, 50);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(42, 23);
-            this.btnAjouter.TabIndex = 21;
-            this.btnAjouter.Text = "+";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(256, 585);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(595, 28);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(241, 94);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(822, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Jouer une quiz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Size = new System.Drawing.Size(21, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAjouterQuestion
+            // panelContenu
             // 
-            this.btnAjouterQuestion.Location = new System.Drawing.Point(506, 97);
-            this.btnAjouterQuestion.Name = "btnAjouterQuestion";
-            this.btnAjouterQuestion.Size = new System.Drawing.Size(189, 23);
-            this.btnAjouterQuestion.TabIndex = 23;
-            this.btnAjouterQuestion.Text = "Ajouter Question";
-            this.btnAjouterQuestion.UseVisualStyleBackColor = true;
-            this.btnAjouterQuestion.Click += new System.EventHandler(this.btnAjouterQuestion_Click);
+            this.panelContenu.AutoScroll = true;
+            this.panelContenu.Location = new System.Drawing.Point(256, 91);
+            this.panelContenu.Name = "panelContenu";
+            this.panelContenu.Size = new System.Drawing.Size(595, 488);
+            this.panelContenu.TabIndex = 4;
+            // 
+            // txtNavigation
+            // 
+            this.txtNavigation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtNavigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNavigation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.txtNavigation.Location = new System.Drawing.Point(262, 19);
+            this.txtNavigation.Name = "txtNavigation";
+            this.txtNavigation.Size = new System.Drawing.Size(163, 35);
+            this.txtNavigation.TabIndex = 20;
+            this.txtNavigation.Text = "Leçons";
+            this.txtNavigation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PagePrincipale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 523);
-            this.Controls.Add(this.btnAjouterQuestion);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(851, 613);
+            this.Controls.Add(this.panelContenu);
+            this.Controls.Add(this.txtNavigation);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.panelSideMenu);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PagePrincipale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
-            this.Load += new System.EventHandler(this.PagePrincipale_Load);
-            this.panelSideMenu.ResumeLayout(false);
-            this.btnQuizPlayed.ResumeLayout(false);
+            this.Text = "Page principale";
+            this.Load += new System.EventHandler(this.FrmTest_Load);
+            this.panel1.ResumeLayout(false);
+            this.btnDeconnecte.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.btnUtilisateurs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.btnQuiz.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.btnUnites.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.btnLesson.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.btnModels.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.btnLesson.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
@@ -353,28 +401,28 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelSideMenu;
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel btnLesson;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel btnQuiz;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel btnQuizPlayed;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel btnUnites;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel btnModels;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel btnQuiz;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel btnLesson;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel btnModels;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAjouterQuestion;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel panelContenu;
+        private System.Windows.Forms.Label txtNavigation;
+        private System.Windows.Forms.Panel btnDeconnecte;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel btnUtilisateurs;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label5;
     }
 }

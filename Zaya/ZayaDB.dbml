@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Zaya" Class="ZayaDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-SFB5OFQ;Initial Catalog=Zaya;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Zaya.Properties.Settings" SettingsPropertyName="ZayaConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-SFB5OFQ;Initial Catalog=Zaya;User ID=sa" SettingsObjectName="Zaya.Properties.Settings" SettingsPropertyName="ZayaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Commentaire" Member="Commentaire">
     <Type Name="Commentaire">
       <Column Name="idCommentaire" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -20,6 +20,7 @@
       <Column Name="idUtilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="textLecon" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="idMatiere" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dateAjoute" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="Lecon_Commentaire" Member="Commentaire" ThisKey="idLecon" OtherKey="idLecon" Type="Commentaire" />
       <Association Name="Lecon_Question" Member="Question" ThisKey="idLecon" OtherKey="idLecon" Type="Question" />
       <Association Name="Matiere_Lecon" Member="Matiere" ThisKey="idMatiere" OtherKey="idMatiere" Type="Matiere" IsForeignKey="true" />

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Zaya
 {
     static class Program
@@ -16,7 +15,7 @@ namespace Zaya
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CommunForms.FrmTest());
+            Application.Run(new CommunForms.AjouterQuestion());
         }
     }
 }

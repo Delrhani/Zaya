@@ -198,11 +198,22 @@ namespace Zaya.CommunForms
 
         private void tempEstime_progressChanged(object sender, EventArgs e)
         {
-            if(tempEstime.Value == 0)
+            if (tempEstime.Value == 0)
             {
                 MessageBox.Show("You lose in this quiz", "Lose Quiz", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 timer.Stop();
             }
+        }
+
+        private void JouerQuiz_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

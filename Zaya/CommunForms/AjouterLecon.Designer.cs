@@ -35,28 +35,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtLibelle = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnValider = new MetroFramework.Controls.MetroButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnValider = new ePOSOne.btnProduct.Button_WOC();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 81);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(133, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 21);
+            this.label1.Size = new System.Drawing.Size(87, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Matière : ";
             // 
             // txtLecon
             // 
-            this.txtLecon.Location = new System.Drawing.Point(117, 176);
+            this.txtLecon.Location = new System.Drawing.Point(124, 159);
             this.txtLecon.Multiline = true;
             this.txtLecon.Name = "txtLecon";
             this.txtLecon.Size = new System.Drawing.Size(353, 194);
@@ -69,7 +76,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.label2.Location = new System.Drawing.Point(221, 9);
+            this.label2.Location = new System.Drawing.Point(236, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 31);
@@ -80,58 +87,66 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(122, 112);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(142, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 21);
+            this.label3.Size = new System.Drawing.Size(78, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Libéllé : ";
             // 
             // txtLibelle
             // 
-            this.txtLibelle.Location = new System.Drawing.Point(206, 113);
+            this.txtLibelle.Location = new System.Drawing.Point(242, 113);
             this.txtLibelle.Multiline = true;
             this.txtLibelle.Name = "txtLibelle";
-            this.txtLibelle.Size = new System.Drawing.Size(172, 26);
+            this.txtLibelle.Size = new System.Drawing.Size(224, 26);
             this.txtLibelle.TabIndex = 6;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(98, 471);
+            this.panel4.Size = new System.Drawing.Size(108, 417);
             this.panel4.TabIndex = 10;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // btnValider
+            // panel5
             // 
-            this.btnValider.Location = new System.Drawing.Point(206, 412);
-            this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(172, 31);
-            this.btnValider.TabIndex = 11;
-            this.btnValider.Text = "Valider";
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
+            this.panel5.Location = new System.Drawing.Point(0, 363);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(114, 2);
+            this.panel5.TabIndex = 9;
             // 
-            // button1
+            // panel1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(450, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
+            this.panel1.Location = new System.Drawing.Point(-4, 377);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(114, 2);
+            this.panel1.TabIndex = 8;
             // 
-            // cmbMatiere
+            // panel2
             // 
-            this.cmbMatiere.FormattingEnabled = true;
-            this.cmbMatiere.ItemHeight = 23;
-            this.cmbMatiere.Location = new System.Drawing.Point(206, 78);
-            this.cmbMatiere.Name = "cmbMatiere";
-            this.cmbMatiere.Size = new System.Drawing.Size(172, 29);
-            this.cmbMatiere.TabIndex = 13;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(-5, 391);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(114, 2);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(0, -13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(114, 4);
+            this.panel3.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -143,15 +158,64 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(464, 3);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 25);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cmbMatiere
+            // 
+            this.cmbMatiere.FormattingEnabled = true;
+            this.cmbMatiere.ItemHeight = 23;
+            this.cmbMatiere.Location = new System.Drawing.Point(242, 78);
+            this.cmbMatiere.Name = "cmbMatiere";
+            this.cmbMatiere.Size = new System.Drawing.Size(224, 29);
+            this.cmbMatiere.TabIndex = 13;
+            // 
+            // btnValider
+            // 
+            this.btnValider.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
+            this.btnValider.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(182)))), ((int)(((byte)(200)))));
+            this.btnValider.FlatAppearance.BorderSize = 0;
+            this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValider.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValider.Location = new System.Drawing.Point(362, 376);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.btnValider.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.btnValider.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnValider.Size = new System.Drawing.Size(115, 31);
+            this.btnValider.TabIndex = 14;
+            this.btnValider.Text = "Valider";
+            this.btnValider.TextColor = System.Drawing.Color.White;
+            this.btnValider.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(325, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // AjouterLecon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 471);
+            this.ClientSize = new System.Drawing.Size(489, 417);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnValider);
             this.Controls.Add(this.cmbMatiere);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnValider);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtLibelle);
             this.Controls.Add(this.label3);
@@ -162,7 +226,9 @@
             this.Text = "AjouterLecon";
             this.Load += new System.EventHandler(this.AjouterLecon_Load);
             this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,9 +242,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLibelle;
         private System.Windows.Forms.Panel panel4;
-        private MetroFramework.Controls.MetroButton btnValider;
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroComboBox cmbMatiere;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ePOSOne.btnProduct.Button_WOC btnValider;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

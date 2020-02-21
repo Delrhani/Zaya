@@ -21,10 +21,7 @@ namespace Zaya.CommunForms
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            if (txtReponse.Text.Trim().Length > 0)
-                listeReponse.Items.Add(txtReponse.Text, valide.Checked);
-            else
-                MessageBox.Show("Merci d'ajouter la reponce", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
 
         private void AjouterQuestion_Load(object sender, EventArgs e)
@@ -45,6 +42,36 @@ namespace Zaya.CommunForms
 
         private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listeReponse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtReponse_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQuestion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbLecon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             var resultat = from l in DataBaseConfiguration.Context.Lecon
                            where l.idLecon == int.Parse(cmbMatiere.SelectedValue.ToString())
                            select new { l.libelle, l.idLecon };
@@ -53,26 +80,113 @@ namespace Zaya.CommunForms
             cmbLecon.DataSource = resultat;
         }
 
-        private void btnValider_Click(object sender, EventArgs e)
+        private void metroComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if(txtQuestion.Text.Trim().Length > 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void valide_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+            if (txtReponse.Text.Trim().Length > 0)
+                listeReponse.Items.Add(txtReponse.Text, valide.Checked);
+            else
+                MessageBox.Show("Merci d'ajouter la reponce", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button_WOC1_Click_1(object sender, EventArgs e)
+        {
+            if (txtQuestion.Text.Trim().Length > 0)
             {
                 Question question = new Question();
                 question.idLecon = int.Parse(cmbLecon.SelectedValue.ToString());
                 question.textQuestion = txtQuestion.Text;
-                if(listeReponse.Items.Count == 0)
+                if (listeReponse.Items.Count == 0)
                 {
                     MessageBox.Show("Please add one or more answers", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if(listeReponse.Items.Count == 1)
+                else if (listeReponse.Items.Count == 1)
                 {
                     question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestion
-                                              where t.libelle == "text"
-                                              select new { t.idTypeQuestion }).First().idTypeQuestion; 
+                                               where t.libelle == "text"
+                                               select new { t.idTypeQuestion }).First().idTypeQuestion;
                 }
                 else
                 {
-                    if(listeReponse.CheckedItems.Count == 1)
+                    if (listeReponse.CheckedItems.Count == 1)
                     {
                         question.idTypeQuestion = (from t in DataBaseConfiguration.Context.TypeQuestion
                                                    where t.libelle == "single"
@@ -85,7 +199,7 @@ namespace Zaya.CommunForms
                                                    select new { t.idTypeQuestion }).First().idTypeQuestion;
                     }
                 }
-                foreach(var v in listeReponse.Items)
+                foreach (var v in listeReponse.Items)
                 {
                     Reponse reponse = new Reponse();
                     reponse.txtReponse = v.ToString();

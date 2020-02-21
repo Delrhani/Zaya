@@ -8,23 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+
 
 namespace Zaya
 {
-    public partial class LoginForm : MaterialSkin.Controls.MaterialForm
+    public partial class LoginForm : Form
     {
         private Thread thread;
         private Form frm;
         public LoginForm()
         {
             InitializeComponent();
-
-            frm = null;
-            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
-            skinManager.AddFormToManage(this);
-            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green600, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
-
+            
+          
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -76,5 +74,25 @@ namespace Zaya
                 return personne.First();
             return null;
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-}
+    }

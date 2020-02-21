@@ -54,6 +54,7 @@ namespace Zaya.CommunForms
         {
             panelLeft.Height = btnUnites.Height;
             panelLeft.Top = btnUnites.Top;
+           
         }
 
         private void btnQuizPlayed_MouseClick(object sender, MouseEventArgs e)

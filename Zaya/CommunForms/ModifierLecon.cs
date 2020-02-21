@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Zaya.CommunForms
 {
-    public partial class ModifierLecon : MaterialSkin.Controls.MaterialForm
+    public partial class ModifierLecon : Form
     {
         private Lecon lecon;
         public ModifierLecon(Lecon lecon)
@@ -50,6 +50,26 @@ namespace Zaya.CommunForms
         private void txtLecon_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLibelle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            btn_Close.BackColor = Color.Red;
         }
     }
 }
