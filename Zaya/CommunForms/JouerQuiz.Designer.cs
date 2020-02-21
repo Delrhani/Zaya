@@ -45,7 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.custumProgresssBar1 = new Zaya.Controls.CustumProgresssBar();
+            //this.custumProgresssBar1 = new Zaya.Controls.CustumProgresssBar();
             this.score = new Zaya.Controls.ProgressBarEx();
             this.tempEstime = new Zaya.Controls.ProgressBarEx();
             this.panelQuestion.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             // panelQuestion
             // 
-            this.panelQuestion.Controls.Add(this.custumProgresssBar1);
+//            this.panelQuestion.Controls.Add(this.custumProgresssBar1);
             this.panelQuestion.Controls.Add(this.panelReponse);
             this.panelQuestion.Controls.Add(this.txtQuestion);
             this.panelQuestion.Controls.Add(this.score);
@@ -192,10 +192,10 @@
             // 
             // custumProgresssBar1
             // 
-            this.custumProgresssBar1.Location = new System.Drawing.Point(408, 97);
+            /*this.custumProgresssBar1.Location = new System.Drawing.Point(408, 97);
             this.custumProgresssBar1.Name = "custumProgresssBar1";
             this.custumProgresssBar1.Size = new System.Drawing.Size(110, 101);
-            this.custumProgresssBar1.TabIndex = 2;
+            this.custumProgresssBar1.TabIndex = 2;*/
             // 
             // score
             // 
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private Controls.CustumProgresssBar custumProgresssBar1;
+        //private Controls.CustumProgresssBar custumProgresssBar1;
         private System.Windows.Forms.Panel panel8;
         private MetroFramework.Controls.MetroButton metroButton1;
     }

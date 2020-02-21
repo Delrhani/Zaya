@@ -117,9 +117,6 @@
     <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
-    <Reference Include="MaterialDesignColors, Version=1.2.3.981, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialDesignColors.1.2.3-ci981\lib\net45\MaterialDesignColors.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=3.0.1.920, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.3.0.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
@@ -192,7 +189,12 @@
     <Compile Include="Controls\CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomProgressBar.cs" />
+    <Compile Include="Controls\CustomProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomProgressBar.Designer.cs">
+      <DependentUpon>CustomProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CustomradioBtn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +206,12 @@
     </Compile>
     <Compile Include="Controls\CustumProgresssBar.Designer.cs">
       <DependentUpon>CustumProgresssBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ProgressBarEx.cs">
       <SubType>Component</SubType>
@@ -342,11 +350,17 @@
     <EmbeddedResource Include="Controls\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomProgressBar.resx">
+      <DependentUpon>CustomProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomradioBtn.resx">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustumProgresssBar.resx">
       <DependentUpon>CustumProgresssBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LeconModel.resx">
       <DependentUpon>LeconModel.cs</DependentUpon>

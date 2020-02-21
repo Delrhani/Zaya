@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Zaya.Controls
 {
-    public partial class CustumProgresssBar : UserControl
+    public partial class Form1 : Form
     {
-        public CustumProgresssBar()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void circularProgressBar1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

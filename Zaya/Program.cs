@@ -15,7 +15,7 @@ namespace Zaya
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CommunForms.AjouterQuestion());
+            Application.Run(new Controls.Form1());
         }
     }
 }

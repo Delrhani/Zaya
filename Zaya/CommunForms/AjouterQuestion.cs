@@ -103,7 +103,7 @@ namespace Zaya.CommunForms
 
         private void btnAjouter_MouseHover(object sender, EventArgs e)
         {
-            btnAjouter.BackColor = System.Drawing.SystemColors.Highlight;
+            //btnAjouter.BackColor = System.Drawing.SystemColors.Highlight;
         }
 
         private void button1_Click(object sender, EventArgs e)
