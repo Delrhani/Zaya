@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC1 = new Zaya.CommunForms.Button_WOC();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +80,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private ePOSOne.btnProduct.Button_WOC button_WOC1;
+        private Zaya.CommunForms.Button_WOC button_WOC1;
     }
 }

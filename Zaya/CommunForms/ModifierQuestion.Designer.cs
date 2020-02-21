@@ -47,8 +47,8 @@
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
             this.cmbLecon = new MetroFramework.Controls.MetroComboBox();
             this.valide = new MaterialSkin.Controls.MaterialCheckBox();
-            this.btnAjouter = new ePOSOne.btnProduct.Button_WOC();
-            this.btnValider = new ePOSOne.btnProduct.Button_WOC();
+            this.btnAjouter = new Zaya.CommunForms.Button_WOC();
+            this.btnValider = new Zaya.CommunForms.Button_WOC();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
@@ -244,8 +244,8 @@
             this.btnAjouter.Location = new System.Drawing.Point(414, 249);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnAjouter.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
-            this.btnAjouter.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnAjouter.OnHoverButtonColor = System.Drawing.Color.Silver;
+            this.btnAjouter.OnHoverTextColor = System.Drawing.Color.Black;
             this.btnAjouter.Size = new System.Drawing.Size(115, 31);
             this.btnAjouter.TabIndex = 24;
             this.btnAjouter.Text = "Ajouter";
@@ -265,8 +265,8 @@
             this.btnValider.Location = new System.Drawing.Point(414, 477);
             this.btnValider.Name = "btnValider";
             this.btnValider.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnValider.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
-            this.btnValider.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnValider.OnHoverButtonColor = System.Drawing.Color.Silver;
+            this.btnValider.OnHoverTextColor = System.Drawing.Color.Black;
             this.btnValider.Size = new System.Drawing.Size(115, 31);
             this.btnValider.TabIndex = 25;
             this.btnValider.Text = "Valider";
@@ -326,7 +326,7 @@
         private MetroFramework.Controls.MetroComboBox cmbMatiere;
         private MetroFramework.Controls.MetroComboBox cmbLecon;
         private MaterialSkin.Controls.MaterialCheckBox valide;
-        private ePOSOne.btnProduct.Button_WOC btnAjouter;
-        private ePOSOne.btnProduct.Button_WOC btnValider;
+        private Zaya.CommunForms.Button_WOC btnAjouter;
+        private Zaya.CommunForms.Button_WOC btnValider;
     }
 }

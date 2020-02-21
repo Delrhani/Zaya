@@ -49,8 +49,8 @@
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
             this.cmbLecon = new MetroFramework.Controls.MetroComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnValider = new ePOSOne.btnProduct.Button_WOC();
-            this.btnAjouter = new ePOSOne.btnProduct.Button_WOC();
+            this.btnValider = new Zaya.CommunForms.Button_WOC();
+            this.btnAjouter = new Zaya.CommunForms.Button_WOC();
             this.valide = new MaterialSkin.Controls.MaterialCheckBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -262,6 +262,7 @@
             // 
             this.btnValider.BorderColor = System.Drawing.Color.Transparent;
             this.btnValider.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(182)))), ((int)(((byte)(200)))));
+            this.btnValider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnValider.FlatAppearance.BorderSize = 0;
             this.btnValider.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnValider.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -270,8 +271,8 @@
             this.btnValider.Location = new System.Drawing.Point(352, 471);
             this.btnValider.Name = "btnValider";
             this.btnValider.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnValider.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
-            this.btnValider.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnValider.OnHoverButtonColor = System.Drawing.Color.Silver;
+            this.btnValider.OnHoverTextColor = System.Drawing.Color.Black;
             this.btnValider.Size = new System.Drawing.Size(115, 31);
             this.btnValider.TabIndex = 22;
             this.btnValider.Text = "Valider";
@@ -282,6 +283,7 @@
             // 
             this.btnAjouter.BorderColor = System.Drawing.Color.Transparent;
             this.btnAjouter.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(182)))), ((int)(((byte)(200)))));
+            this.btnAjouter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAjouter.FlatAppearance.BorderSize = 0;
             this.btnAjouter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAjouter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -290,13 +292,14 @@
             this.btnAjouter.Location = new System.Drawing.Point(347, 245);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.btnAjouter.OnHoverButtonColor = System.Drawing.Color.Purple;
-            this.btnAjouter.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnAjouter.OnHoverButtonColor = System.Drawing.Color.Silver;
+            this.btnAjouter.OnHoverTextColor = System.Drawing.Color.Black;
             this.btnAjouter.Size = new System.Drawing.Size(115, 31);
             this.btnAjouter.TabIndex = 23;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.TextColor = System.Drawing.Color.White;
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.ForeColorChanged += new System.EventHandler(this.btnAjouter_ForeColorChanged);
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // valide
@@ -373,8 +376,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private ePOSOne.btnProduct.Button_WOC btnValider;
-        private ePOSOne.btnProduct.Button_WOC btnAjouter;
+        private Zaya.CommunForms.Button_WOC btnValider;
+        private Zaya.CommunForms.Button_WOC btnAjouter;
         private MaterialSkin.Controls.MaterialCheckBox valide;
     }
 }

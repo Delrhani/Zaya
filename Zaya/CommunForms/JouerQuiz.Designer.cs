@@ -31,13 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JouerQuiz));
             this.panelQuestion = new System.Windows.Forms.Panel();
-            this.custumProgresssBar1 = new Zaya.Controls.CustumProgresssBar();
             this.panelReponse = new System.Windows.Forms.Panel();
             this.txtQuestion = new System.Windows.Forms.Label();
-            this.score = new Zaya.Controls.ProgressBarEx();
             this.btnSuivant = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.tempEstime = new Zaya.Controls.ProgressBarEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -48,6 +45,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.custumProgresssBar1 = new Zaya.Controls.CustumProgresssBar();
+            this.score = new Zaya.Controls.ProgressBarEx();
+            this.tempEstime = new Zaya.Controls.ProgressBarEx();
             this.panelQuestion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -63,22 +63,15 @@
             this.panelQuestion.Controls.Add(this.panelReponse);
             this.panelQuestion.Controls.Add(this.txtQuestion);
             this.panelQuestion.Controls.Add(this.score);
-            this.panelQuestion.Location = new System.Drawing.Point(32, 98);
+            this.panelQuestion.Location = new System.Drawing.Point(27, 61);
             this.panelQuestion.Name = "panelQuestion";
-            this.panelQuestion.Size = new System.Drawing.Size(528, 314);
+            this.panelQuestion.Size = new System.Drawing.Size(533, 371);
             this.panelQuestion.TabIndex = 3;
-            // 
-            // custumProgresssBar1
-            // 
-            this.custumProgresssBar1.Location = new System.Drawing.Point(408, 98);
-            this.custumProgresssBar1.Name = "custumProgresssBar1";
-            this.custumProgresssBar1.Size = new System.Drawing.Size(110, 101);
-            this.custumProgresssBar1.TabIndex = 2;
             // 
             // panelReponse
             // 
             this.panelReponse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
-            this.panelReponse.Location = new System.Drawing.Point(3, 25);
+            this.panelReponse.Location = new System.Drawing.Point(29, 25);
             this.panelReponse.Name = "panelReponse";
             this.panelReponse.Size = new System.Drawing.Size(356, 281);
             this.panelReponse.TabIndex = 1;
@@ -91,17 +84,6 @@
             this.txtQuestion.Size = new System.Drawing.Size(156, 13);
             this.txtQuestion.TabIndex = 0;
             this.txtQuestion.Text = "Comment déclarer un variable ?";
-            // 
-            // score
-            // 
-            this.score.BackColor = System.Drawing.Color.Gainsboro;
-            this.score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.score.ForeColor = System.Drawing.Color.SeaGreen;
-            this.score.Location = new System.Drawing.Point(408, 97);
-            this.score.Margin = new System.Windows.Forms.Padding(0);
-            this.score.Name = "score";
-            this.score.Size = new System.Drawing.Size(110, 101);
-            this.score.TabIndex = 1;
             // 
             // btnSuivant
             // 
@@ -117,15 +99,6 @@
             // 
             this.timer.Interval = 3000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // tempEstime
-            // 
-            this.tempEstime.BackColor = System.Drawing.Color.White;
-            this.tempEstime.Location = new System.Drawing.Point(32, 58);
-            this.tempEstime.Name = "tempEstime";
-            this.tempEstime.Size = new System.Drawing.Size(523, 10);
-            this.tempEstime.TabIndex = 2;
-            this.tempEstime.Value = 100;
             // 
             // panel1
             // 
@@ -144,9 +117,9 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(-8, 428);
+            this.panel6.Location = new System.Drawing.Point(-6, 429);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(138, 10);
+            this.panel6.Size = new System.Drawing.Size(138, 4);
             this.panel6.TabIndex = 22;
             // 
             // panel7
@@ -160,9 +133,9 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(-7, 442);
+            this.panel4.Location = new System.Drawing.Point(-7, 443);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(138, 10);
+            this.panel4.Size = new System.Drawing.Size(138, 4);
             this.panel4.TabIndex = 21;
             // 
             // panel5
@@ -176,9 +149,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(-8, 456);
+            this.panel2.Location = new System.Drawing.Point(-8, 457);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(141, 10);
+            this.panel2.Size = new System.Drawing.Size(141, 4);
             this.panel2.TabIndex = 20;
             // 
             // panel3
@@ -216,6 +189,33 @@
             this.metroButton1.TabIndex = 7;
             this.metroButton1.Text = "X";
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // custumProgresssBar1
+            // 
+            this.custumProgresssBar1.Location = new System.Drawing.Point(408, 97);
+            this.custumProgresssBar1.Name = "custumProgresssBar1";
+            this.custumProgresssBar1.Size = new System.Drawing.Size(110, 101);
+            this.custumProgresssBar1.TabIndex = 2;
+            // 
+            // score
+            // 
+            this.score.BackColor = System.Drawing.Color.Gainsboro;
+            this.score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score.ForeColor = System.Drawing.Color.SeaGreen;
+            this.score.Location = new System.Drawing.Point(408, 97);
+            this.score.Margin = new System.Windows.Forms.Padding(0);
+            this.score.Name = "score";
+            this.score.Size = new System.Drawing.Size(110, 101);
+            this.score.TabIndex = 1;
+            // 
+            // tempEstime
+            // 
+            this.tempEstime.BackColor = System.Drawing.Color.White;
+            this.tempEstime.Location = new System.Drawing.Point(27, 29);
+            this.tempEstime.Name = "tempEstime";
+            this.tempEstime.Size = new System.Drawing.Size(523, 10);
+            this.tempEstime.TabIndex = 2;
+            this.tempEstime.Value = 100;
             // 
             // JouerQuiz
             // 

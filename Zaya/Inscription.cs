@@ -126,10 +126,7 @@ namespace Zaya
 
         private void materialLabel1_Click(object sender, EventArgs e)
         {
-            using (LoginForm lf = new LoginForm())
-            {
-                lf.ShowDialog();
-            }
+            this.Close();
         }
         private static void showMatch(string text, string expr)
         {

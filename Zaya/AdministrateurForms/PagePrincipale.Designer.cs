@@ -186,7 +186,6 @@
             this.btnQuiz.Name = "btnQuiz";
             this.btnQuiz.Size = new System.Drawing.Size(234, 56);
             this.btnQuiz.TabIndex = 25;
-            this.btnQuiz.Click += new System.EventHandler(this.btnQuiz_Click);
             this.btnQuiz.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnQuiz_MouseClick);
             this.btnQuiz.MouseLeave += new System.EventHandler(this.btnQuiz_MouseLeave);
             this.btnQuiz.MouseHover += new System.EventHandler(this.btnQuiz_MouseHover);
