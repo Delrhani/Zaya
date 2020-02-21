@@ -205,6 +205,7 @@
             this.btnValider.Text = "Valider";
             this.btnValider.TextColor = System.Drawing.Color.White;
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // AjouterLecon
             // 

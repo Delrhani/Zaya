@@ -61,7 +61,6 @@
             this.txtLecon.Name = "txtLecon";
             this.txtLecon.Size = new System.Drawing.Size(318, 196);
             this.txtLecon.TabIndex = 2;
-            this.txtLecon.TextChanged += new System.EventHandler(this.txtLecon_TextChanged);
             // 
             // txtLibelle
             // 
@@ -70,7 +69,6 @@
             this.txtLibelle.Name = "txtLibelle";
             this.txtLibelle.Size = new System.Drawing.Size(202, 29);
             this.txtLibelle.TabIndex = 6;
-            this.txtLibelle.TextChanged += new System.EventHandler(this.txtLibelle_TextChanged);
             // 
             // label3
             // 
@@ -126,7 +124,6 @@
             this.btn_Close.TabIndex = 17;
             this.btn_Close.Text = "X";
             this.btn_Close.UseVisualStyleBackColor = true;
-            this.btn_Close.Click += new System.EventHandler(this.button1_Click);
             this.btn_Close.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // panel3
@@ -226,6 +223,7 @@
             this.btnValider.Text = "Valider";
             this.btnValider.TextColor = System.Drawing.Color.White;
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // ModifierLecon
             // 

@@ -101,7 +101,6 @@
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(195, 29);
             this.txtQuestion.TabIndex = 5;
-            this.txtQuestion.TextChanged += new System.EventHandler(this.txtQuestion_TextChanged);
             // 
             // txtReponse
             // 
@@ -129,7 +128,6 @@
             this.listeReponse.Name = "listeReponse";
             this.listeReponse.Size = new System.Drawing.Size(304, 184);
             this.listeReponse.TabIndex = 9;
-            this.listeReponse.SelectedIndexChanged += new System.EventHandler(this.listeReponse_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -184,7 +182,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
             this.panel2.TabIndex = 17;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -213,7 +210,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_Close
             // 
@@ -278,6 +274,7 @@
             this.btnValider.Text = "Valider";
             this.btnValider.TextColor = System.Drawing.Color.White;
             this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // btnAjouter
             // 
@@ -299,7 +296,6 @@
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.TextColor = System.Drawing.Color.White;
             this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.ForeColorChanged += new System.EventHandler(this.btnAjouter_ForeColorChanged);
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // valide

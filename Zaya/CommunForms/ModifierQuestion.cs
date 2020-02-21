@@ -19,11 +19,6 @@ namespace Zaya.CommunForms
             this.question = question;
         }
 
-        private void btnAjouter_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void AjouterQuestion_Load(object sender, EventArgs e)
         {
             var resultat = from m in DataBaseConfiguration.Context.Matiere
@@ -40,36 +35,6 @@ namespace Zaya.CommunForms
             }
         }
 
-        private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnValider_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void listeReponse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtReponse_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQuestion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbLecon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var resultat = from l in DataBaseConfiguration.Context.Lecon
@@ -78,85 +43,6 @@ namespace Zaya.CommunForms
             cmbLecon.DisplayMember = "libelle";
             cmbLecon.ValueMember = "idLecon";
             cmbLecon.DataSource = resultat;
-        }
-
-        private void metroComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private void valide_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button_WOC1_Click(object sender, EventArgs e)
@@ -208,6 +94,8 @@ namespace Zaya.CommunForms
                 }
                 DataBaseConfiguration.Context.Question.InsertOnSubmit(question);
                 DataBaseConfiguration.Context.SubmitChanges();
+                this.Close();
+
             }
             else
             {
