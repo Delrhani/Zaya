@@ -54,6 +54,7 @@ namespace Zaya
                     this.Name = Frame;
                     this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15;
                     this.x = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i;
+                    y = 0;
                     this.Location = new Point(this.x, this.y);
                     break;
 

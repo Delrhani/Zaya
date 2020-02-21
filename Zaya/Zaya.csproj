@@ -192,12 +192,6 @@
     <Compile Include="Controls\CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomProgresBar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\CustomProgresBar.Designer.cs">
-      <DependentUpon>CustomProgresBar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\CustomProgressBar.cs" />
     <Compile Include="Controls\CustomradioBtn.cs">
       <SubType>Form</SubType>
@@ -210,18 +204,6 @@
     </Compile>
     <Compile Include="Controls\CustumProgresssBar.Designer.cs">
       <DependentUpon>CustumProgresssBar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HistoriqueLigne.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\HistoriqueLigne.Designer.cs">
-      <DependentUpon>HistoriqueLigne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HistoriqueQuiz.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\HistoriqueQuiz.Designer.cs">
-      <DependentUpon>HistoriqueQuiz.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ProgressBarEx.cs">
       <SubType>Component</SubType>
@@ -285,12 +267,6 @@
     </Compile>
     <Compile Include="Controls\CustomChecks.Designer.cs">
       <DependentUpon>CustomChecks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\CustomListBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\CustomListBox.Designer.cs">
-      <DependentUpon>CustomListBox.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBaseConfiguration.cs" />
     <Compile Include="Form_Alert.cs">
@@ -366,20 +342,11 @@
     <EmbeddedResource Include="Controls\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CustomProgresBar.resx">
-      <DependentUpon>CustomProgresBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomradioBtn.resx">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustumProgresssBar.resx">
       <DependentUpon>CustumProgresssBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HistoriqueLigne.resx">
-      <DependentUpon>HistoriqueLigne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HistoriqueQuiz.resx">
-      <DependentUpon>HistoriqueQuiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LeconModel.resx">
       <DependentUpon>LeconModel.cs</DependentUpon>
@@ -389,9 +356,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomChecks.resx">
       <DependentUpon>CustomChecks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CustomListBox.resx">
-      <DependentUpon>CustomListBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
