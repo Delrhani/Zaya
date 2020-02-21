@@ -50,7 +50,7 @@ namespace Zaya.AdministrateurForms
             cmbMatieres.ValueMember = "idMatiere";
             cmbMatieres.DisplayMember = "libelle";
             cmbMatieres.DataSource = res;
-            cmbMatieres.SelectedIndex = 0;
+            cmbMatieres.SelectedValue = 0;
 
             int y = 0;
             Point p = cmbMatieres.Location;

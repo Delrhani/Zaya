@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Zaya.AdministrateurForms
 {
-    public partial class ModifierMatiere : Form
+    public partial class ModifierMatiere : Form 
     {
         private Matiere matiere;
         public ModifierMatiere(Matiere matiere)
