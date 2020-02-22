@@ -70,19 +70,16 @@ namespace Zaya.AdministrateurForms
             this.Close();
         }
 
-        private void button1_MouseMove(object sender, MouseEventArgs e)
-        {
-            button1.BackColor = Color.Red;
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.Transparent;
-        }
+       
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -37,6 +37,9 @@
             this.txt_nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_phone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnModifier = new System.Windows.Forms.Button();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // rdFemme
@@ -45,7 +48,7 @@
             this.rdFemme.BackColor = System.Drawing.Color.White;
             this.rdFemme.Depth = 0;
             this.rdFemme.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdFemme.Location = new System.Drawing.Point(231, 139);
+            this.rdFemme.Location = new System.Drawing.Point(217, 170);
             this.rdFemme.Margin = new System.Windows.Forms.Padding(0);
             this.rdFemme.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdFemme.MouseState = MaterialSkin.MouseState.HOVER;
@@ -63,7 +66,7 @@
             this.rdHomme.Checked = true;
             this.rdHomme.Depth = 0;
             this.rdHomme.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdHomme.Location = new System.Drawing.Point(98, 139);
+            this.rdHomme.Location = new System.Drawing.Point(84, 170);
             this.rdHomme.Margin = new System.Windows.Forms.Padding(0);
             this.rdHomme.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdHomme.MouseState = MaterialSkin.MouseState.HOVER;
@@ -71,7 +74,6 @@
             this.rdHomme.Ripple = true;
             this.rdHomme.Size = new System.Drawing.Size(78, 30);
             this.rdHomme.TabIndex = 37;
-            this.rdHomme.TabStop = true;
             this.rdHomme.Text = "Homme";
             this.rdHomme.UseVisualStyleBackColor = false;
             // 
@@ -81,7 +83,7 @@
             this.txt_password.Depth = 0;
             this.txt_password.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txt_password.Hint = "Password";
-            this.txt_password.Location = new System.Drawing.Point(98, 258);
+            this.txt_password.Location = new System.Drawing.Point(84, 289);
             this.txt_password.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '\0';
@@ -99,7 +101,7 @@
             this.txt_username.Depth = 0;
             this.txt_username.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txt_username.Hint = "Username";
-            this.txt_username.Location = new System.Drawing.Point(98, 218);
+            this.txt_username.Location = new System.Drawing.Point(84, 249);
             this.txt_username.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_username.Name = "txt_username";
             this.txt_username.PasswordChar = '\0';
@@ -117,7 +119,7 @@
             this.txt_email.Depth = 0;
             this.txt_email.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txt_email.Hint = "Email";
-            this.txt_email.Location = new System.Drawing.Point(98, 178);
+            this.txt_email.Location = new System.Drawing.Point(84, 209);
             this.txt_email.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_email.Name = "txt_email";
             this.txt_email.PasswordChar = '\0';
@@ -135,7 +137,7 @@
             this.txt_prenom.Depth = 0;
             this.txt_prenom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txt_prenom.Hint = "First Name";
-            this.txt_prenom.Location = new System.Drawing.Point(98, 25);
+            this.txt_prenom.Location = new System.Drawing.Point(84, 56);
             this.txt_prenom.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_prenom.Name = "txt_prenom";
             this.txt_prenom.PasswordChar = '\0';
@@ -153,7 +155,7 @@
             this.txt_nom.Depth = 0;
             this.txt_nom.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txt_nom.Hint = "Familly Name";
-            this.txt_nom.Location = new System.Drawing.Point(98, 63);
+            this.txt_nom.Location = new System.Drawing.Point(84, 94);
             this.txt_nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_nom.Name = "txt_nom";
             this.txt_nom.PasswordChar = '\0';
@@ -171,7 +173,7 @@
             this.txt_phone.Depth = 0;
             this.txt_phone.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txt_phone.Hint = "Phone";
-            this.txt_phone.Location = new System.Drawing.Point(98, 101);
+            this.txt_phone.Location = new System.Drawing.Point(84, 132);
             this.txt_phone.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.PasswordChar = '\0';
@@ -185,19 +187,50 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(231, 287);
+            this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifier.Location = new System.Drawing.Point(217, 344);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(75, 23);
+            this.btnModifier.Size = new System.Drawing.Size(82, 34);
             this.btnModifier.TabIndex = 39;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnModifier.MouseHover += new System.EventHandler(this.btnModifier_MouseHover);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(352, 0);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(32, 28);
+            this.metroButton1.TabIndex = 40;
+            this.metroButton1.Text = "X";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(31, 416);
+            this.panel1.TabIndex = 41;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
+            this.panel2.Location = new System.Drawing.Point(30, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(31, 417);
+            this.panel2.TabIndex = 42;
             // 
             // ConsulterUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 342);
+            this.ClientSize = new System.Drawing.Size(384, 416);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.rdFemme);
             this.Controls.Add(this.rdHomme);
@@ -207,6 +240,7 @@
             this.Controls.Add(this.txt_prenom);
             this.Controls.Add(this.txt_nom);
             this.Controls.Add(this.txt_phone);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsulterUtilisateur";
             this.Text = "Consulter un utilisateur";
             this.Load += new System.EventHandler(this.ConsulterUtilisateur_Load);
@@ -226,5 +260,8 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_nom;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_phone;
         private System.Windows.Forms.Button btnModifier;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
