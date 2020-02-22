@@ -27,6 +27,7 @@ namespace Zaya.CommunForms
                 lecon.idMatiere = int.Parse(cmbMatiere.SelectedValue.ToString());
                 lecon.libelle = txtLibelle.Text;
                 DataBaseConfiguration.Context.SubmitChanges();
+                this.Close();
             }
             else
             {
@@ -45,26 +46,6 @@ namespace Zaya.CommunForms
             cmbMatiere.SelectedValue = lecon.idMatiere;
             txtLibelle.Text = lecon.libelle;
             txtLecon.Text = lecon.textLecon;
-        }
-
-        private void txtLecon_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLibelle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void button1_MouseHover(object sender, EventArgs e)

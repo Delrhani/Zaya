@@ -38,11 +38,6 @@ namespace Zaya.CommunForms
             cmbMatiere.DataSource = resultat;
         }
 
-        private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnValider_Click(object sender, EventArgs e)
         {
             if(txtQuestion.Text.Trim().Length > 0)
@@ -84,6 +79,7 @@ namespace Zaya.CommunForms
                 }
                 DataBaseConfiguration.Context.Question.InsertOnSubmit(question);
                 DataBaseConfiguration.Context.SubmitChanges();
+                this.Close();
             }
             else
             {
@@ -91,54 +87,9 @@ namespace Zaya.CommunForms
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_WOC1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnAjouter_MouseHover(object sender, EventArgs e)
-        {
-            //btnAjouter.BackColor = System.Drawing.SystemColors.Highlight;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbLecon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQuestion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listeReponse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnValider_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_Close_MouseHover(object sender, EventArgs e)
@@ -146,14 +97,5 @@ namespace Zaya.CommunForms
             btn_Close.BackColor = Color.Red;
         }
 
-        private void valide_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAjouter_ForeColorChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

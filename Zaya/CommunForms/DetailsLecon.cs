@@ -26,5 +26,30 @@ namespace Zaya.CommunForms
             txtNomUtilisateur.Text = lecon.Utilisateur.nom + ' ' + lecon.Utilisateur.prenom;
             txtLecon.Text = lecon.textLecon;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+           metroButton1.BackColor = Color.Red;
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

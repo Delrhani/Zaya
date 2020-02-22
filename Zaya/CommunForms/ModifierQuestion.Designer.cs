@@ -95,7 +95,6 @@
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(256, 20);
             this.txtQuestion.TabIndex = 5;
-            this.txtQuestion.TextChanged += new System.EventHandler(this.txtQuestion_TextChanged);
             // 
             // txtReponse
             // 
@@ -103,7 +102,6 @@
             this.txtReponse.Name = "txtReponse";
             this.txtReponse.Size = new System.Drawing.Size(256, 20);
             this.txtReponse.TabIndex = 7;
-            this.txtReponse.TextChanged += new System.EventHandler(this.txtReponse_TextChanged);
             // 
             // label4
             // 
@@ -123,7 +121,6 @@
             this.listeReponse.Name = "listeReponse";
             this.listeReponse.Size = new System.Drawing.Size(343, 154);
             this.listeReponse.TabIndex = 9;
-            this.listeReponse.SelectedIndexChanged += new System.EventHandler(this.listeReponse_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -214,7 +211,6 @@
             this.cmbLecon.Name = "cmbLecon";
             this.cmbLecon.Size = new System.Drawing.Size(240, 29);
             this.cmbLecon.TabIndex = 14;
-            this.cmbLecon.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged_1);
             // 
             // valide
             // 

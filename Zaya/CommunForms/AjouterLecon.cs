@@ -19,25 +19,6 @@ namespace Zaya.CommunForms
             this.utilisateur = utilisateur;
         }
 
-        private void btnValider_Click(object sender, EventArgs e)
-        {
-            if (txtLecon.Text.Trim().Length > 0)
-            { 
-                Lecon lecon = new Lecon();
-                lecon.textLecon = txtLecon.Text;
-                lecon.idMatiere = int.Parse(cmbMatiere.SelectedValue.ToString());
-                lecon.libelle = txtLibelle.Text;
-                lecon.idUtilisateur = utilisateur.idUtilisateur;
-                DataBaseConfiguration.Context.Lecon.InsertOnSubmit(lecon);
-                DataBaseConfiguration.Context.SubmitChanges();
-            }
-            else
-            {
-                MessageBox.Show("Merci de saisir le texte du leçon", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
-            }
-
-        }
-
         private void AjouterLecon_Load(object sender, EventArgs e)
         {
             var resultat = from m in DataBaseConfiguration.Context.Matiere
@@ -50,6 +31,25 @@ namespace Zaya.CommunForms
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            if (txtLecon.Text.Trim().Length > 0)
+            {
+                Lecon lecon = new Lecon();
+                lecon.textLecon = txtLecon.Text;
+                lecon.idMatiere = int.Parse(cmbMatiere.SelectedValue.ToString());
+                lecon.libelle = txtLibelle.Text;
+                lecon.idUtilisateur = utilisateur.idUtilisateur;
+                DataBaseConfiguration.Context.Lecon.InsertOnSubmit(lecon);
+                DataBaseConfiguration.Context.SubmitChanges();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Merci de saisir le texte du leçon", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+            }
         }
     }
 }

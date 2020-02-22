@@ -23,6 +23,7 @@ namespace Zaya.AdministrateurForms
             InitializeComponent();
             this.utilisateur = utilisateur;
             frm = new LoginForm();
+            btnLesson.PerformLayout();
         }
 
         private void FrmTest_Load(object sender, EventArgs e)
@@ -50,13 +51,22 @@ namespace Zaya.AdministrateurForms
             cmbMatieres.ValueMember = "idMatiere";
             cmbMatieres.DisplayMember = "libelle";
             cmbMatieres.DataSource = res;
-            cmbMatieres.SelectedValue = 0;
+            cmbMatieres.SelectedValue = "0";
 
             int y = 0;
             Point p = cmbMatieres.Location;
             p.X = panelContenu.Width - cmbMatieres.Width - 50;
             cmbMatieres.Location = p;
             y += p.Y + 20;
+
+            Button btnAjouter = new Button();
+            btnAjouter.Text = "+";
+            btnAjouter.Click += btnAjouterLecon;
+
+            p = btnAjouter.Location;
+            p.X = cmbMatieres.Location.X - 20;
+
+
             cmbMatieres.SelectedIndexChanged += (s, e1) => {
                 for (int i = panelContenu.Controls.Count - 1; i >= 1; i--)
                 {
@@ -65,6 +75,12 @@ namespace Zaya.AdministrateurForms
                 InitListeLecon(y, cmbMatieres.SelectedIndex);
             };
             panelContenu.Controls.Add(cmbMatieres);
+            panelContenu.Controls.Add(btnAjouter);
+        }
+
+        private void btnAjouterLecon(object sender, EventArgs e)
+        {
+            new CommunForms.AjouterLecon(utilisateur).ShowDialog();
         }
 
         private void InitListeLecon(int y, int selectedIndex)
@@ -88,22 +104,50 @@ namespace Zaya.AdministrateurForms
             panelLeft.Height = btnQuiz.Height;
             panelLeft.Top = btnQuiz.Top;
             txtNavigation.Text = "Quiz";
+            panelContenu.Controls.Clear();
+            Button btnJouerQuiz = new Button();
+            btnJouerQuiz.Text = "+";
+            btnJouerQuiz.Click += JouezQuizClick;
+            panelContenu.Controls.Add(btnJouerQuiz);
+        }
+
+        private void JouezQuizClick(object sender, EventArgs e)
+        {
+            new CommunForms.MenuQuiz(utilisateur).ShowDialog();
         }
 
         private void btnModels_MouseClick(object sender, MouseEventArgs e)
         {
             panelLeft.Height = btnModels.Height;
             panelLeft.Top = btnModels.Top;
-            txtNavigation.Text = "Modules";
-            ListBox listBox = new ListBox();
-            var v = from m in DataBaseConfiguration.Context.Matiere
-                    select new { m.libelle, m.idMatiere };
-            listBox.DisplayMember = "libelle";
-            listBox.ValueMember = "idMatiere";
-            listBox.DataSource = v;
-            listBox.Dock = DockStyle.Fill;
+            txtNavigation.Text = "Matières";
+
             panelContenu.Controls.Clear();
-            panelContenu.Controls.Add(listBox);
+
+            int y = 0;
+            Button btnAjouter = new Button();
+            btnAjouter.Text = "+";
+            
+            Point p = btnAjouter.Location;
+            p.X = panelContenu.Width - btnAjouter.Width - 50;
+            btnAjouter.Location = p;
+            y += p.Y + 20;
+            btnAjouter.Click += (s, e1) => {
+                new AjouterMatiere().ShowDialog();
+            };
+            panelContenu.Controls.Add(btnAjouter);
+
+            var matieres = from m in DataBaseConfiguration.Context.Matiere
+                           select m;
+            foreach (Matiere m in matieres)
+            {
+                ModuleModel leconModel = new ModuleModel(m, true);
+                p = leconModel.Location;
+                p.Y = y;
+                y += leconModel.Height + 5;
+                leconModel.Location = p;
+                panelContenu.Controls.Add(leconModel);
+            }
         }
 
         private void btnLesson_MouseHover(object sender, EventArgs e)

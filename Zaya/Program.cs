@@ -15,7 +15,7 @@ namespace Zaya
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Controls.Form1());
+            Application.Run(new FrmRain());
         }
     }
 }

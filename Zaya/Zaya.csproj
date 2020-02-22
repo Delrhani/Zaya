@@ -189,29 +189,18 @@
     <Compile Include="Controls\CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomProgressBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\CustomProgressBar.Designer.cs">
-      <DependentUpon>CustomProgressBar.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Controls\CustomProgressBar.cs" />
     <Compile Include="Controls\CustomradioBtn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controls\CustomradioBtn.Designer.cs">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustumProgresssBar.cs">
+    <Compile Include="Controls\ModuleModel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CustumProgresssBar.Designer.cs">
-      <DependentUpon>CustumProgresssBar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Controls\ModuleModel.Designer.cs">
+      <DependentUpon>ModuleModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ProgressBarEx.cs">
       <SubType>Component</SubType>
@@ -283,6 +272,12 @@
     <Compile Include="Form_Alert.designer.cs">
       <DependentUpon>Form_Alert.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRain.Designer.cs">
+      <DependentUpon>FrmRain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inscription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,17 +345,11 @@
     <EmbeddedResource Include="Controls\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CustomProgressBar.resx">
-      <DependentUpon>CustomProgressBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomradioBtn.resx">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CustumProgresssBar.resx">
-      <DependentUpon>CustumProgresssBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ModuleModel.resx">
+      <DependentUpon>ModuleModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LeconModel.resx">
       <DependentUpon>LeconModel.cs</DependentUpon>
@@ -373,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRain.resx">
+      <DependentUpon>FrmRain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
