@@ -43,60 +43,12 @@ namespace Zaya.AdministrateurForms
             txtNavigation.Text = "Leçons";
             
             panelContenu.Controls.Clear();
-            MetroFramework.Controls.MetroComboBox cmbMatieres = new MetroFramework.Controls.MetroComboBox();
-            var res = (from m in DataBaseConfiguration.Context.Matiere
-                         select new { m.idMatiere, m.libelle }).ToList();
-            res.Insert(0, new { idMatiere = 0, libelle = "Tout" });
-
-            cmbMatieres.ValueMember = "idMatiere";
-            cmbMatieres.DisplayMember = "libelle";
-            cmbMatieres.DataSource = res;
-            cmbMatieres.SelectedValue = "0";
-
-            int y = 0;
-            Point p = cmbMatieres.Location;
-            p.X = panelContenu.Width - cmbMatieres.Width - 50;
-            cmbMatieres.Location = p;
-            y += p.Y + 20;
-
-            Button btnAjouter = new Button();
-            btnAjouter.Text = "+";
-            btnAjouter.Click += btnAjouterLecon;
-
-            p = btnAjouter.Location;
-            p.X = cmbMatieres.Location.X - 20;
-
-
-            cmbMatieres.SelectedIndexChanged += (s, e1) => {
-                for (int i = panelContenu.Controls.Count - 1; i >= 1; i--)
-                {
-                    panelContenu.Controls.RemoveAt(i);
-                }
-                InitListeLecon(y, cmbMatieres.SelectedIndex);
-            };
-            panelContenu.Controls.Add(cmbMatieres);
-            panelContenu.Controls.Add(btnAjouter);
+            panelContenu.Controls.Add(new LeconsModel());
         }
 
         private void btnAjouterLecon(object sender, EventArgs e)
         {
             new CommunForms.AjouterLecon(utilisateur).ShowDialog();
-        }
-
-        private void InitListeLecon(int y, int selectedIndex)
-        {
-            var v = from l in DataBaseConfiguration.Context.Lecon
-                    where selectedIndex >= 1 ? l.idMatiere == selectedIndex : l.idMatiere >= 1
-                    select l;
-            foreach (Lecon l in v)
-            {
-                LeconModel leconModel = new LeconModel(l);
-                Point p = leconModel.Location;
-                p.Y = y;
-                y += leconModel.Height + 5;
-                leconModel.Location = p;
-                panelContenu.Controls.Add(leconModel);
-            }
         }
 
         private void btnQuiz_MouseClick(object sender, MouseEventArgs e)
