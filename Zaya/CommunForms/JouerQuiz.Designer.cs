@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JouerQuiz));
             this.panelQuestion = new System.Windows.Forms.Panel();
-            this.custumProgresssBar1 = new Zaya.Controls.CustumProgresssBar();
             this.panelReponse = new System.Windows.Forms.Panel();
             this.txtQuestion = new System.Windows.Forms.Label();
             this.score = new Zaya.Controls.ProgressBarEx();
@@ -59,7 +58,6 @@
             // 
             // panelQuestion
             // 
-            this.panelQuestion.Controls.Add(this.custumProgresssBar1);
             this.panelQuestion.Controls.Add(this.panelReponse);
             this.panelQuestion.Controls.Add(this.txtQuestion);
             this.panelQuestion.Controls.Add(this.score);
@@ -67,13 +65,6 @@
             this.panelQuestion.Name = "panelQuestion";
             this.panelQuestion.Size = new System.Drawing.Size(533, 371);
             this.panelQuestion.TabIndex = 3;
-            // 
-            // custumProgresssBar1
-            // 
-            this.custumProgresssBar1.Location = new System.Drawing.Point(408, 97);
-            this.custumProgresssBar1.Name = "custumProgresssBar1";
-            this.custumProgresssBar1.Size = new System.Drawing.Size(110, 101);
-            this.custumProgresssBar1.TabIndex = 2;
             // 
             // panelReponse
             // 
@@ -260,7 +251,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private Controls.CustumProgresssBar custumProgresssBar1;
         private System.Windows.Forms.Panel panel8;
         private MetroFramework.Controls.MetroButton metroButton1;
     }

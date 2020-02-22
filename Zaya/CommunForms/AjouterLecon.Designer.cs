@@ -40,10 +40,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnValider = new Zaya.CommunForms.Button_WOC();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -158,17 +158,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(464, 3);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 25);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // cmbMatiere
             // 
             this.cmbMatiere.FormattingEnabled = true;
@@ -207,16 +196,25 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(458, -1);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(32, 28);
+            this.metroButton1.TabIndex = 16;
+            this.metroButton1.Text = "X";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // AjouterLecon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 417);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.cmbMatiere);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtLibelle);
             this.Controls.Add(this.label3);
@@ -243,7 +241,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLibelle;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroComboBox cmbMatiere;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Zaya.CommunForms.Button_WOC btnValider;
@@ -252,5 +249,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

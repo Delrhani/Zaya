@@ -17,6 +17,7 @@ namespace Zaya.CommunForms
         {
             InitializeComponent();
             this.utilisateur = utilisateur;
+            cmbDifficulte.SelectedIndex = 0;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -47,6 +48,11 @@ namespace Zaya.CommunForms
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

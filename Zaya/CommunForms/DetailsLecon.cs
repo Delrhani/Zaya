@@ -24,7 +24,21 @@ namespace Zaya.CommunForms
             txtLibelle.Text = lecon.libelle;
             txtDateAjoute.Text = lecon.dateAjoute.ToLongDateString();
             txtNomUtilisateur.Text = lecon.Utilisateur.nom + ' ' + lecon.Utilisateur.prenom;
-            txtLecon.Text = lecon.textLecon;
+            txtMatiere.Text = lecon.Matiere.libelle;
+            
+            string[] words = lecon.textLecon.Split(' ');
+            string text = "";
+            for(int i = 0; i < words.Length; i++)
+            {
+                if (text.Length + words[i].Length > 76)
+                {
+                    text += '\n';
+                    txtLecon.Text += text;
+                    text = "";
+                }
+                text += words[i] + " ";
+            }
+            txtLecon.Text += text;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -48,6 +62,66 @@ namespace Zaya.CommunForms
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtLibelle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomUtilisateur_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDateAjoute_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLecon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblModele_Click(object sender, EventArgs e)
         {
 
         }

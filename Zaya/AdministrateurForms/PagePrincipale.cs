@@ -43,7 +43,7 @@ namespace Zaya.AdministrateurForms
             txtNavigation.Text = "Leçons";
             
             panelContenu.Controls.Clear();
-            ComboBox cmbMatieres = new ComboBox();
+            MetroFramework.Controls.MetroComboBox cmbMatieres = new MetroFramework.Controls.MetroComboBox();
             var res = (from m in DataBaseConfiguration.Context.Matiere
                          select new { m.idMatiere, m.libelle }).ToList();
             res.Insert(0, new { idMatiere = 0, libelle = "Tout" });

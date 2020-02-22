@@ -48,5 +48,16 @@ namespace Zaya.AdministrateurForms
                 rdFemme.Checked = true;
             }
         }
+
+        private void btnModifier_MouseHover(object sender, EventArgs e)
+        {
+            metroButton1.BackColor = Color.Black;
+            
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

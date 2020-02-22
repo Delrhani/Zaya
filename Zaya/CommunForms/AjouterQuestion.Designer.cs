@@ -45,13 +45,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_Close = new System.Windows.Forms.Button();
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
             this.cmbLecon = new MetroFramework.Controls.MetroComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnValider = new Zaya.CommunForms.Button_WOC();
             this.btnAjouter = new Zaya.CommunForms.Button_WOC();
             this.valide = new MaterialSkin.Controls.MaterialCheckBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -211,21 +211,6 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_Close
-            // 
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btn_Close.FlatAppearance.BorderSize = 0;
-            this.btn_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Close.Location = new System.Drawing.Point(466, 4);
-            this.btn_Close.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(23, 23);
-            this.btn_Close.TabIndex = 18;
-            this.btn_Close.Text = "X";
-            this.btn_Close.UseVisualStyleBackColor = true;
-            this.btn_Close.Click += new System.EventHandler(this.button1_Click);
-            this.btn_Close.MouseHover += new System.EventHandler(this.btn_Close_MouseHover);
-            // 
             // cmbMatiere
             // 
             this.cmbMatiere.FormattingEnabled = true;
@@ -315,18 +300,27 @@
             this.valide.Text = "Valide";
             this.valide.UseVisualStyleBackColor = true;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(463, -1);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(32, 28);
+            this.metroButton1.TabIndex = 25;
+            this.metroButton1.Text = "X";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // AjouterQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 522);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.valide);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbLecon);
             this.Controls.Add(this.cmbMatiere);
-            this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listeReponse);
@@ -363,7 +357,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btn_Close;
         private MetroFramework.Controls.MetroComboBox cmbMatiere;
         private MetroFramework.Controls.MetroComboBox cmbLecon;
         private System.Windows.Forms.Label label5;
@@ -376,5 +369,6 @@
         private Zaya.CommunForms.Button_WOC btnValider;
         private Zaya.CommunForms.Button_WOC btnAjouter;
         private MaterialSkin.Controls.MaterialCheckBox valide;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

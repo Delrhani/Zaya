@@ -51,5 +51,15 @@ namespace Zaya.CommunForms
                 MessageBox.Show("Merci de saisir le texte du leçon", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

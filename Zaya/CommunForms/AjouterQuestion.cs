@@ -100,7 +100,7 @@ namespace Zaya.CommunForms
 
         private void btn_Close_MouseHover(object sender, EventArgs e)
         {
-            btn_Close.BackColor = Color.Red;
+            metroButton1.BackColor = Color.Red;
         }
 
         private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,6 +115,11 @@ namespace Zaya.CommunForms
                 cmbLecon.SelectedValue = lecon.idLecon;
             }
             
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
