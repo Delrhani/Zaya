@@ -72,6 +72,7 @@ namespace Zaya
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            this.Activate();
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -90,4 +91,5 @@ namespace Zaya
 
         }
     }
-    }
+}
+
