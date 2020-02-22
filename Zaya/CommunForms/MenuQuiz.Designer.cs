@@ -55,7 +55,7 @@
             this.btnStart.Location = new System.Drawing.Point(312, 260);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(141, 23);
-            this.btnStart.TabIndex = 0;
+            this.btnStart.TabIndex = 3;
             this.btnStart.Text = "Lancer";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -65,7 +65,7 @@
             this.btnAnnuler.Location = new System.Drawing.Point(312, 289);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(141, 23);
-            this.btnAnnuler.TabIndex = 1;
+            this.btnAnnuler.TabIndex = 4;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -97,16 +97,21 @@
             this.lsMatiere.Location = new System.Drawing.Point(238, 95);
             this.lsMatiere.Name = "lsMatiere";
             this.lsMatiere.Size = new System.Drawing.Size(215, 29);
-            this.lsMatiere.TabIndex = 7;
+            this.lsMatiere.TabIndex = 1;
             // 
             // cmbDifficulte
             // 
+            this.cmbDifficulte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbDifficulte.FormattingEnabled = true;
             this.cmbDifficulte.ItemHeight = 23;
+            this.cmbDifficulte.Items.AddRange(new object[] {
+            "Facile",
+            "Moyen",
+            "Difficile"});
             this.cmbDifficulte.Location = new System.Drawing.Point(238, 140);
             this.cmbDifficulte.Name = "cmbDifficulte";
             this.cmbDifficulte.Size = new System.Drawing.Size(215, 29);
-            this.cmbDifficulte.TabIndex = 8;
+            this.cmbDifficulte.TabIndex = 2;
             // 
             // panel1
             // 
@@ -181,6 +186,7 @@
             // 
             // MenuQuiz
             // 
+            this.AcceptButton = this.btnStart;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 349);
@@ -193,6 +199,7 @@
             this.Controls.Add(this.btnStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuQuiz";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "O";
             this.Load += new System.EventHandler(this.MenuQuiz_Load);
             this.panel1.ResumeLayout(false);

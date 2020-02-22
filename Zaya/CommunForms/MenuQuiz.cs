@@ -24,7 +24,16 @@ namespace Zaya.CommunForms
             Matiere matiere = (from m in DataBaseConfiguration.Context.Matiere
                                where m.idMatiere == (int)lsMatiere.SelectedValue
                                select m).First();
-            new JouerQuiz(utilisateur, matiere, JouerQuiz.Difficulte.Facile).Show();
+            JouerQuiz.Difficulte difficulte = JouerQuiz.Difficulte.Facile;
+            if(cmbDifficulte.SelectedItem.ToString().Equals("Moyen"))
+            {
+                difficulte = JouerQuiz.Difficulte.Moyen;
+            }
+            else if(cmbDifficulte.SelectedItem.ToString().Equals("Difficile"))
+            {
+                difficulte = JouerQuiz.Difficulte.Difficile;
+            }
+            new JouerQuiz(utilisateur, matiere, difficulte).Show();
             this.Visible = false;
         }
 

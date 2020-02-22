@@ -12,9 +12,11 @@ namespace Zaya.CommunForms
 {
     public partial class AjouterQuestion : Form
     {
-        public AjouterQuestion()
+        private Lecon lecon;
+        public AjouterQuestion(Lecon l = null)
         {
             InitializeComponent();
+            this.lecon = l;
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -36,6 +38,10 @@ namespace Zaya.CommunForms
             cmbMatiere.DisplayMember = "libelle";
             cmbMatiere.ValueMember = "idMatiere";
             cmbMatiere.DataSource = resultat;
+            if(lecon != null)
+            {
+                cmbMatiere.SelectedValue = lecon.idMatiere;
+            }
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -97,5 +103,18 @@ namespace Zaya.CommunForms
             btn_Close.BackColor = Color.Red;
         }
 
+        private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var resultat = from l in DataBaseConfiguration.Context.Lecon
+                           select new { l.libelle, l.idLecon };
+            cmbLecon.DisplayMember = "libelle";
+            cmbLecon.ValueMember = "idLecon";
+            cmbLecon.DataSource = resultat;
+            if(lecon != null) 
+            {
+                cmbLecon.SelectedValue = lecon.idLecon;
+            }
+            
+        }
     }
 }

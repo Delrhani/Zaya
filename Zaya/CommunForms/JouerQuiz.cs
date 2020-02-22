@@ -19,7 +19,7 @@ namespace Zaya.CommunForms
         private List<Question> questions;
         private int currentQuestion;
         private Quiz quiz;
-        private int NBR_QUESTION = 20;
+        private int NBR_QUESTION = 1;
 
         public enum Difficulte
         {
@@ -56,7 +56,12 @@ namespace Zaya.CommunForms
                     where q.Lecon.idMatiere == matiere.idMatiere
                     select q;
             List<Question> temp = v.ToList();
-            for (int i = 0; i < NBR_QUESTION; i++)
+            if(NBR_QUESTION > temp.Count)
+            {
+                MessageBox.Show("Le nombre de question est insuffisant pour ce quiz", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                metroButton1.PerformClick();
+            }
+            for (int i = 0; i < NBR_QUESTION && i < temp.Count; i++)
             {
                 Random rndGen = new Random();
                 int random = rndGen.Next(0, temp.Count);
@@ -86,6 +91,11 @@ namespace Zaya.CommunForms
                         if (question.Reponse[0].txtReponse.Equals(textBox.Text.Trim()))
                         {
                             score.Value += 10;
+                            AlertQuestion(AnswerLevel.ALL);
+                        } 
+                        else
+                        {
+                            AlertQuestion(AnswerLevel.NOTHING);
                         }
 
                         ReponseQuiz reponseQuiz = new ReponseQuiz();
@@ -95,6 +105,8 @@ namespace Zaya.CommunForms
                         break;
                     case "multiple":
                         CheckedListBox lsReponse = (CheckedListBox)panelReponse.Controls[0];
+                        bool hasValidAnswers = false;
+                        bool hasInvalidAnswers = false;
                         for (int i = 0; i < lsReponse.Items.Count; i++)
                         {
                             if (lsReponse.GetItemChecked(i))
@@ -102,7 +114,12 @@ namespace Zaya.CommunForms
                                 Reponse reponse = question.Reponse[i];
                                 if(reponse.valider)
                                 {
-                                    score.Value += (int) 10.0 / question.Reponse.Count(); 
+                                    score.Value += (int) 10.0 / question.Reponse.Count();
+                                    hasValidAnswers = true;
+                                }
+                                else
+                                {
+                                    hasInvalidAnswers = true;
                                 }
                                 reponseQuiz = new ReponseQuiz();
                                 reponseQuiz.Reponse = reponse;
@@ -112,6 +129,18 @@ namespace Zaya.CommunForms
                             {
                                 score.Value += (int)10.0 / question.Reponse.Count();
                             }
+                        }
+                        if(hasInvalidAnswers && hasInvalidAnswers)
+                        {
+                            AlertQuestion(AnswerLevel.MEDIUM);
+                        }
+                        else if(hasValidAnswers)
+                        {
+                            AlertQuestion(AnswerLevel.ALL);
+                        }
+                        else
+                        {
+                            AlertQuestion(AnswerLevel.NOTHING);
                         }
                         break;
                     case "single":
@@ -126,6 +155,11 @@ namespace Zaya.CommunForms
                                 if(int.Parse(rd.Name) == question.Reponse.Where(temp => temp.valider).First().idReponse)
                                 {
                                     score.Value += 10;
+                                    AlertQuestion(AnswerLevel.ALL);
+                                }
+                                else
+                                {
+                                    AlertQuestion(AnswerLevel.NOTHING);
                                 }
                                 exists = true;
                                 break;
@@ -205,20 +239,35 @@ namespace Zaya.CommunForms
             }
         }
 
-        private void JouerQuiz_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
-        private void custumProgresssBar2_Load(object sender, EventArgs e)
+        private enum AnswerLevel
         {
+            ALL,
+            NOTHING,
+            MEDIUM
+        }
 
+        private void AlertQuestion(AnswerLevel level)
+        {
+            Form_Alert alert = new Form_Alert();
+            Form_Alert.TypeMessage type = Form_Alert.TypeMessage.ERROR;
+            string message = "Oops! Faire plus d'effort.";
+            switch(level)
+            {
+                case AnswerLevel.ALL:
+                    type = Form_Alert.TypeMessage.SUCCESS;
+                    message = "Très bien! Vous êtes intelligent.";
+                    break;
+                case AnswerLevel.MEDIUM:
+                    type = Form_Alert.TypeMessage.WARNING;
+                    message = "Bien! Bon continuation.";
+                    break;
+            }
+            alert.ShowAlert(message, type);
         }
     }
 }

@@ -205,6 +205,12 @@
     <Compile Include="Controls\CustumProgresssBar.Designer.cs">
       <DependentUpon>CustumProgresssBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UtilisateurModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UtilisateurModel.Designer.cs">
+      <DependentUpon>UtilisateurModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ModuleModel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustumProgresssBar.resx">
       <DependentUpon>CustumProgresssBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UtilisateurModel.resx">
+      <DependentUpon>UtilisateurModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ModuleModel.resx">
       <DependentUpon>ModuleModel.cs</DependentUpon>

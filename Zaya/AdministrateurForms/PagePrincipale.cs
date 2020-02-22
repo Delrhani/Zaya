@@ -190,16 +190,24 @@ namespace Zaya.AdministrateurForms
         {
             panelLeft.Height = btnUtilisateurs.Height;
             panelLeft.Top = btnUtilisateurs.Top;
-            ListBox listBox = new ListBox();
-            var v = from u in DataBaseConfiguration.Context.Utilisateur
-                    orderby u.TypeUtilisateur.idTypeUtilisateur
-                    select new { nomComplet = u.nom + " " + u.prenom, u.idUtilisateur };
-            listBox.DisplayMember = "nomComplet";
-            listBox.ValueMember = "idUtilisateur";
-            listBox.DataSource = v;
-            listBox.Dock = DockStyle.Fill;
+            txtNavigation.Text = "Utilisateurs";
+
             panelContenu.Controls.Clear();
-            panelContenu.Controls.Add(listBox);
+
+            int y = 0;
+
+            var utilisateurs = from u in DataBaseConfiguration.Context.Utilisateur
+                           select u;
+            Point p = panelContenu.Location;
+            foreach (Utilisateur u in utilisateurs)
+            {
+                UtilisateurModel utilisateurModel = new UtilisateurModel(u);
+                p = utilisateurModel.Location;
+                p.Y = y;
+                y += utilisateurModel.Height + 5;
+                utilisateurModel.Location = p;
+                panelContenu.Controls.Add(utilisateurModel);
+            }
         }
 
         private void btnDeconnecte_MouseClick(object sender, MouseEventArgs e)
@@ -247,5 +255,6 @@ namespace Zaya.AdministrateurForms
         {
             
         }
+
     }
 }
