@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifierMatiere));
             this.txtMatiere = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
@@ -42,6 +41,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,16 +74,6 @@
             this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Matière :";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(472, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAnnuler
             // 
@@ -187,17 +177,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(464, 0);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(32, 28);
+            this.metroButton1.TabIndex = 12;
+            this.metroButton1.Text = "X";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // ModifierMatiere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 243);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMatiere);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -216,7 +215,6 @@
         #endregion
         private MaterialSkin.Controls.MaterialSingleLineTextField txtMatiere;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button button2;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
@@ -227,5 +225,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

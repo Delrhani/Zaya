@@ -64,5 +64,10 @@ namespace Zaya.AdministrateurForms
         {
             btnAnnuler.BackColor = Color.Transparent;
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

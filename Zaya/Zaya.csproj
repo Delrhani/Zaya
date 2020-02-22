@@ -213,12 +213,6 @@
     <Compile Include="Controls\ProgressBarEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CommunForms\FrmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CommunForms\FrmTest.designer.cs">
-      <DependentUpon>FrmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="CommunForms\JouerQuiz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,9 +322,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommunForms\DetailsLecon.resx">
       <DependentUpon>DetailsLecon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CommunForms\FrmTest.resx">
-      <DependentUpon>FrmTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommunForms\JouerQuiz.resx">
       <DependentUpon>JouerQuiz.cs</DependentUpon>

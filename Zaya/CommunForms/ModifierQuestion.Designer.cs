@@ -49,6 +49,7 @@
             this.valide = new MaterialSkin.Controls.MaterialCheckBox();
             this.btnAjouter = new Zaya.CommunForms.Button_WOC();
             this.btnValider = new Zaya.CommunForms.Button_WOC();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
@@ -270,11 +271,20 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.button_WOC1_Click_1);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(521, 0);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(32, 28);
+            this.metroButton1.TabIndex = 26;
+            this.metroButton1.Text = "X";
+            // 
             // ModifierQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 527);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.valide);
@@ -324,5 +334,6 @@
         private MaterialSkin.Controls.MaterialCheckBox valide;
         private Zaya.CommunForms.Button_WOC btnAjouter;
         private Zaya.CommunForms.Button_WOC btnValider;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_Close = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -46,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
             this.btnValider = new Zaya.CommunForms.Button_WOC();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,18 +113,6 @@
             this.label4.Size = new System.Drawing.Size(101, 31);
             this.label4.TabIndex = 3;
             this.label4.Text = "Leçon ";
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Close.Location = new System.Drawing.Point(461, 3);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(24, 24);
-            this.btn_Close.TabIndex = 17;
-            this.btn_Close.Text = "X";
-            this.btn_Close.UseVisualStyleBackColor = true;
-            this.btn_Close.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // panel3
             // 
@@ -225,16 +213,25 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(457, -1);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(32, 28);
+            this.metroButton1.TabIndex = 21;
+            this.metroButton1.Text = "X";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // ModifierLecon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 441);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.txtLibelle);
             this.Controls.Add(this.cmbMatiere);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -262,7 +259,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Panel panel3;
         private MetroFramework.Controls.MetroComboBox cmbMatiere;
         private Zaya.CommunForms.Button_WOC btnValider;
@@ -273,5 +269,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

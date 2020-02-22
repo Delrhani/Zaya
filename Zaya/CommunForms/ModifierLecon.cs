@@ -48,9 +48,11 @@ namespace Zaya.CommunForms
             txtLecon.Text = lecon.textLecon;
         }
 
-        private void button1_MouseHover(object sender, EventArgs e)
+      
+
+        private void metroButton1_Click(object sender, EventArgs e)
         {
-            btn_Close.BackColor = Color.Red;
+            this.Close();
         }
     }
 }
