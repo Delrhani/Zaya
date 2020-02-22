@@ -64,9 +64,9 @@
             this.txtLesson.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLesson.Location = new System.Drawing.Point(6, 89);
             this.txtLesson.Name = "txtLesson";
-            this.txtLesson.Size = new System.Drawing.Size(509, 23);
+            this.txtLesson.Size = new System.Drawing.Size(500, 23);
             this.txtLesson.TabIndex = 2;
-            this.txtLesson.Text = "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaavvvvv4vv";
+            this.txtLesson.Text = "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaavvvvv4vv";
             // 
             // groupBox1
             // 
@@ -76,14 +76,14 @@
             this.groupBox1.Controls.Add(this.txtNomProfesseur);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(564, 189);
+            this.groupBox1.Size = new System.Drawing.Size(555, 189);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnDetails
             // 
-            this.btnDetails.Location = new System.Drawing.Point(521, 89);
+            this.btnDetails.Location = new System.Drawing.Point(512, 89);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Size = new System.Drawing.Size(37, 23);
             this.btnDetails.TabIndex = 3;
@@ -97,7 +97,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "LeconModel";
-            this.Size = new System.Drawing.Size(564, 189);
+            this.Size = new System.Drawing.Size(557, 189);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

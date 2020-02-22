@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Zaya" Class="ZayaDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-SFB5OFQ;Initial Catalog=Zaya;User ID=sa" SettingsObjectName="Zaya.Properties.Settings" SettingsPropertyName="ZayaConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Commentaire" Member="Commentaire">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-27MU3H7\ELBAHJA;Initial Catalog=Zaya;User ID=sa" SettingsObjectName="Zaya.Properties.Settings" SettingsPropertyName="ZayaConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Commentaire" Member="Commentaires">
     <Type Name="Commentaire">
       <Column Name="idCommentaire" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idQuiz" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -13,7 +13,7 @@
       <Association Name="Utilisateur_Commentaire" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Lecon" Member="Lecon">
+  <Table Name="dbo.Lecon" Member="Lecons">
     <Type Name="Lecon">
       <Column Name="idLecon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="libelle" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
@@ -21,33 +21,33 @@
       <Column Name="textLecon" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="idMatiere" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="dateAjoute" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="Lecon_Commentaire" Member="Commentaire" ThisKey="idLecon" OtherKey="idLecon" Type="Commentaire" />
-      <Association Name="Lecon_Question" Member="Question" ThisKey="idLecon" OtherKey="idLecon" Type="Question" />
+      <Association Name="Lecon_Commentaire" Member="Commentaires" ThisKey="idLecon" OtherKey="idLecon" Type="Commentaire" />
+      <Association Name="Lecon_Question" Member="Questions" ThisKey="idLecon" OtherKey="idLecon" Type="Question" />
       <Association Name="Matiere_Lecon" Member="Matiere" ThisKey="idMatiere" OtherKey="idMatiere" Type="Matiere" IsForeignKey="true" />
       <Association Name="Utilisateur_Lecon" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Matiere" Member="Matiere">
+  <Table Name="dbo.Matiere" Member="Matieres">
     <Type Name="Matiere">
       <Column Name="idMatiere" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="libelle" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Association Name="Matiere_Lecon" Member="Lecon" ThisKey="idMatiere" OtherKey="idMatiere" Type="Lecon" />
-      <Association Name="Matiere_Quiz" Member="Quiz" ThisKey="idMatiere" OtherKey="idMatiere" Type="Quiz" />
+      <Association Name="Matiere_Lecon" Member="Lecons" ThisKey="idMatiere" OtherKey="idMatiere" Type="Lecon" />
+      <Association Name="Matiere_Quiz" Member="Quizs" ThisKey="idMatiere" OtherKey="idMatiere" Type="Quiz" />
     </Type>
   </Table>
-  <Table Name="dbo.Question" Member="Question">
+  <Table Name="dbo.Question" Member="Questions">
     <Type Name="Question">
       <Column Name="idQuestion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idLecon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="textQuestion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="idTypeQuestion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Question_Reponse" Member="Reponse" ThisKey="idQuestion" OtherKey="idQuestion" Type="Reponse" />
-      <Association Name="Question_ResultatQuiz" Member="ResultatQuiz" ThisKey="idQuestion" OtherKey="idQuestion" Type="ResultatQuiz" />
+      <Association Name="Question_Reponse" Member="Reponses" ThisKey="idQuestion" OtherKey="idQuestion" Type="Reponse" />
+      <Association Name="Question_ResultatQuiz" Member="ResultatQuizs" ThisKey="idQuestion" OtherKey="idQuestion" Type="ResultatQuiz" />
       <Association Name="Lecon_Question" Member="Lecon" ThisKey="idLecon" OtherKey="idLecon" Type="Lecon" IsForeignKey="true" />
       <Association Name="TypeQuestion_Question" Member="TypeQuestion" ThisKey="idTypeQuestion" OtherKey="idTypeQuestion" Type="TypeQuestion" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Quiz" Member="Quiz">
+  <Table Name="dbo.Quiz" Member="Quizs">
     <Type Name="Quiz">
       <Column Name="idQuiz" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="duree" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
@@ -55,23 +55,23 @@
       <Column Name="idMatiere" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idUtilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="dateQuiz" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="Quiz_Commentaire" Member="Commentaire" ThisKey="idQuiz" OtherKey="idQuiz" Type="Commentaire" />
-      <Association Name="Quiz_ResultatQuiz" Member="ResultatQuiz" ThisKey="idQuiz" OtherKey="idQuiz" Type="ResultatQuiz" />
+      <Association Name="Quiz_Commentaire" Member="Commentaires" ThisKey="idQuiz" OtherKey="idQuiz" Type="Commentaire" />
+      <Association Name="Quiz_ResultatQuiz" Member="ResultatQuizs" ThisKey="idQuiz" OtherKey="idQuiz" Type="ResultatQuiz" />
       <Association Name="Matiere_Quiz" Member="Matiere" ThisKey="idMatiere" OtherKey="idMatiere" Type="Matiere" IsForeignKey="true" />
       <Association Name="Utilisateur_Quiz" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Reponse" Member="Reponse">
+  <Table Name="dbo.Reponse" Member="Reponses">
     <Type Name="Reponse">
       <Column Name="idReponse" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idQuestion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="valider" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="txtReponse" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Reponse_ReponseQuiz" Member="ReponseQuiz" ThisKey="idReponse" OtherKey="idReponse" Type="ReponseQuiz" />
+      <Column Name="txtReponse" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Reponse_ReponseQuiz" Member="ReponseQuizs" ThisKey="idReponse" OtherKey="idReponse" Type="ReponseQuiz" />
       <Association Name="Question_Reponse" Member="Question" ThisKey="idQuestion" OtherKey="idQuestion" Type="Question" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ReponseQuiz" Member="ReponseQuiz">
+  <Table Name="dbo.ReponseQuiz" Member="ReponseQuizs">
     <Type Name="ReponseQuiz">
       <Column Name="idReponseQuiz" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idResultatQuiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -81,31 +81,31 @@
       <Association Name="ResultatQuiz_ReponseQuiz" Member="ResultatQuiz" ThisKey="idResultatQuiz" OtherKey="idResultatQuiz" Type="ResultatQuiz" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ResultatQuiz" Member="ResultatQuiz">
+  <Table Name="dbo.ResultatQuiz" Member="ResultatQuizs">
     <Type Name="ResultatQuiz">
       <Column Name="idResultatQuiz" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idQuiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idQuestion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ResultatQuiz_ReponseQuiz" Member="ReponseQuiz" ThisKey="idResultatQuiz" OtherKey="idResultatQuiz" Type="ReponseQuiz" />
+      <Association Name="ResultatQuiz_ReponseQuiz" Member="ReponseQuizs" ThisKey="idResultatQuiz" OtherKey="idResultatQuiz" Type="ReponseQuiz" />
       <Association Name="Question_ResultatQuiz" Member="Question" ThisKey="idQuestion" OtherKey="idQuestion" Type="Question" IsForeignKey="true" />
       <Association Name="Quiz_ResultatQuiz" Member="Quiz" ThisKey="idQuiz" OtherKey="idQuiz" Type="Quiz" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TypeQuestion" Member="TypeQuestion">
+  <Table Name="dbo.TypeQuestion" Member="TypeQuestions">
     <Type Name="TypeQuestion">
       <Column Name="idTypeQuestion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="libelle" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="TypeQuestion_Question" Member="Question" ThisKey="idTypeQuestion" OtherKey="idTypeQuestion" Type="Question" />
+      <Association Name="TypeQuestion_Question" Member="Questions" ThisKey="idTypeQuestion" OtherKey="idTypeQuestion" Type="Question" />
     </Type>
   </Table>
-  <Table Name="dbo.TypeUtilisateur" Member="TypeUtilisateur">
+  <Table Name="dbo.TypeUtilisateur" Member="TypeUtilisateurs">
     <Type Name="TypeUtilisateur">
       <Column Name="idTypeUtilisateur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="libelle" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Association Name="TypeUtilisateur_Utilisateur" Member="Utilisateur" ThisKey="idTypeUtilisateur" OtherKey="idTypeUtilisateur" Type="Utilisateur" />
+      <Association Name="TypeUtilisateur_Utilisateur" Member="Utilisateurs" ThisKey="idTypeUtilisateur" OtherKey="idTypeUtilisateur" Type="Utilisateur" />
     </Type>
   </Table>
-  <Table Name="dbo.Utilisateur" Member="Utilisateur">
+  <Table Name="dbo.Utilisateur" Member="Utilisateurs">
     <Type Name="Utilisateur">
       <Column Name="idUtilisateur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nom" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
@@ -117,9 +117,9 @@
       <Column Name="pwd" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="dateInscription" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="idTypeUtilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Utilisateur_Commentaire" Member="Commentaire" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Commentaire" />
-      <Association Name="Utilisateur_Lecon" Member="Lecon" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Lecon" />
-      <Association Name="Utilisateur_Quiz" Member="Quiz" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Quiz" />
+      <Association Name="Utilisateur_Commentaire" Member="Commentaires" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Commentaire" />
+      <Association Name="Utilisateur_Lecon" Member="Lecons" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Lecon" />
+      <Association Name="Utilisateur_Quiz" Member="Quizs" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Quiz" />
       <Association Name="TypeUtilisateur_Utilisateur" Member="TypeUtilisateur" ThisKey="idTypeUtilisateur" OtherKey="idTypeUtilisateur" Type="TypeUtilisateur" IsForeignKey="true" />
     </Type>
   </Table>

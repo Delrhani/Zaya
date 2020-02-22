@@ -199,11 +199,11 @@
     <Compile Include="Controls\CustomradioBtn.Designer.cs">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustumProgresssBar.cs">
+    <Compile Include="Controls\LeconsModel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CustumProgresssBar.Designer.cs">
-      <DependentUpon>CustumProgresssBar.cs</DependentUpon>
+    <Compile Include="Controls\LeconsModel.Designer.cs">
+      <DependentUpon>LeconsModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\UtilisateurModel.cs">
       <SubType>UserControl</SubType>
@@ -287,6 +287,12 @@
     <Compile Include="Form_Alert.designer.cs">
       <DependentUpon>Form_Alert.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRain.Designer.cs">
+      <DependentUpon>FrmRain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inscription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
     </Compile>
     <Compile Include="UtilisateurForms\PagePrincipale.Designer.cs">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZayaDB.cs">
+      <DependentUpon>ZayaDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="ZayaDB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -357,8 +366,8 @@
     <EmbeddedResource Include="Controls\CustomradioBtn.resx">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CustumProgresssBar.resx">
-      <DependentUpon>CustumProgresssBar.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\LeconsModel.resx">
+      <DependentUpon>LeconsModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UtilisateurModel.resx">
       <DependentUpon>UtilisateurModel.cs</DependentUpon>
@@ -377,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRain.resx">
+      <DependentUpon>FrmRain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
