@@ -49,9 +49,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelContenu = new System.Windows.Forms.Panel();
             this.txtNavigation = new System.Windows.Forms.Label();
+            this.btnFermer = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             this.btnDeconnecte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -334,18 +334,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(595, 28);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(822, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(21, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panelContenu
             // 
             this.panelContenu.AutoScroll = true;
@@ -366,21 +354,31 @@
             this.txtNavigation.Text = "Leçons";
             this.txtNavigation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnFermer
+            // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFermer.Location = new System.Drawing.Point(819, 0);
+            this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(32, 28);
+            this.btnFermer.TabIndex = 21;
+            this.btnFermer.Text = "X";
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
+            // 
             // PagePrincipale
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(851, 613);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.panelContenu);
             this.Controls.Add(this.txtNavigation);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PagePrincipale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page principale";
-            this.Load += new System.EventHandler(this.FrmTest_Load);
             this.panel1.ResumeLayout(false);
             this.btnDeconnecte.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -413,7 +411,6 @@
         private System.Windows.Forms.Panel btnModels;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelContenu;
         private System.Windows.Forms.Label txtNavigation;
@@ -423,5 +420,6 @@
         private System.Windows.Forms.Panel btnUtilisateurs;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
+        private MetroFramework.Controls.MetroButton btnFermer;
     }
 }

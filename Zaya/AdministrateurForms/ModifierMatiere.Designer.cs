@@ -86,6 +86,7 @@
             this.btnAnnuler.TabIndex = 10;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = false;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             this.btnAnnuler.MouseLeave += new System.EventHandler(this.btnAnnuler_MouseLeave);
             this.btnAnnuler.MouseHover += new System.EventHandler(this.btnAnnuler_MouseHover);
             // 
@@ -100,7 +101,6 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Valider";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             this.button2.MouseHover += new System.EventHandler(this.button2_MouseHover);
             // 
@@ -185,7 +185,7 @@
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
             this.metroButton1.TabIndex = 12;
             this.metroButton1.Text = "X";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // ModifierMatiere
             // 
@@ -203,7 +203,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModifierMatiere";
             this.Text = "Modifier matiére";
-            this.Load += new System.EventHandler(this.ModifierMatiere_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

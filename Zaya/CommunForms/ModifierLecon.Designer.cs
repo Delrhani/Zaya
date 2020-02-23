@@ -45,7 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
             this.btnValider = new Zaya.CommunForms.Button_WOC();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnFermer = new MetroFramework.Controls.MetroButton();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -213,21 +213,22 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // metroButton1
+            // btnFermer
             // 
-            this.metroButton1.Location = new System.Drawing.Point(457, -1);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(32, 28);
-            this.metroButton1.TabIndex = 21;
-            this.metroButton1.Text = "X";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnFermer.Location = new System.Drawing.Point(457, 0);
+            this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(32, 28);
+            this.btnFermer.TabIndex = 21;
+            this.btnFermer.Text = "X";
+            this.btnFermer.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // ModifierLecon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 441);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.txtLibelle);
             this.Controls.Add(this.cmbMatiere);
@@ -269,6 +270,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnFermer;
     }
 }

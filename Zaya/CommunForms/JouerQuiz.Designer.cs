@@ -33,7 +33,6 @@
             this.panelQuestion = new System.Windows.Forms.Panel();
             this.panelReponse = new System.Windows.Forms.Panel();
             this.txtQuestion = new System.Windows.Forms.Label();
-            this.score = new Zaya.Controls.ProgressBarEx();
             this.btnSuivant = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,7 +45,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tempEstime = new Zaya.Controls.ProgressBarEx();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnFermer = new MetroFramework.Controls.MetroButton();
+            this.txtTrueQuestion = new System.Windows.Forms.Label();
+            this.txtWrongQuestion = new System.Windows.Forms.Label();
             this.panelQuestion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -60,45 +61,33 @@
             // 
             this.panelQuestion.Controls.Add(this.panelReponse);
             this.panelQuestion.Controls.Add(this.txtQuestion);
-            this.panelQuestion.Controls.Add(this.score);
-            this.panelQuestion.Location = new System.Drawing.Point(27, 61);
+            this.panelQuestion.Location = new System.Drawing.Point(3, 61);
             this.panelQuestion.Name = "panelQuestion";
-            this.panelQuestion.Size = new System.Drawing.Size(533, 371);
+            this.panelQuestion.Size = new System.Drawing.Size(634, 338);
             this.panelQuestion.TabIndex = 3;
             // 
             // panelReponse
             // 
             this.panelReponse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
-            this.panelReponse.Location = new System.Drawing.Point(29, 25);
+            this.panelReponse.Location = new System.Drawing.Point(24, 61);
             this.panelReponse.Name = "panelReponse";
-            this.panelReponse.Size = new System.Drawing.Size(356, 281);
+            this.panelReponse.Size = new System.Drawing.Size(579, 274);
             this.panelReponse.TabIndex = 1;
             // 
             // txtQuestion
             // 
             this.txtQuestion.AutoSize = true;
-            this.txtQuestion.Location = new System.Drawing.Point(153, 5);
+            this.txtQuestion.Location = new System.Drawing.Point(21, 26);
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(156, 13);
             this.txtQuestion.TabIndex = 0;
             this.txtQuestion.Text = "Comment déclarer un variable ?";
             // 
-            // score
-            // 
-            this.score.BackColor = System.Drawing.Color.Gainsboro;
-            this.score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.score.ForeColor = System.Drawing.Color.SeaGreen;
-            this.score.Location = new System.Drawing.Point(408, 97);
-            this.score.Margin = new System.Windows.Forms.Padding(0);
-            this.score.Name = "score";
-            this.score.Size = new System.Drawing.Size(110, 101);
-            this.score.TabIndex = 1;
-            // 
             // btnSuivant
             // 
-            this.btnSuivant.Location = new System.Drawing.Point(222, 353);
+            this.btnSuivant.Location = new System.Drawing.Point(470, 405);
             this.btnSuivant.Name = "btnSuivant";
-            this.btnSuivant.Size = new System.Drawing.Size(10, 10);
+            this.btnSuivant.Size = new System.Drawing.Size(167, 34);
             this.btnSuivant.TabIndex = 4;
             this.btnSuivant.Text = "Suivant";
             this.btnSuivant.UseVisualStyleBackColor = true;
@@ -182,6 +171,8 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.txtWrongQuestion);
+            this.panel8.Controls.Add(this.txtTrueQuestion);
             this.panel8.Controls.Add(this.panelQuestion);
             this.panel8.Controls.Add(this.tempEstime);
             this.panel8.Controls.Add(this.btnSuivant);
@@ -195,19 +186,37 @@
             this.tempEstime.BackColor = System.Drawing.Color.White;
             this.tempEstime.Location = new System.Drawing.Point(27, 29);
             this.tempEstime.Name = "tempEstime";
-            this.tempEstime.Size = new System.Drawing.Size(523, 10);
+            this.tempEstime.Size = new System.Drawing.Size(579, 10);
             this.tempEstime.TabIndex = 2;
             this.tempEstime.Value = 100;
             // 
-            // metroButton1
+            // btnFermer
             // 
-            this.metroButton1.Location = new System.Drawing.Point(789, 0);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(39, 36);
-            this.metroButton1.TabIndex = 7;
-            this.metroButton1.Text = "X";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnFermer.Location = new System.Drawing.Point(789, 0);
+            this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(39, 36);
+            this.btnFermer.TabIndex = 7;
+            this.btnFermer.Text = "X";
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
+            // 
+            // txtTrueQuestion
+            // 
+            this.txtTrueQuestion.AutoSize = true;
+            this.txtTrueQuestion.Location = new System.Drawing.Point(24, 13);
+            this.txtTrueQuestion.Name = "txtTrueQuestion";
+            this.txtTrueQuestion.Size = new System.Drawing.Size(80, 13);
+            this.txtTrueQuestion.TabIndex = 5;
+            this.txtTrueQuestion.Text = "Passé : 5 / 100";
+            // 
+            // txtWrongQuestion
+            // 
+            this.txtWrongQuestion.AutoSize = true;
+            this.txtWrongQuestion.Location = new System.Drawing.Point(513, 13);
+            this.txtWrongQuestion.Name = "txtWrongQuestion";
+            this.txtWrongQuestion.Size = new System.Drawing.Size(93, 13);
+            this.txtWrongQuestion.TabIndex = 6;
+            this.txtWrongQuestion.Text = "Incorrect : 5 / 100";
             // 
             // JouerQuiz
             // 
@@ -215,7 +224,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(828, 502);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -230,13 +239,12 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Controls.ProgressBarEx score;
         private Controls.ProgressBarEx tempEstime;
         private System.Windows.Forms.Panel panelQuestion;
         private System.Windows.Forms.Label txtQuestion;
@@ -252,6 +260,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnFermer;
+        private System.Windows.Forms.Label txtTrueQuestion;
+        private System.Windows.Forms.Label txtWrongQuestion;
     }
 }

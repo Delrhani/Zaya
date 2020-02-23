@@ -192,12 +192,35 @@
     <Compile Include="Controls\CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomProgressBar.cs" />
     <Compile Include="Controls\CustomradioBtn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controls\CustomradioBtn.Designer.cs">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuizModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QuizModel.Designer.cs">
+      <DependentUpon>QuizModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuizesModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QuizesModel.Designer.cs">
+      <DependentUpon>QuizesModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UtilisateursModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UtilisateursModel.Designer.cs">
+      <DependentUpon>UtilisateursModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModulesModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ModulesModel.Designer.cs">
+      <DependentUpon>ModulesModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\LeconsModel.cs">
       <SubType>UserControl</SubType>
@@ -356,6 +379,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CustomradioBtn.resx">
       <DependentUpon>CustomradioBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QuizModel.resx">
+      <DependentUpon>QuizModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QuizesModel.resx">
+      <DependentUpon>QuizesModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UtilisateursModel.resx">
+      <DependentUpon>UtilisateursModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ModulesModel.resx">
+      <DependentUpon>ModulesModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LeconsModel.resx">
       <DependentUpon>LeconsModel.cs</DependentUpon>

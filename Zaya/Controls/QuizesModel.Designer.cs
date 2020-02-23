@@ -1,6 +1,6 @@
 ﻿namespace Zaya.Controls
 {
-    partial class LeconsModel
+    partial class QuizesModel
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,21 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbMatieres = new MetroFramework.Controls.MetroComboBox();
             this.panelContenu = new System.Windows.Forms.Panel();
-            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnJouer = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // cmbMatieres
-            // 
-            this.cmbMatieres.FormattingEnabled = true;
-            this.cmbMatieres.ItemHeight = 23;
-            this.cmbMatieres.Location = new System.Drawing.Point(375, 3);
-            this.cmbMatieres.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
-            this.cmbMatieres.Name = "cmbMatieres";
-            this.cmbMatieres.Size = new System.Drawing.Size(190, 29);
-            this.cmbMatieres.TabIndex = 0;
-            this.cmbMatieres.SelectedIndexChanged += new System.EventHandler(this.cmbMatieres_SelectedIndexChanged);
             // 
             // panelContenu
             // 
@@ -51,27 +39,27 @@
             this.panelContenu.Name = "panelContenu";
             this.panelContenu.Size = new System.Drawing.Size(589, 447);
             this.panelContenu.TabIndex = 2;
+            this.panelContenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenu_Paint);
             // 
-            // btnAjouter
+            // btnJouer
             // 
-            this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnAjouter.Location = new System.Drawing.Point(326, 3);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(43, 29);
-            this.btnAjouter.TabIndex = 1;
-            this.btnAjouter.Text = "+";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            this.btnJouer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnJouer.Location = new System.Drawing.Point(518, 3);
+            this.btnJouer.Name = "btnJouer";
+            this.btnJouer.Size = new System.Drawing.Size(43, 29);
+            this.btnJouer.TabIndex = 2;
+            this.btnJouer.Text = "+";
+            this.btnJouer.UseVisualStyleBackColor = true;
+            this.btnJouer.Click += new System.EventHandler(this.btnJouer_Click);
             // 
-            // LeconsModel
+            // QuizesModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btnJouer);
             this.Controls.Add(this.panelContenu);
-            this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.cmbMatieres);
-            this.Name = "LeconsModel";
+            this.Name = "QuizesModel";
             this.Size = new System.Drawing.Size(595, 488);
             this.Load += new System.EventHandler(this.LeconsModel_Load);
             this.ResumeLayout(false);
@@ -79,9 +67,7 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroComboBox cmbMatieres;
         private System.Windows.Forms.Panel panelContenu;
-        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button btnJouer;
     }
 }

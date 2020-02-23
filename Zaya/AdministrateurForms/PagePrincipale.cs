@@ -23,17 +23,14 @@ namespace Zaya.AdministrateurForms
             InitializeComponent();
             this.utilisateur = utilisateur;
             frm = new LoginForm();
-            btnLesson.PerformLayout();
         }
 
-        private void FrmTest_Load(object sender, EventArgs e)
+        private void btnFermer_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if(DialogResult.Yes == MessageBox.Show("Voulez-vous vraiment fermer l'application ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                this.Close();
+            }
         }
 
         private void btnLesson_Click(object sender, MouseEventArgs e)
@@ -43,12 +40,7 @@ namespace Zaya.AdministrateurForms
             txtNavigation.Text = "Leçons";
             
             panelContenu.Controls.Clear();
-            panelContenu.Controls.Add(new LeconsModel());
-        }
-
-        private void btnAjouterLecon(object sender, EventArgs e)
-        {
-            new CommunForms.AjouterLecon(utilisateur).ShowDialog();
+            panelContenu.Controls.Add(new LeconsModel(utilisateur));
         }
 
         private void btnQuiz_MouseClick(object sender, MouseEventArgs e)
@@ -75,31 +67,7 @@ namespace Zaya.AdministrateurForms
             txtNavigation.Text = "Matières";
 
             panelContenu.Controls.Clear();
-
-            int y = 0;
-            Button btnAjouter = new Button();
-            btnAjouter.Text = "+";
-            
-            Point p = btnAjouter.Location;
-            p.X = panelContenu.Width - btnAjouter.Width - 50;
-            btnAjouter.Location = p;
-            y += p.Y + 20;
-            btnAjouter.Click += (s, e1) => {
-                new AjouterMatiere().ShowDialog();
-            };
-            panelContenu.Controls.Add(btnAjouter);
-
-            var matieres = from m in DataBaseConfiguration.Context.Matiere
-                           select m;
-            foreach (Matiere m in matieres)
-            {
-                ModuleModel leconModel = new ModuleModel(m, true);
-                p = leconModel.Location;
-                p.Y = y;
-                y += leconModel.Height + 5;
-                leconModel.Location = p;
-                panelContenu.Controls.Add(leconModel);
-            }
+            panelContenu.Controls.Add(new ModulesModel(utilisateur.TypeUtilisateur.libelle == "Administrateur"));
         }
 
         private void btnLesson_MouseHover(object sender, EventArgs e)
@@ -145,21 +113,8 @@ namespace Zaya.AdministrateurForms
             txtNavigation.Text = "Utilisateurs";
 
             panelContenu.Controls.Clear();
+            panelContenu.Controls.Add(new UtilisateursModel());
 
-            int y = 0;
-
-            var utilisateurs = from u in DataBaseConfiguration.Context.Utilisateur
-                           select u;
-            Point p = panelContenu.Location;
-            foreach (Utilisateur u in utilisateurs)
-            {
-                UtilisateurModel utilisateurModel = new UtilisateurModel(u);
-                p = utilisateurModel.Location;
-                p.Y = y;
-                y += utilisateurModel.Height + 5;
-                utilisateurModel.Location = p;
-                panelContenu.Controls.Add(utilisateurModel);
-            }
         }
 
         private void btnDeconnecte_MouseClick(object sender, MouseEventArgs e)
@@ -201,11 +156,6 @@ namespace Zaya.AdministrateurForms
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnQuiz_Click(object sender, EventArgs e)
-        {
-            
         }
 
     }

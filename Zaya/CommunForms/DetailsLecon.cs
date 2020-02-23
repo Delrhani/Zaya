@@ -41,89 +41,19 @@ namespace Zaya.CommunForms
             txtLecon.Text += text;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void button1_MouseHover(object sender, EventArgs e)
         {
            metroButton1.BackColor = Color.Red;
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnFermer_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void txtLibelle_Click(object sender, EventArgs e)
+        private void btnAjouter_Click(object sender, EventArgs e)
         {
-
+            new AjouterQuestion(lecon).ShowDialog();
         }
 
-        private void txtNomUtilisateur_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDateAjoute_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLecon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblModele_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -12,9 +12,11 @@ namespace Zaya.Controls
 {
     public partial class LeconsModel : UserControl
     {
-        public LeconsModel()
+        private Utilisateur utilisateur;
+        public LeconsModel(Utilisateur utilisateur)
         {
             InitializeComponent();
+            this.utilisateur = utilisateur;
         }
 
         private void LeconsModel_Load(object sender, EventArgs e)
@@ -30,13 +32,12 @@ namespace Zaya.Controls
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            new AdministrateurForms.AjouterMatiere();
+            new CommunForms.AjouterLecon(utilisateur).ShowDialog();
         }
 
         private void cmbMatieres_SelectedIndexChanged(object sender, EventArgs e)
         {
             panelContenu.Controls.Clear();
-            MessageBox.Show(cmbMatieres + "");
             InitListeLecon((int)cmbMatieres.SelectedValue);
         }
 
