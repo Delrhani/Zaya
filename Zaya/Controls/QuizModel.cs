@@ -27,7 +27,11 @@ namespace Zaya.Controls
 
         private void BindingData()
         {
-            
+            this.txtDate.Text = quiz.dateQuiz.ToString();
+            this.txtMatiere.Text = quiz.Matiere.libelle;
+            this.txtTempEstime.Text = quiz.tempsEstime.ToString();
+            score.Value = (int) quiz.score;
+            score.Text = quiz.score + "%";
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

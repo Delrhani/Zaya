@@ -33,6 +33,9 @@ namespace Zaya
     partial void InsertCommentaire(Commentaire instance);
     partial void UpdateCommentaire(Commentaire instance);
     partial void DeleteCommentaire(Commentaire instance);
+    partial void InsertUtilisateur(Utilisateur instance);
+    partial void UpdateUtilisateur(Utilisateur instance);
+    partial void DeleteUtilisateur(Utilisateur instance);
     partial void InsertLecon(Lecon instance);
     partial void UpdateLecon(Lecon instance);
     partial void DeleteLecon(Lecon instance);
@@ -60,9 +63,6 @@ namespace Zaya
     partial void InsertTypeUtilisateur(TypeUtilisateur instance);
     partial void UpdateTypeUtilisateur(TypeUtilisateur instance);
     partial void DeleteTypeUtilisateur(TypeUtilisateur instance);
-    partial void InsertUtilisateur(Utilisateur instance);
-    partial void UpdateUtilisateur(Utilisateur instance);
-    partial void DeleteUtilisateur(Utilisateur instance);
     #endregion
 		
 		public ZayaDBDataContext() : 
@@ -100,6 +100,14 @@ namespace Zaya
 			get
 			{
 				return this.GetTable<Commentaire>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Utilisateur> Utilisateur
+		{
+			get
+			{
+				return this.GetTable<Utilisateur>();
 			}
 		}
 		
@@ -175,14 +183,6 @@ namespace Zaya
 			}
 		}
 		
-		public System.Data.Linq.Table<Utilisateur> Utilisateur
-		{
-			get
-			{
-				return this.GetTable<Utilisateur>();
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.encrypt", IsComposable=true)]
 		public System.Data.Linq.Binary encrypt([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pwd)
 		{
@@ -208,11 +208,11 @@ namespace Zaya
 		
 		private int _idUtilisateur;
 		
+		private EntityRef<Utilisateur> _Utilisateur;
+		
 		private EntityRef<Lecon> _Lecon;
 		
 		private EntityRef<Quiz> _Quiz;
-		
-		private EntityRef<Utilisateur> _Utilisateur;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -234,9 +234,9 @@ namespace Zaya
 		
 		public Commentaire()
 		{
+			this._Utilisateur = default(EntityRef<Utilisateur>);
 			this._Lecon = default(EntityRef<Lecon>);
 			this._Quiz = default(EntityRef<Quiz>);
-			this._Utilisateur = default(EntityRef<Utilisateur>);
 			OnCreated();
 		}
 		
@@ -372,6 +372,40 @@ namespace Zaya
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Commentaire", Storage="_Utilisateur", ThisKey="idUtilisateur", OtherKey="idUtilisateur", IsForeignKey=true)]
+		public Utilisateur Utilisateur
+		{
+			get
+			{
+				return this._Utilisateur.Entity;
+			}
+			set
+			{
+				Utilisateur previousValue = this._Utilisateur.Entity;
+				if (((previousValue != value) 
+							|| (this._Utilisateur.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Utilisateur.Entity = null;
+						previousValue.Commentaire.Remove(this);
+					}
+					this._Utilisateur.Entity = value;
+					if ((value != null))
+					{
+						value.Commentaire.Add(this);
+						this._idUtilisateur = value.idUtilisateur;
+					}
+					else
+					{
+						this._idUtilisateur = default(int);
+					}
+					this.SendPropertyChanged("Utilisateur");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lecon_Commentaire", Storage="_Lecon", ThisKey="idLecon", OtherKey="idLecon", IsForeignKey=true)]
 		public Lecon Lecon
 		{
@@ -389,12 +423,12 @@ namespace Zaya
 					if ((previousValue != null))
 					{
 						this._Lecon.Entity = null;
-						previousValue.Commentaires.Remove(this);
+						previousValue.Commentaire.Remove(this);
 					}
 					this._Lecon.Entity = value;
 					if ((value != null))
 					{
-						value.Commentaires.Add(this);
+						value.Commentaire.Add(this);
 						this._idLecon = value.idLecon;
 					}
 					else
@@ -423,12 +457,12 @@ namespace Zaya
 					if ((previousValue != null))
 					{
 						this._Quiz.Entity = null;
-						previousValue.Commentaires.Remove(this);
+						previousValue.Commentaire.Remove(this);
 					}
 					this._Quiz.Entity = value;
 					if ((value != null))
 					{
-						value.Commentaires.Add(this);
+						value.Commentaire.Add(this);
 						this._idQuiz = value.idQuiz;
 					}
 					else
@@ -436,40 +470,6 @@ namespace Zaya
 						this._idQuiz = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Quiz");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Commentaire", Storage="_Utilisateur", ThisKey="idUtilisateur", OtherKey="idUtilisateur", IsForeignKey=true)]
-		public Utilisateur Utilisateur
-		{
-			get
-			{
-				return this._Utilisateur.Entity;
-			}
-			set
-			{
-				Utilisateur previousValue = this._Utilisateur.Entity;
-				if (((previousValue != value) 
-							|| (this._Utilisateur.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Utilisateur.Entity = null;
-						previousValue.Commentaires.Remove(this);
-					}
-					this._Utilisateur.Entity = value;
-					if ((value != null))
-					{
-						value.Commentaires.Add(this);
-						this._idUtilisateur = value.idUtilisateur;
-					}
-					else
-					{
-						this._idUtilisateur = default(int);
-					}
-					this.SendPropertyChanged("Utilisateur");
 				}
 			}
 		}
@@ -495,6 +495,409 @@ namespace Zaya
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Utilisateur")]
+	public partial class Utilisateur : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idUtilisateur;
+		
+		private string _nom;
+		
+		private string _prenom;
+		
+		private string _telephone;
+		
+		private System.Nullable<char> _sexe;
+		
+		private string _email;
+		
+		private string _username;
+		
+		private System.Data.Linq.Binary _pwd;
+		
+		private System.DateTime _dateInscription;
+		
+		private int _idTypeUtilisateur;
+		
+		private EntitySet<Commentaire> _Commentaire;
+		
+		private EntitySet<Lecon> _Lecon;
+		
+		private EntitySet<Quiz> _Quiz;
+		
+		private EntityRef<TypeUtilisateur> _TypeUtilisateur;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidUtilisateurChanging(int value);
+    partial void OnidUtilisateurChanged();
+    partial void OnnomChanging(string value);
+    partial void OnnomChanged();
+    partial void OnprenomChanging(string value);
+    partial void OnprenomChanged();
+    partial void OntelephoneChanging(string value);
+    partial void OntelephoneChanged();
+    partial void OnsexeChanging(System.Nullable<char> value);
+    partial void OnsexeChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpwdChanging(System.Data.Linq.Binary value);
+    partial void OnpwdChanged();
+    partial void OndateInscriptionChanging(System.DateTime value);
+    partial void OndateInscriptionChanged();
+    partial void OnidTypeUtilisateurChanging(int value);
+    partial void OnidTypeUtilisateurChanged();
+    #endregion
+		
+		public Utilisateur()
+		{
+			this._Commentaire = new EntitySet<Commentaire>(new Action<Commentaire>(this.attach_Commentaire), new Action<Commentaire>(this.detach_Commentaire));
+			this._Lecon = new EntitySet<Lecon>(new Action<Lecon>(this.attach_Lecon), new Action<Lecon>(this.detach_Lecon));
+			this._Quiz = new EntitySet<Quiz>(new Action<Quiz>(this.attach_Quiz), new Action<Quiz>(this.detach_Quiz));
+			this._TypeUtilisateur = default(EntityRef<TypeUtilisateur>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUtilisateur", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idUtilisateur
+		{
+			get
+			{
+				return this._idUtilisateur;
+			}
+			set
+			{
+				if ((this._idUtilisateur != value))
+				{
+					this.OnidUtilisateurChanging(value);
+					this.SendPropertyChanging();
+					this._idUtilisateur = value;
+					this.SendPropertyChanged("idUtilisateur");
+					this.OnidUtilisateurChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nom", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nom
+		{
+			get
+			{
+				return this._nom;
+			}
+			set
+			{
+				if ((this._nom != value))
+				{
+					this.OnnomChanging(value);
+					this.SendPropertyChanging();
+					this._nom = value;
+					this.SendPropertyChanged("nom");
+					this.OnnomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenom", DbType="VarChar(100)")]
+		public string prenom
+		{
+			get
+			{
+				return this._prenom;
+			}
+			set
+			{
+				if ((this._prenom != value))
+				{
+					this.OnprenomChanging(value);
+					this.SendPropertyChanging();
+					this._prenom = value;
+					this.SendPropertyChanged("prenom");
+					this.OnprenomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telephone", DbType="VarChar(20)")]
+		public string telephone
+		{
+			get
+			{
+				return this._telephone;
+			}
+			set
+			{
+				if ((this._telephone != value))
+				{
+					this.OntelephoneChanging(value);
+					this.SendPropertyChanging();
+					this._telephone = value;
+					this.SendPropertyChanged("telephone");
+					this.OntelephoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexe", DbType="Char(1)")]
+		public System.Nullable<char> sexe
+		{
+			get
+			{
+				return this._sexe;
+			}
+			set
+			{
+				if ((this._sexe != value))
+				{
+					this.OnsexeChanging(value);
+					this.SendPropertyChanging();
+					this._sexe = value;
+					this.SendPropertyChanged("sexe");
+					this.OnsexeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pwd", DbType="VarBinary(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary pwd
+		{
+			get
+			{
+				return this._pwd;
+			}
+			set
+			{
+				if ((this._pwd != value))
+				{
+					this.OnpwdChanging(value);
+					this.SendPropertyChanging();
+					this._pwd = value;
+					this.SendPropertyChanged("pwd");
+					this.OnpwdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateInscription", DbType="Date NOT NULL")]
+		public System.DateTime dateInscription
+		{
+			get
+			{
+				return this._dateInscription;
+			}
+			set
+			{
+				if ((this._dateInscription != value))
+				{
+					this.OndateInscriptionChanging(value);
+					this.SendPropertyChanging();
+					this._dateInscription = value;
+					this.SendPropertyChanged("dateInscription");
+					this.OndateInscriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idTypeUtilisateur", DbType="Int NOT NULL")]
+		public int idTypeUtilisateur
+		{
+			get
+			{
+				return this._idTypeUtilisateur;
+			}
+			set
+			{
+				if ((this._idTypeUtilisateur != value))
+				{
+					if (this._TypeUtilisateur.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidTypeUtilisateurChanging(value);
+					this.SendPropertyChanging();
+					this._idTypeUtilisateur = value;
+					this.SendPropertyChanged("idTypeUtilisateur");
+					this.OnidTypeUtilisateurChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Commentaire", Storage="_Commentaire", ThisKey="idUtilisateur", OtherKey="idUtilisateur")]
+		public EntitySet<Commentaire> Commentaire
+		{
+			get
+			{
+				return this._Commentaire;
+			}
+			set
+			{
+				this._Commentaire.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Lecon", Storage="_Lecon", ThisKey="idUtilisateur", OtherKey="idUtilisateur")]
+		public EntitySet<Lecon> Lecon
+		{
+			get
+			{
+				return this._Lecon;
+			}
+			set
+			{
+				this._Lecon.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Quiz", Storage="_Quiz", ThisKey="idUtilisateur", OtherKey="idUtilisateur")]
+		public EntitySet<Quiz> Quiz
+		{
+			get
+			{
+				return this._Quiz;
+			}
+			set
+			{
+				this._Quiz.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeUtilisateur_Utilisateur", Storage="_TypeUtilisateur", ThisKey="idTypeUtilisateur", OtherKey="idTypeUtilisateur", IsForeignKey=true)]
+		public TypeUtilisateur TypeUtilisateur
+		{
+			get
+			{
+				return this._TypeUtilisateur.Entity;
+			}
+			set
+			{
+				TypeUtilisateur previousValue = this._TypeUtilisateur.Entity;
+				if (((previousValue != value) 
+							|| (this._TypeUtilisateur.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TypeUtilisateur.Entity = null;
+						previousValue.Utilisateur.Remove(this);
+					}
+					this._TypeUtilisateur.Entity = value;
+					if ((value != null))
+					{
+						value.Utilisateur.Add(this);
+						this._idTypeUtilisateur = value.idTypeUtilisateur;
+					}
+					else
+					{
+						this._idTypeUtilisateur = default(int);
+					}
+					this.SendPropertyChanged("TypeUtilisateur");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Commentaire(Commentaire entity)
+		{
+			this.SendPropertyChanging();
+			entity.Utilisateur = this;
+		}
+		
+		private void detach_Commentaire(Commentaire entity)
+		{
+			this.SendPropertyChanging();
+			entity.Utilisateur = null;
+		}
+		
+		private void attach_Lecon(Lecon entity)
+		{
+			this.SendPropertyChanging();
+			entity.Utilisateur = this;
+		}
+		
+		private void detach_Lecon(Lecon entity)
+		{
+			this.SendPropertyChanging();
+			entity.Utilisateur = null;
+		}
+		
+		private void attach_Quiz(Quiz entity)
+		{
+			this.SendPropertyChanging();
+			entity.Utilisateur = this;
+		}
+		
+		private void detach_Quiz(Quiz entity)
+		{
+			this.SendPropertyChanging();
+			entity.Utilisateur = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Lecon")]
 	public partial class Lecon : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -513,13 +916,13 @@ namespace Zaya
 		
 		private System.DateTime _dateAjoute;
 		
-		private EntitySet<Commentaire> _Commentaires;
+		private EntitySet<Commentaire> _Commentaire;
 		
-		private EntitySet<Question> _Questions;
-		
-		private EntityRef<Matiere> _Matiere;
+		private EntitySet<Question> _Question;
 		
 		private EntityRef<Utilisateur> _Utilisateur;
+		
+		private EntityRef<Matiere> _Matiere;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -541,10 +944,10 @@ namespace Zaya
 		
 		public Lecon()
 		{
-			this._Commentaires = new EntitySet<Commentaire>(new Action<Commentaire>(this.attach_Commentaires), new Action<Commentaire>(this.detach_Commentaires));
-			this._Questions = new EntitySet<Question>(new Action<Question>(this.attach_Questions), new Action<Question>(this.detach_Questions));
-			this._Matiere = default(EntityRef<Matiere>);
+			this._Commentaire = new EntitySet<Commentaire>(new Action<Commentaire>(this.attach_Commentaire), new Action<Commentaire>(this.detach_Commentaire));
+			this._Question = new EntitySet<Question>(new Action<Question>(this.attach_Question), new Action<Question>(this.detach_Question));
 			this._Utilisateur = default(EntityRef<Utilisateur>);
+			this._Matiere = default(EntityRef<Matiere>);
 			OnCreated();
 		}
 		
@@ -676,63 +1079,29 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lecon_Commentaire", Storage="_Commentaires", ThisKey="idLecon", OtherKey="idLecon")]
-		public EntitySet<Commentaire> Commentaires
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lecon_Commentaire", Storage="_Commentaire", ThisKey="idLecon", OtherKey="idLecon")]
+		public EntitySet<Commentaire> Commentaire
 		{
 			get
 			{
-				return this._Commentaires;
+				return this._Commentaire;
 			}
 			set
 			{
-				this._Commentaires.Assign(value);
+				this._Commentaire.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lecon_Question", Storage="_Questions", ThisKey="idLecon", OtherKey="idLecon")]
-		public EntitySet<Question> Questions
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Lecon_Question", Storage="_Question", ThisKey="idLecon", OtherKey="idLecon")]
+		public EntitySet<Question> Question
 		{
 			get
 			{
-				return this._Questions;
+				return this._Question;
 			}
 			set
 			{
-				this._Questions.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Matiere_Lecon", Storage="_Matiere", ThisKey="idMatiere", OtherKey="idMatiere", IsForeignKey=true)]
-		public Matiere Matiere
-		{
-			get
-			{
-				return this._Matiere.Entity;
-			}
-			set
-			{
-				Matiere previousValue = this._Matiere.Entity;
-				if (((previousValue != value) 
-							|| (this._Matiere.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Matiere.Entity = null;
-						previousValue.Lecon.Remove(this);
-					}
-					this._Matiere.Entity = value;
-					if ((value != null))
-					{
-						value.Lecon.Add(this);
-						this._idMatiere = value.idMatiere;
-					}
-					else
-					{
-						this._idMatiere = default(int);
-					}
-					this.SendPropertyChanged("Matiere");
-				}
+				this._Question.Assign(value);
 			}
 		}
 		
@@ -770,6 +1139,40 @@ namespace Zaya
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Matiere_Lecon", Storage="_Matiere", ThisKey="idMatiere", OtherKey="idMatiere", IsForeignKey=true)]
+		public Matiere Matiere
+		{
+			get
+			{
+				return this._Matiere.Entity;
+			}
+			set
+			{
+				Matiere previousValue = this._Matiere.Entity;
+				if (((previousValue != value) 
+							|| (this._Matiere.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Matiere.Entity = null;
+						previousValue.Lecon.Remove(this);
+					}
+					this._Matiere.Entity = value;
+					if ((value != null))
+					{
+						value.Lecon.Add(this);
+						this._idMatiere = value.idMatiere;
+					}
+					else
+					{
+						this._idMatiere = default(int);
+					}
+					this.SendPropertyChanged("Matiere");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -790,25 +1193,25 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_Commentaires(Commentaire entity)
+		private void attach_Commentaire(Commentaire entity)
 		{
 			this.SendPropertyChanging();
 			entity.Lecon = this;
 		}
 		
-		private void detach_Commentaires(Commentaire entity)
+		private void detach_Commentaire(Commentaire entity)
 		{
 			this.SendPropertyChanging();
 			entity.Lecon = null;
 		}
 		
-		private void attach_Questions(Question entity)
+		private void attach_Question(Question entity)
 		{
 			this.SendPropertyChanging();
 			entity.Lecon = this;
 		}
 		
-		private void detach_Questions(Question entity)
+		private void detach_Question(Question entity)
 		{
 			this.SendPropertyChanging();
 			entity.Lecon = null;
@@ -825,9 +1228,9 @@ namespace Zaya
 		
 		private string _libelle;
 		
-		private EntitySet<Lecon> _Lecons;
+		private EntitySet<Lecon> _Lecon;
 		
-		private EntitySet<Quiz> _Quizs;
+		private EntitySet<Quiz> _Quiz;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -841,8 +1244,8 @@ namespace Zaya
 		
 		public Matiere()
 		{
-			this._Lecons = new EntitySet<Lecon>(new Action<Lecon>(this.attach_Lecons), new Action<Lecon>(this.detach_Lecons));
-			this._Quizs = new EntitySet<Quiz>(new Action<Quiz>(this.attach_Quizs), new Action<Quiz>(this.detach_Quizs));
+			this._Lecon = new EntitySet<Lecon>(new Action<Lecon>(this.attach_Lecon), new Action<Lecon>(this.detach_Lecon));
+			this._Quiz = new EntitySet<Quiz>(new Action<Quiz>(this.attach_Quiz), new Action<Quiz>(this.detach_Quiz));
 			OnCreated();
 		}
 		
@@ -886,29 +1289,29 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Matiere_Lecon", Storage="_Lecons", ThisKey="idMatiere", OtherKey="idMatiere")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Matiere_Lecon", Storage="_Lecon", ThisKey="idMatiere", OtherKey="idMatiere")]
 		public EntitySet<Lecon> Lecon
 		{
 			get
 			{
-				return this._Lecons;
+				return this._Lecon;
 			}
 			set
 			{
-				this._Lecons.Assign(value);
+				this._Lecon.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Matiere_Quiz", Storage="_Quizs", ThisKey="idMatiere", OtherKey="idMatiere")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Matiere_Quiz", Storage="_Quiz", ThisKey="idMatiere", OtherKey="idMatiere")]
 		public EntitySet<Quiz> Quiz
 		{
 			get
 			{
-				return this._Quizs;
+				return this._Quiz;
 			}
 			set
 			{
-				this._Quizs.Assign(value);
+				this._Quiz.Assign(value);
 			}
 		}
 		
@@ -932,25 +1335,25 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_Lecons(Lecon entity)
+		private void attach_Lecon(Lecon entity)
 		{
 			this.SendPropertyChanging();
 			entity.Matiere = this;
 		}
 		
-		private void detach_Lecons(Lecon entity)
+		private void detach_Lecon(Lecon entity)
 		{
 			this.SendPropertyChanging();
 			entity.Matiere = null;
 		}
 		
-		private void attach_Quizs(Quiz entity)
+		private void attach_Quiz(Quiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Matiere = this;
 		}
 		
-		private void detach_Quizs(Quiz entity)
+		private void detach_Quiz(Quiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Matiere = null;
@@ -971,9 +1374,9 @@ namespace Zaya
 		
 		private int _idTypeQuestion;
 		
-		private EntitySet<Reponse> _Reponses;
+		private EntitySet<Reponse> _Reponse;
 		
-		private EntitySet<ResultatQuiz> _ResultatQuizs;
+		private EntitySet<ResultatQuiz> _ResultatQuiz;
 		
 		private EntityRef<Lecon> _Lecon;
 		
@@ -995,8 +1398,8 @@ namespace Zaya
 		
 		public Question()
 		{
-			this._Reponses = new EntitySet<Reponse>(new Action<Reponse>(this.attach_Reponses), new Action<Reponse>(this.detach_Reponses));
-			this._ResultatQuizs = new EntitySet<ResultatQuiz>(new Action<ResultatQuiz>(this.attach_ResultatQuizs), new Action<ResultatQuiz>(this.detach_ResultatQuizs));
+			this._Reponse = new EntitySet<Reponse>(new Action<Reponse>(this.attach_Reponse), new Action<Reponse>(this.detach_Reponse));
+			this._ResultatQuiz = new EntitySet<ResultatQuiz>(new Action<ResultatQuiz>(this.attach_ResultatQuiz), new Action<ResultatQuiz>(this.detach_ResultatQuiz));
 			this._Lecon = default(EntityRef<Lecon>);
 			this._TypeQuestion = default(EntityRef<TypeQuestion>);
 			OnCreated();
@@ -1090,29 +1493,29 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_Reponse", Storage="_Reponses", ThisKey="idQuestion", OtherKey="idQuestion")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_Reponse", Storage="_Reponse", ThisKey="idQuestion", OtherKey="idQuestion")]
 		public EntitySet<Reponse> Reponse
 		{
 			get
 			{
-				return this._Reponses;
+				return this._Reponse;
 			}
 			set
 			{
-				this._Reponses.Assign(value);
+				this._Reponse.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_ResultatQuiz", Storage="_ResultatQuizs", ThisKey="idQuestion", OtherKey="idQuestion")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Question_ResultatQuiz", Storage="_ResultatQuiz", ThisKey="idQuestion", OtherKey="idQuestion")]
 		public EntitySet<ResultatQuiz> ResultatQuiz
 		{
 			get
 			{
-				return this._ResultatQuizs;
+				return this._ResultatQuiz;
 			}
 			set
 			{
-				this._ResultatQuizs.Assign(value);
+				this._ResultatQuiz.Assign(value);
 			}
 		}
 		
@@ -1133,12 +1536,12 @@ namespace Zaya
 					if ((previousValue != null))
 					{
 						this._Lecon.Entity = null;
-						previousValue.Questions.Remove(this);
+						previousValue.Question.Remove(this);
 					}
 					this._Lecon.Entity = value;
 					if ((value != null))
 					{
-						value.Questions.Add(this);
+						value.Question.Add(this);
 						this._idLecon = value.idLecon;
 					}
 					else
@@ -1167,12 +1570,12 @@ namespace Zaya
 					if ((previousValue != null))
 					{
 						this._TypeQuestion.Entity = null;
-						previousValue.Questions.Remove(this);
+						previousValue.Question.Remove(this);
 					}
 					this._TypeQuestion.Entity = value;
 					if ((value != null))
 					{
-						value.Questions.Add(this);
+						value.Question.Add(this);
 						this._idTypeQuestion = value.idTypeQuestion;
 					}
 					else
@@ -1204,25 +1607,25 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_Reponses(Reponse entity)
+		private void attach_Reponse(Reponse entity)
 		{
 			this.SendPropertyChanging();
 			entity.Question = this;
 		}
 		
-		private void detach_Reponses(Reponse entity)
+		private void detach_Reponse(Reponse entity)
 		{
 			this.SendPropertyChanging();
 			entity.Question = null;
 		}
 		
-		private void attach_ResultatQuizs(ResultatQuiz entity)
+		private void attach_ResultatQuiz(ResultatQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Question = this;
 		}
 		
-		private void detach_ResultatQuizs(ResultatQuiz entity)
+		private void detach_ResultatQuiz(ResultatQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Question = null;
@@ -1247,9 +1650,11 @@ namespace Zaya
 		
 		private System.DateTime _dateQuiz;
 		
-		private EntitySet<Commentaire> _Commentaires;
+		private double _score;
 		
-		private EntitySet<ResultatQuiz> _ResultatQuizs;
+		private EntitySet<Commentaire> _Commentaire;
+		
+		private EntitySet<ResultatQuiz> _ResultatQuiz;
 		
 		private EntityRef<Matiere> _Matiere;
 		
@@ -1271,12 +1676,14 @@ namespace Zaya
     partial void OnidUtilisateurChanged();
     partial void OndateQuizChanging(System.DateTime value);
     partial void OndateQuizChanged();
+    partial void OnscoreChanging(double value);
+    partial void OnscoreChanged();
     #endregion
 		
 		public Quiz()
 		{
-			this._Commentaires = new EntitySet<Commentaire>(new Action<Commentaire>(this.attach_Commentaires), new Action<Commentaire>(this.detach_Commentaires));
-			this._ResultatQuizs = new EntitySet<ResultatQuiz>(new Action<ResultatQuiz>(this.attach_ResultatQuizs), new Action<ResultatQuiz>(this.detach_ResultatQuizs));
+			this._Commentaire = new EntitySet<Commentaire>(new Action<Commentaire>(this.attach_Commentaire), new Action<Commentaire>(this.detach_Commentaire));
+			this._ResultatQuiz = new EntitySet<ResultatQuiz>(new Action<ResultatQuiz>(this.attach_ResultatQuiz), new Action<ResultatQuiz>(this.detach_ResultatQuiz));
 			this._Matiere = default(EntityRef<Matiere>);
 			this._Utilisateur = default(EntityRef<Utilisateur>);
 			OnCreated();
@@ -1410,29 +1817,49 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Quiz_Commentaire", Storage="_Commentaires", ThisKey="idQuiz", OtherKey="idQuiz")]
-		public EntitySet<Commentaire> Commentaires
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_score", DbType="Float NOT NULL")]
+		public double score
 		{
 			get
 			{
-				return this._Commentaires;
+				return this._score;
 			}
 			set
 			{
-				this._Commentaires.Assign(value);
+				if ((this._score != value))
+				{
+					this.OnscoreChanging(value);
+					this.SendPropertyChanging();
+					this._score = value;
+					this.SendPropertyChanged("score");
+					this.OnscoreChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Quiz_ResultatQuiz", Storage="_ResultatQuizs", ThisKey="idQuiz", OtherKey="idQuiz")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Quiz_Commentaire", Storage="_Commentaire", ThisKey="idQuiz", OtherKey="idQuiz")]
+		public EntitySet<Commentaire> Commentaire
+		{
+			get
+			{
+				return this._Commentaire;
+			}
+			set
+			{
+				this._Commentaire.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Quiz_ResultatQuiz", Storage="_ResultatQuiz", ThisKey="idQuiz", OtherKey="idQuiz")]
 		public EntitySet<ResultatQuiz> ResultatQuiz
 		{
 			get
 			{
-				return this._ResultatQuizs;
+				return this._ResultatQuiz;
 			}
 			set
 			{
-				this._ResultatQuizs.Assign(value);
+				this._ResultatQuiz.Assign(value);
 			}
 		}
 		
@@ -1524,25 +1951,25 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_Commentaires(Commentaire entity)
+		private void attach_Commentaire(Commentaire entity)
 		{
 			this.SendPropertyChanging();
 			entity.Quiz = this;
 		}
 		
-		private void detach_Commentaires(Commentaire entity)
+		private void detach_Commentaire(Commentaire entity)
 		{
 			this.SendPropertyChanging();
 			entity.Quiz = null;
 		}
 		
-		private void attach_ResultatQuizs(ResultatQuiz entity)
+		private void attach_ResultatQuiz(ResultatQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Quiz = this;
 		}
 		
-		private void detach_ResultatQuizs(ResultatQuiz entity)
+		private void detach_ResultatQuiz(ResultatQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Quiz = null;
@@ -1563,7 +1990,7 @@ namespace Zaya
 		
 		private string _txtReponse;
 		
-		private EntitySet<ReponseQuiz> _ReponseQuizs;
+		private EntitySet<ReponseQuiz> _ReponseQuiz;
 		
 		private EntityRef<Question> _Question;
 		
@@ -1583,7 +2010,7 @@ namespace Zaya
 		
 		public Reponse()
 		{
-			this._ReponseQuizs = new EntitySet<ReponseQuiz>(new Action<ReponseQuiz>(this.attach_ReponseQuizs), new Action<ReponseQuiz>(this.detach_ReponseQuizs));
+			this._ReponseQuiz = new EntitySet<ReponseQuiz>(new Action<ReponseQuiz>(this.attach_ReponseQuiz), new Action<ReponseQuiz>(this.detach_ReponseQuiz));
 			this._Question = default(EntityRef<Question>);
 			OnCreated();
 		}
@@ -1672,16 +2099,16 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Reponse_ReponseQuiz", Storage="_ReponseQuizs", ThisKey="idReponse", OtherKey="idReponse")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Reponse_ReponseQuiz", Storage="_ReponseQuiz", ThisKey="idReponse", OtherKey="idReponse")]
 		public EntitySet<ReponseQuiz> ReponseQuiz
 		{
 			get
 			{
-				return this._ReponseQuizs;
+				return this._ReponseQuiz;
 			}
 			set
 			{
-				this._ReponseQuizs.Assign(value);
+				this._ReponseQuiz.Assign(value);
 			}
 		}
 		
@@ -1739,13 +2166,13 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_ReponseQuizs(ReponseQuiz entity)
+		private void attach_ReponseQuiz(ReponseQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Reponse = this;
 		}
 		
-		private void detach_ReponseQuizs(ReponseQuiz entity)
+		private void detach_ReponseQuiz(ReponseQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.Reponse = null;
@@ -1980,7 +2407,7 @@ namespace Zaya
 		
 		private int _idQuestion;
 		
-		private EntitySet<ReponseQuiz> _ReponseQuizs;
+		private EntitySet<ReponseQuiz> _ReponseQuiz;
 		
 		private EntityRef<Question> _Question;
 		
@@ -2000,7 +2427,7 @@ namespace Zaya
 		
 		public ResultatQuiz()
 		{
-			this._ReponseQuizs = new EntitySet<ReponseQuiz>(new Action<ReponseQuiz>(this.attach_ReponseQuizs), new Action<ReponseQuiz>(this.detach_ReponseQuizs));
+			this._ReponseQuiz = new EntitySet<ReponseQuiz>(new Action<ReponseQuiz>(this.attach_ReponseQuiz), new Action<ReponseQuiz>(this.detach_ReponseQuiz));
 			this._Question = default(EntityRef<Question>);
 			this._Quiz = default(EntityRef<Quiz>);
 			OnCreated();
@@ -2074,16 +2501,16 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ResultatQuiz_ReponseQuiz", Storage="_ReponseQuizs", ThisKey="idResultatQuiz", OtherKey="idResultatQuiz")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ResultatQuiz_ReponseQuiz", Storage="_ReponseQuiz", ThisKey="idResultatQuiz", OtherKey="idResultatQuiz")]
 		public EntitySet<ReponseQuiz> ReponseQuiz
 		{
 			get
 			{
-				return this._ReponseQuizs;
+				return this._ReponseQuiz;
 			}
 			set
 			{
-				this._ReponseQuizs.Assign(value);
+				this._ReponseQuiz.Assign(value);
 			}
 		}
 		
@@ -2175,13 +2602,13 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_ReponseQuizs(ReponseQuiz entity)
+		private void attach_ReponseQuiz(ReponseQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.ResultatQuiz = this;
 		}
 		
-		private void detach_ReponseQuizs(ReponseQuiz entity)
+		private void detach_ReponseQuiz(ReponseQuiz entity)
 		{
 			this.SendPropertyChanging();
 			entity.ResultatQuiz = null;
@@ -2198,7 +2625,7 @@ namespace Zaya
 		
 		private string _libelle;
 		
-		private EntitySet<Question> _Questions;
+		private EntitySet<Question> _Question;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2212,7 +2639,7 @@ namespace Zaya
 		
 		public TypeQuestion()
 		{
-			this._Questions = new EntitySet<Question>(new Action<Question>(this.attach_Questions), new Action<Question>(this.detach_Questions));
+			this._Question = new EntitySet<Question>(new Action<Question>(this.attach_Question), new Action<Question>(this.detach_Question));
 			OnCreated();
 		}
 		
@@ -2256,16 +2683,16 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeQuestion_Question", Storage="_Questions", ThisKey="idTypeQuestion", OtherKey="idTypeQuestion")]
-		public EntitySet<Question> Questions
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeQuestion_Question", Storage="_Question", ThisKey="idTypeQuestion", OtherKey="idTypeQuestion")]
+		public EntitySet<Question> Question
 		{
 			get
 			{
-				return this._Questions;
+				return this._Question;
 			}
 			set
 			{
-				this._Questions.Assign(value);
+				this._Question.Assign(value);
 			}
 		}
 		
@@ -2289,13 +2716,13 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_Questions(Question entity)
+		private void attach_Question(Question entity)
 		{
 			this.SendPropertyChanging();
 			entity.TypeQuestion = this;
 		}
 		
-		private void detach_Questions(Question entity)
+		private void detach_Question(Question entity)
 		{
 			this.SendPropertyChanging();
 			entity.TypeQuestion = null;
@@ -2312,7 +2739,7 @@ namespace Zaya
 		
 		private string _libelle;
 		
-		private EntitySet<Utilisateur> _Utilisateurs;
+		private EntitySet<Utilisateur> _Utilisateur;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2326,7 +2753,7 @@ namespace Zaya
 		
 		public TypeUtilisateur()
 		{
-			this._Utilisateurs = new EntitySet<Utilisateur>(new Action<Utilisateur>(this.attach_Utilisateurs), new Action<Utilisateur>(this.detach_Utilisateurs));
+			this._Utilisateur = new EntitySet<Utilisateur>(new Action<Utilisateur>(this.attach_Utilisateur), new Action<Utilisateur>(this.detach_Utilisateur));
 			OnCreated();
 		}
 		
@@ -2370,16 +2797,16 @@ namespace Zaya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeUtilisateur_Utilisateur", Storage="_Utilisateurs", ThisKey="idTypeUtilisateur", OtherKey="idTypeUtilisateur")]
-		public EntitySet<Utilisateur> Utilisateurs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeUtilisateur_Utilisateur", Storage="_Utilisateur", ThisKey="idTypeUtilisateur", OtherKey="idTypeUtilisateur")]
+		public EntitySet<Utilisateur> Utilisateur
 		{
 			get
 			{
-				return this._Utilisateurs;
+				return this._Utilisateur;
 			}
 			set
 			{
-				this._Utilisateurs.Assign(value);
+				this._Utilisateur.Assign(value);
 			}
 		}
 		
@@ -2403,419 +2830,16 @@ namespace Zaya
 			}
 		}
 		
-		private void attach_Utilisateurs(Utilisateur entity)
+		private void attach_Utilisateur(Utilisateur entity)
 		{
 			this.SendPropertyChanging();
 			entity.TypeUtilisateur = this;
 		}
 		
-		private void detach_Utilisateurs(Utilisateur entity)
+		private void detach_Utilisateur(Utilisateur entity)
 		{
 			this.SendPropertyChanging();
 			entity.TypeUtilisateur = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Utilisateur")]
-	public partial class Utilisateur : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idUtilisateur;
-		
-		private string _nom;
-		
-		private string _prenom;
-		
-		private string _telephone;
-		
-		private System.Nullable<char> _sexe;
-		
-		private string _email;
-		
-		private string _username;
-		
-		private System.Data.Linq.Binary _pwd;
-		
-		private System.DateTime _dateInscription;
-		
-		private int _idTypeUtilisateur;
-		
-		private EntitySet<Commentaire> _Commentaires;
-		
-		private EntitySet<Lecon> _Lecons;
-		
-		private EntitySet<Quiz> _Quizs;
-		
-		private EntityRef<TypeUtilisateur> _TypeUtilisateur;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidUtilisateurChanging(int value);
-    partial void OnidUtilisateurChanged();
-    partial void OnnomChanging(string value);
-    partial void OnnomChanged();
-    partial void OnprenomChanging(string value);
-    partial void OnprenomChanged();
-    partial void OntelephoneChanging(string value);
-    partial void OntelephoneChanged();
-    partial void OnsexeChanging(System.Nullable<char> value);
-    partial void OnsexeChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
-    partial void OnpwdChanging(System.Data.Linq.Binary value);
-    partial void OnpwdChanged();
-    partial void OndateInscriptionChanging(System.DateTime value);
-    partial void OndateInscriptionChanged();
-    partial void OnidTypeUtilisateurChanging(int value);
-    partial void OnidTypeUtilisateurChanged();
-    #endregion
-		
-		public Utilisateur()
-		{
-			this._Commentaires = new EntitySet<Commentaire>(new Action<Commentaire>(this.attach_Commentaires), new Action<Commentaire>(this.detach_Commentaires));
-			this._Lecons = new EntitySet<Lecon>(new Action<Lecon>(this.attach_Lecons), new Action<Lecon>(this.detach_Lecons));
-			this._Quizs = new EntitySet<Quiz>(new Action<Quiz>(this.attach_Quizs), new Action<Quiz>(this.detach_Quizs));
-			this._TypeUtilisateur = default(EntityRef<TypeUtilisateur>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUtilisateur", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int idUtilisateur
-		{
-			get
-			{
-				return this._idUtilisateur;
-			}
-			set
-			{
-				if ((this._idUtilisateur != value))
-				{
-					this.OnidUtilisateurChanging(value);
-					this.SendPropertyChanging();
-					this._idUtilisateur = value;
-					this.SendPropertyChanged("idUtilisateur");
-					this.OnidUtilisateurChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nom", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string nom
-		{
-			get
-			{
-				return this._nom;
-			}
-			set
-			{
-				if ((this._nom != value))
-				{
-					this.OnnomChanging(value);
-					this.SendPropertyChanging();
-					this._nom = value;
-					this.SendPropertyChanged("nom");
-					this.OnnomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenom", DbType="VarChar(100)")]
-		public string prenom
-		{
-			get
-			{
-				return this._prenom;
-			}
-			set
-			{
-				if ((this._prenom != value))
-				{
-					this.OnprenomChanging(value);
-					this.SendPropertyChanging();
-					this._prenom = value;
-					this.SendPropertyChanged("prenom");
-					this.OnprenomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telephone", DbType="VarChar(20)")]
-		public string telephone
-		{
-			get
-			{
-				return this._telephone;
-			}
-			set
-			{
-				if ((this._telephone != value))
-				{
-					this.OntelephoneChanging(value);
-					this.SendPropertyChanging();
-					this._telephone = value;
-					this.SendPropertyChanged("telephone");
-					this.OntelephoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexe", DbType="Char(1)")]
-		public System.Nullable<char> sexe
-		{
-			get
-			{
-				return this._sexe;
-			}
-			set
-			{
-				if ((this._sexe != value))
-				{
-					this.OnsexeChanging(value);
-					this.SendPropertyChanging();
-					this._sexe = value;
-					this.SendPropertyChanged("sexe");
-					this.OnsexeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this.OnusernameChanging(value);
-					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pwd", DbType="VarBinary(MAX) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary pwd
-		{
-			get
-			{
-				return this._pwd;
-			}
-			set
-			{
-				if ((this._pwd != value))
-				{
-					this.OnpwdChanging(value);
-					this.SendPropertyChanging();
-					this._pwd = value;
-					this.SendPropertyChanged("pwd");
-					this.OnpwdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateInscription", DbType="Date NOT NULL")]
-		public System.DateTime dateInscription
-		{
-			get
-			{
-				return this._dateInscription;
-			}
-			set
-			{
-				if ((this._dateInscription != value))
-				{
-					this.OndateInscriptionChanging(value);
-					this.SendPropertyChanging();
-					this._dateInscription = value;
-					this.SendPropertyChanged("dateInscription");
-					this.OndateInscriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idTypeUtilisateur", DbType="Int NOT NULL")]
-		public int idTypeUtilisateur
-		{
-			get
-			{
-				return this._idTypeUtilisateur;
-			}
-			set
-			{
-				if ((this._idTypeUtilisateur != value))
-				{
-					if (this._TypeUtilisateur.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidTypeUtilisateurChanging(value);
-					this.SendPropertyChanging();
-					this._idTypeUtilisateur = value;
-					this.SendPropertyChanged("idTypeUtilisateur");
-					this.OnidTypeUtilisateurChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Commentaire", Storage="_Commentaires", ThisKey="idUtilisateur", OtherKey="idUtilisateur")]
-		public EntitySet<Commentaire> Commentaires
-		{
-			get
-			{
-				return this._Commentaires;
-			}
-			set
-			{
-				this._Commentaires.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Lecon", Storage="_Lecons", ThisKey="idUtilisateur", OtherKey="idUtilisateur")]
-		public EntitySet<Lecon> Lecon
-		{
-			get
-			{
-				return this._Lecons;
-			}
-			set
-			{
-				this._Lecons.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Utilisateur_Quiz", Storage="_Quizs", ThisKey="idUtilisateur", OtherKey="idUtilisateur")]
-		public EntitySet<Quiz> Quiz
-		{
-			get
-			{
-				return this._Quizs;
-			}
-			set
-			{
-				this._Quizs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeUtilisateur_Utilisateur", Storage="_TypeUtilisateur", ThisKey="idTypeUtilisateur", OtherKey="idTypeUtilisateur", IsForeignKey=true)]
-		public TypeUtilisateur TypeUtilisateur
-		{
-			get
-			{
-				return this._TypeUtilisateur.Entity;
-			}
-			set
-			{
-				TypeUtilisateur previousValue = this._TypeUtilisateur.Entity;
-				if (((previousValue != value) 
-							|| (this._TypeUtilisateur.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TypeUtilisateur.Entity = null;
-						previousValue.Utilisateurs.Remove(this);
-					}
-					this._TypeUtilisateur.Entity = value;
-					if ((value != null))
-					{
-						value.Utilisateurs.Add(this);
-						this._idTypeUtilisateur = value.idTypeUtilisateur;
-					}
-					else
-					{
-						this._idTypeUtilisateur = default(int);
-					}
-					this.SendPropertyChanged("TypeUtilisateur");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Commentaires(Commentaire entity)
-		{
-			this.SendPropertyChanging();
-			entity.Utilisateur = this;
-		}
-		
-		private void detach_Commentaires(Commentaire entity)
-		{
-			this.SendPropertyChanging();
-			entity.Utilisateur = null;
-		}
-		
-		private void attach_Lecons(Lecon entity)
-		{
-			this.SendPropertyChanging();
-			entity.Utilisateur = this;
-		}
-		
-		private void detach_Lecons(Lecon entity)
-		{
-			this.SendPropertyChanging();
-			entity.Utilisateur = null;
-		}
-		
-		private void attach_Quizs(Quiz entity)
-		{
-			this.SendPropertyChanging();
-			entity.Utilisateur = this;
-		}
-		
-		private void detach_Quizs(Quiz entity)
-		{
-			this.SendPropertyChanging();
-			entity.Utilisateur = null;
 		}
 	}
 }

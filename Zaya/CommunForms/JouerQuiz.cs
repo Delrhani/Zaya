@@ -14,14 +14,17 @@ namespace Zaya.CommunForms
 {
     public partial class JouerQuiz : Form
     {
-        private Utilisateur utilisateur;
+
         private Matiere matiere;
         private List<Question> questions;
         private int currentQuestion;
         private Quiz quiz;
-        private int NBR_QUESTION = 1;
+        private int NBR_QUESTION = 2;
         private int nbrWrongQuestion = 0;
         private int nbrTrueQuestion = 0;
+        private bool isEnought = true;
+        
+        // Enumeration to know the difficulty choosed by the user
         public enum Difficulte
         {
             Facile,
@@ -29,14 +32,15 @@ namespace Zaya.CommunForms
             Difficile
         }
 
+        // Initialize components
         public JouerQuiz(Utilisateur utilisateur, Matiere matiere, Difficulte difficulte)
         {
             InitializeComponent();
-            this.utilisateur = utilisateur;
             this.matiere = matiere;
-            currentQuestion = 0;
+            currentQuestion = -1;
             questions = new List<Question>();
             quiz = new Quiz();
+            quiz.score = 0;
             quiz.Utilisateur = utilisateur;
             quiz.Matiere = matiere;
             quiz.dateQuiz = DateTime.Now;
@@ -51,40 +55,120 @@ namespace Zaya.CommunForms
             }
             txtTrueQuestion.Text = "Passé " + (nbrWrongQuestion + nbrTrueQuestion) + " / " + NBR_QUESTION;
             txtWrongQuestion.Text = "Incorrect " + nbrWrongQuestion + " / " + NBR_QUESTION;
+            this.Activate();
+            StartGame();
         }
 
-        private void JouerQuiz_Load(object sender, EventArgs e)
+        // Method to start the quiz
+        private void StartGame()
+        {
+            LoadQuestions();
+            if(!isEnought)
+            {
+                this.Close();
+            }
+            timer.Start();
+            NextQuestion();
+        }
+
+        // Method to move to next question
+        private void NextQuestion()
+        {
+            currentQuestion++;
+            if (currentQuestion < questions.Count)
+            {
+                Question question = questions[currentQuestion];
+                txtQuestion.Text = question.textQuestion;
+                switch (question.TypeQuestion.libelle)
+                {
+                    case "text":
+                        panelReponse.Controls.Clear();
+                        TextBox t = new TextBox();
+                        t.Name = "reponse";
+                        panelReponse.Controls.Add(t);
+                        break;
+                    case "multiple":
+                        panelReponse.Controls.Clear();
+                        CheckedListBox listReponseMultiple = new CheckedListBox();
+
+                        foreach (Reponse r in question.Reponse)
+                        {
+                            listReponseMultiple.Items.Add(r.txtReponse, false);
+                        }
+                        listReponseMultiple.Dock = DockStyle.Fill;
+                        listReponseMultiple.Name = "reponse";
+                        panelReponse.Controls.Add(listReponseMultiple);
+                        break;
+                    case "single":
+                        panelReponse.Controls.Clear();
+                        List<RadioButton> listReponseSingle = new List<RadioButton>();
+                        int y = 0;
+
+                        foreach (Reponse r in question.Reponse)
+                        {
+                            RadioButton rd = new RadioButton();
+                            rd.Location = new Point(rd.Location.X, y);
+                            rd.Width = 400;
+                            y += 20;
+                            rd.Text = r.txtReponse;
+                            rd.Name = r.idReponse.ToString();
+                            listReponseSingle.Add(rd);
+                        }
+                        panelReponse.Controls.AddRange(listReponseSingle.ToArray());
+                        break;
+                }
+                ShowResult();
+            }
+            else
+            {
+                timer.Stop();
+                quiz.tempsEstime = TimeSpan.FromMilliseconds((timer.Interval / 10 * (1 - tempEstime.Value / 100.0)) * 1000);
+                quiz.score = Math.Floor(quiz.score);
+                SaveQuiz();
+                Close();
+            }
+        }
+
+        // Load NBR_QUESTION of questions from database random
+        private void LoadQuestions()
         {
             var v = from q in DataBaseConfiguration.Context.Question
                     where q.Lecon.idMatiere == matiere.idMatiere
                     select q;
             List<Question> temp = v.ToList();
-            if(NBR_QUESTION > temp.Count)
+            if (NBR_QUESTION > temp.Count)
             {
                 MessageBox.Show("Le nombre de question est insuffisant pour ce quiz", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnFermer.PerformClick();
+                isEnought = false;
+                return;
             }
-            for (int i = 0; i < NBR_QUESTION && i < temp.Count; i++)
+            for (int i = 0; i < NBR_QUESTION; i++)
             {
                 Random rndGen = new Random();
                 int random = rndGen.Next(0, temp.Count);
                 questions.Add(temp.ElementAt(random));
                 temp.RemoveAt(random);
             }
-            timer.Start();
         }
 
+        // Timer tick listener
         private void timer_Tick(object sender, EventArgs e)
         {
             tempEstime.Value -= 1;
+            if (tempEstime.Value == 0)
+            {
+                MessageBox.Show("You lose in this quiz", "Lose Quiz", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                timer.Stop();
+            }
         }
 
-        private void btnSuivant_Click(object sender, EventArgs e)
+        // Method to move to the next question
+        private void btnQuestionSuivant_Click(object sender, EventArgs e)
         {
             Question question = null;
-            if (currentQuestion > 0)
+            if (currentQuestion >= 0)
             {
-                question = questions[currentQuestion - 1];
+                question = questions[currentQuestion];
                 ResultatQuiz resultat = new ResultatQuiz();
                 resultat.Question = question;
                 switch (question.TypeQuestion.libelle)
@@ -94,6 +178,7 @@ namespace Zaya.CommunForms
                         if (question.Reponse[0].txtReponse.Equals(textBox.Text.Trim()))
                         {
                             nbrTrueQuestion++;
+                            quiz.score += 1.0 / NBR_QUESTION * 100;
                             AlertQuestion(AnswerLevel.ALL);
                         } 
                         else
@@ -119,6 +204,7 @@ namespace Zaya.CommunForms
                                 if(reponse.valider)
                                 {
                                     hasValidAnswers = true;
+                                    quiz.score += (1.0 / (NBR_QUESTION * lsReponse.Items.Count)) * 100;
                                 }
                                 else
                                 {
@@ -157,6 +243,7 @@ namespace Zaya.CommunForms
                                 if(int.Parse(rd.Name) == question.Reponse.Where(temp => temp.valider).First().idReponse)
                                 {
                                     nbrTrueQuestion++;
+                                    quiz.score += 1.0 / NBR_QUESTION * 100;
                                     AlertQuestion(AnswerLevel.ALL);
                                 }
                                 else
@@ -176,75 +263,32 @@ namespace Zaya.CommunForms
                         break;
                 }
                 quiz.ResultatQuiz.Add(resultat);
-
-            }
-
-            if (currentQuestion != questions.Count)
-            {
-                question = questions[currentQuestion++];
-                txtQuestion.Text = question.textQuestion;
-                switch (question.TypeQuestion.libelle)
+                ShowResult();
+                if(currentQuestion + 1 == NBR_QUESTION)
                 {
-                    case "text":
-                        panelReponse.Controls.Clear();
-                        TextBox t = new TextBox();
-                        t.Name = "reponse";
-                        panelReponse.Controls.Add(t);
-                        break;
-                    case "multiple":
-                        panelReponse.Controls.Clear();
-                        CheckedListBox listReponseMultiple = new CheckedListBox();
-
-                        foreach (Reponse r in question.Reponse)
-                        {
-                            listReponseMultiple.Items.Add(r.txtReponse, false);
-                        }
-                        listReponseMultiple.Dock = DockStyle.Fill;
-                        listReponseMultiple.Name = "reponse";
-                        panelReponse.Controls.Add(listReponseMultiple);
-                        break;
-                    case "single":
-                        panelReponse.Controls.Clear();
-                        List<RadioButton> listReponseSingle = new List<RadioButton>();
-                        int y = 0;
-
-                        foreach (Reponse r in question.Reponse)
-                        {
-                            RadioButton rd = new RadioButton();
-                            rd.Location = new Point(rd.Location.X, y);
-                            rd.Width = 400;
-                            y += 20;
-                            rd.Text = r.txtReponse;
-                            rd.Name = r.idReponse.ToString();
-                            listReponseSingle.Add(rd);
-                        }
-                        panelReponse.Controls.AddRange(listReponseSingle.ToArray());
-
-                        break;
+                    MessageBox.Show("Game Ended");
                 }
+                NextQuestion();
             }
-            else
-            {
-                timer.Stop();
-                MessageBox.Show("Opla");
-                quiz.tempsEstime = TimeSpan.FromMilliseconds((timer.Interval / 10 * (1 - tempEstime.Value / 100.0))*1000);
-                MessageBox.Show(quiz.tempsEstime.TotalSeconds.ToString());
-                DataBaseConfiguration.Context.Quiz.InsertOnSubmit(quiz);
-                DataBaseConfiguration.Context.SubmitChanges();
-            }
-            txtTrueQuestion.Text = "Passé " + (nbrWrongQuestion + nbrTrueQuestion) + " / " + NBR_QUESTION;
-            txtWrongQuestion.Text = "Incorrect " + nbrWrongQuestion + " / " + NBR_QUESTION;
+
         }
 
-        private void tempEstime_progressChanged(object sender, EventArgs e)
+        // Show the result in the interface
+        private void ShowResult()
         {
-            if (tempEstime.Value == 0)
-            {
-                MessageBox.Show("You lose in this quiz", "Lose Quiz", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                timer.Stop();
-            }
+            txtTrueQuestion.Text = "Passé " + (nbrWrongQuestion + nbrTrueQuestion) + " / " + questions.Count;
+            txtWrongQuestion.Text = "Incorrect " + nbrWrongQuestion + " / " + questions.Count;
         }
 
+        // Method to save a new record of the quiz
+        private void SaveQuiz()
+        {
+            DataBaseConfiguration.Context.Quiz.InsertOnSubmit(quiz);
+            DataBaseConfiguration.Context.SubmitChanges();
+            this.Close();
+        }
+
+        // Enumeration to know the answer level if the high or medium or low
         private enum AnswerLevel
         {
             ALL,
@@ -252,6 +296,7 @@ namespace Zaya.CommunForms
             MEDIUM
         }
 
+        // Method to show an alert after the answering to a question
         private void AlertQuestion(AnswerLevel level)
         {
             Form_Alert alert = new Form_Alert();
@@ -271,9 +316,15 @@ namespace Zaya.CommunForms
             alert.ShowAlert(message, type);
         }
 
+        // Button close application
         private void btnFermer_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void JouerQuiz_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

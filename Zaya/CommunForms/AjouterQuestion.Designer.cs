@@ -229,6 +229,7 @@
             this.cmbLecon.Name = "cmbLecon";
             this.cmbLecon.Size = new System.Drawing.Size(195, 29);
             this.cmbLecon.TabIndex = 20;
+            this.cmbLecon.SelectedIndexChanged += new System.EventHandler(this.cmbLecon_SelectedIndexChanged);
             // 
             // label5
             // 

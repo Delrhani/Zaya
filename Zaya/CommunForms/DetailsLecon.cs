@@ -55,5 +55,14 @@ namespace Zaya.CommunForms
             new AjouterQuestion(lecon).ShowDialog();
         }
 
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

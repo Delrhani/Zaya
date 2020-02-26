@@ -106,6 +106,7 @@ namespace Zaya.CommunForms
         private void cmbMatiere_SelectedIndexChanged(object sender, EventArgs e)
         {
             var resultat = from l in DataBaseConfiguration.Context.Lecon
+                           where l.idMatiere == (int) cmbMatiere.SelectedValue
                            select new { l.libelle, l.idLecon };
             cmbLecon.DisplayMember = "libelle";
             cmbLecon.ValueMember = "idLecon";
@@ -120,6 +121,11 @@ namespace Zaya.CommunForms
         private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbLecon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

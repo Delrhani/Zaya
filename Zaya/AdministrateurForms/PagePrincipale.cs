@@ -23,6 +23,7 @@ namespace Zaya.AdministrateurForms
             InitializeComponent();
             this.utilisateur = utilisateur;
             frm = new LoginForm();
+            btnLesson_Click(null, null);
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -47,12 +48,11 @@ namespace Zaya.AdministrateurForms
         {
             panelLeft.Height = btnQuiz.Height;
             panelLeft.Top = btnQuiz.Top;
-            txtNavigation.Text = "Quiz";
+            txtNavigation.Text = "Quizes";
+
             panelContenu.Controls.Clear();
-            Button btnJouerQuiz = new Button();
-            btnJouerQuiz.Text = "+";
-            btnJouerQuiz.Click += JouezQuizClick;
-            panelContenu.Controls.Add(btnJouerQuiz);
+            panelContenu.Controls.Add(new QuizesModel(utilisateur));
+
         }
 
         private void JouezQuizClick(object sender, EventArgs e)

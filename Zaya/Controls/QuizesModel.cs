@@ -22,11 +22,12 @@ namespace Zaya.Controls
         private void LeconsModel_Load(object sender, EventArgs e)
         {
             int y = 0;
-            var v = from u in DataBaseConfiguration.Context.Utilisateur
+            var v = from u in DataBaseConfiguration.Context.Quiz
+                    where u.Utilisateur == utilisateur
                     select u;
-            foreach (Utilisateur u in v)
+            foreach (Quiz u in v)
             {
-                UtilisateurModel utilisateurModel = new UtilisateurModel(u);
+                QuizModel utilisateurModel = new QuizModel(u);
                 Point p = utilisateurModel.Location;
                 p.Y = y;
                 y += utilisateurModel.Height + 5;
@@ -42,7 +43,7 @@ namespace Zaya.Controls
 
         private void btnJouer_Click(object sender, EventArgs e)
         {
-            new CommunForms.MenuQuiz(utilisateur);
+            new CommunForms.MenuQuiz(utilisateur).ShowDialog();
         }
     }
 }
