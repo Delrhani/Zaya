@@ -291,7 +291,6 @@
             this.btnLesson.Name = "btnLesson";
             this.btnLesson.Size = new System.Drawing.Size(237, 56);
             this.btnLesson.TabIndex = 24;
-            this.btnLesson.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLesson_Paint);
             this.btnLesson.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnLesson_Click);
             this.btnLesson.MouseLeave += new System.EventHandler(this.btnLesson_MouseLeave);
             this.btnLesson.MouseHover += new System.EventHandler(this.btnLesson_MouseHover);
@@ -321,7 +320,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Leçons";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnLesson_Click);
             this.label1.MouseLeave += new System.EventHandler(this.btnLesson_MouseLeave);
             this.label1.MouseHover += new System.EventHandler(this.btnLesson_MouseHover);

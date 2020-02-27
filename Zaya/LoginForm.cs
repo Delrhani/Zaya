@@ -10,17 +10,19 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-
+using Zaya.Properties;
 
 namespace Zaya
 {
     public partial class LoginForm : Form
     {
-        private Thread thread;
         private Form frm;
+        private bool isVisible = false;
         public LoginForm()
         {
             InitializeComponent();
+            txtLogin.Hint = "Login";
+            txtPassword.Hint = "Mot de passe";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace Zaya
                     break;
             }
             this.Close();
-            thread = new Thread(PagePricipale);
+            Thread thread = new Thread(PagePricipale);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
         }
@@ -86,9 +88,19 @@ namespace Zaya
             int nHeightEllipse // height of ellipse
         );
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void passwordStatut_Click(object sender, EventArgs e)
         {
-
+            isVisible = !isVisible;
+            if (isVisible)
+            {
+                passwordStatut.Image = Resources.hidePassword;
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordStatut.Image = Resources.showPassword;
+                txtPassword.PasswordChar = '•';
+            }
         }
     }
 }

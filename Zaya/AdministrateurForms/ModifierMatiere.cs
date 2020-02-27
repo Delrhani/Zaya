@@ -50,5 +50,12 @@ namespace Zaya.AdministrateurForms
             this.Close();
         }
 
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Voulez-vous vraiment annuler les modifications ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                this.Close();
+            }
+        }
     }
 }

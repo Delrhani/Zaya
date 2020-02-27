@@ -187,7 +187,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(453, 0);
+            this.metroButton1.Location = new System.Drawing.Point(451, 0);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
             this.metroButton1.TabIndex = 17;

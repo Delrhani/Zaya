@@ -47,7 +47,7 @@
             this.txtWrongQuestion = new System.Windows.Forms.Label();
             this.txtTrueQuestion = new System.Windows.Forms.Label();
             this.tempEstime = new Zaya.Controls.ProgressBarEx();
-            this.btnFermer = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panelQuestion.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -209,15 +209,15 @@
             this.tempEstime.TabIndex = 2;
             this.tempEstime.Value = 100;
             // 
-            // btnFermer
+            // metroButton1
             // 
-            this.btnFermer.Location = new System.Drawing.Point(789, 0);
-            this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
-            this.btnFermer.Name = "btnFermer";
-            this.btnFermer.Size = new System.Drawing.Size(39, 36);
-            this.btnFermer.TabIndex = 7;
-            this.btnFermer.Text = "X";
-            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
+            this.metroButton1.Location = new System.Drawing.Point(796, 0);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(32, 28);
+            this.metroButton1.TabIndex = 12;
+            this.metroButton1.Text = "X";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // JouerQuiz
             // 
@@ -225,12 +225,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(828, 502);
-            this.Controls.Add(this.btnFermer);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "JouerQuiz";
-            this.Text = "JouerQuiz";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quiz";
             this.Load += new System.EventHandler(this.JouerQuiz_Load);
             this.panelQuestion.ResumeLayout(false);
             this.panelQuestion.PerformLayout();
@@ -261,8 +262,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
-        private MetroFramework.Controls.MetroButton btnFermer;
         private System.Windows.Forms.Label txtTrueQuestion;
         private System.Windows.Forms.Label txtWrongQuestion;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

@@ -40,7 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnFermer = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,14 +175,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // metroButton1
+            // btnFermer
             // 
-            this.metroButton1.Location = new System.Drawing.Point(464, 0);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(32, 28);
-            this.metroButton1.TabIndex = 11;
-            this.metroButton1.Text = "X";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnFermer.Location = new System.Drawing.Point(464, 0);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(32, 28);
+            this.btnFermer.TabIndex = 11;
+            this.btnFermer.Text = "X";
+            this.btnFermer.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // AjouterMatiere
             // 
@@ -191,7 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 243);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.btnAnnuler);
@@ -201,6 +201,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "AjouterMatiere";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter matiére";
             this.Load += new System.EventHandler(this.AjouterMatiere_Load);
             this.panel1.ResumeLayout(false);
@@ -224,6 +225,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnFermer;
     }
 }

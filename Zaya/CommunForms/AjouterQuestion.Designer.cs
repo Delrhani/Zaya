@@ -51,7 +51,7 @@
             this.btnValider = new Zaya.CommunForms.Button_WOC();
             this.btnAjouter = new Zaya.CommunForms.Button_WOC();
             this.valide = new MaterialSkin.Controls.MaterialCheckBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnFermer = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -301,21 +301,21 @@
             this.valide.Text = "Valide";
             this.valide.UseVisualStyleBackColor = true;
             // 
-            // metroButton1
+            // btnFermer
             // 
-            this.metroButton1.Location = new System.Drawing.Point(463, -1);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(32, 28);
-            this.metroButton1.TabIndex = 25;
-            this.metroButton1.Text = "X";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnFermer.Location = new System.Drawing.Point(462, 0);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(32, 28);
+            this.btnFermer.TabIndex = 25;
+            this.btnFermer.Text = "X";
+            this.btnFermer.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // AjouterQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 522);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.valide);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.btnValider);
@@ -333,7 +333,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AjouterQuestion";
-            this.Text = "AjouterQuestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ajouter un question";
             this.Load += new System.EventHandler(this.AjouterQuestion_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -370,6 +371,6 @@
         private Zaya.CommunForms.Button_WOC btnValider;
         private Zaya.CommunForms.Button_WOC btnAjouter;
         private MaterialSkin.Controls.MaterialCheckBox valide;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnFermer;
     }
 }

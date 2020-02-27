@@ -42,8 +42,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbMatiere = new MetroFramework.Controls.MetroComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnFermer = new MetroFramework.Controls.MetroButton();
             this.btnValider = new Zaya.CommunForms.Button_WOC();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -177,6 +177,16 @@
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
+            // btnFermer
+            // 
+            this.btnFermer.Location = new System.Drawing.Point(457, 0);
+            this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(32, 28);
+            this.btnFermer.TabIndex = 16;
+            this.btnFermer.Text = "X";
+            this.btnFermer.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // btnValider
             // 
             this.btnValider.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
@@ -196,21 +206,12 @@
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(458, -1);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(32, 28);
-            this.metroButton1.TabIndex = 16;
-            this.metroButton1.Text = "X";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
             // AjouterLecon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 417);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.cmbMatiere);
@@ -222,6 +223,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AjouterLecon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AjouterLecon";
             this.Load += new System.EventHandler(this.AjouterLecon_Load);
             this.panel4.ResumeLayout(false);
@@ -249,6 +251,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnFermer;
     }
 }
