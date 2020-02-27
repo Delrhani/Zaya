@@ -34,7 +34,7 @@
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSignUp = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -47,6 +47,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.passwordStatut = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -54,6 +55,7 @@
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).BeginInit();
             this.SuspendLayout();
             // 
             // txtLogin
@@ -130,19 +132,19 @@
             this.materialLabel1.TabIndex = 6;
             this.materialLabel1.Text = "you don\'t have an account ?";
             // 
-            // label3
+            // lblSignUp
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(432, 270);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "SignUp";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblSignUp.AutoSize = true;
+            this.lblSignUp.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSignUp.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignUp.ForeColor = System.Drawing.Color.Gray;
+            this.lblSignUp.Location = new System.Drawing.Point(432, 270);
+            this.lblSignUp.Name = "lblSignUp";
+            this.lblSignUp.Size = new System.Drawing.Size(57, 17);
+            this.lblSignUp.TabIndex = 5;
+            this.lblSignUp.Text = "SignUp";
+            this.lblSignUp.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel1
             // 
@@ -156,7 +158,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(172, 310);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel8
             // 
@@ -250,14 +251,27 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // passwordStatut
+            // 
+            this.passwordStatut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.passwordStatut.Image = global::Zaya.Properties.Resources.showPassword;
+            this.passwordStatut.Location = new System.Drawing.Point(443, 128);
+            this.passwordStatut.Name = "passwordStatut";
+            this.passwordStatut.Size = new System.Drawing.Size(29, 23);
+            this.passwordStatut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.passwordStatut.TabIndex = 33;
+            this.passwordStatut.TabStop = false;
+            this.passwordStatut.Click += new System.EventHandler(this.passwordStatut_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(580, 310);
+            this.Controls.Add(this.passwordStatut);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.materialRaisedButton2);
@@ -268,7 +282,7 @@
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -277,6 +291,7 @@
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +304,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSignUp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
@@ -302,5 +317,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.PictureBox passwordStatut;
     }
 }

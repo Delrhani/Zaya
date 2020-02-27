@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zaya.Properties;
 
-namespace Zaya.AdministrateurForms
+namespace Zaya.Controls
 {
-    public partial class ConsulterUtilisateur : Form
+    public partial class ModifierProfil : UserControl
     {
         private Utilisateur utilisateur;
         private bool isVisible = false;
-        public ConsulterUtilisateur(Utilisateur utilisateur)
+        public ModifierProfil(Utilisateur utilisateur)
         {
             InitializeComponent();
             this.utilisateur = utilisateur;
@@ -30,7 +30,6 @@ namespace Zaya.AdministrateurForms
                 utilisateur.nom = this.txt_nom.Text;
                 utilisateur.telephone = this.txt_phone.Text;
                 utilisateur.username = this.txt_username.Text;
-                utilisateur.idTypeUtilisateur = (int)cmbTypeUtilisateur.SelectedValue;
                 if (utilisateur.sexe == 'F')
                 {
                     utilisateur.sexe = 'M';
@@ -41,11 +40,6 @@ namespace Zaya.AdministrateurForms
 
         private void ConsulterUtilisateur_Load(object sender, EventArgs e)
         {
-            cmbTypeUtilisateur.DisplayMember = "libelle";
-            cmbTypeUtilisateur.ValueMember = "idTypeUtilisateur";
-            cmbTypeUtilisateur.DataSource = from t in DataBaseConfiguration.Context.TypeUtilisateur
-                                            select new { t.idTypeUtilisateur, t.libelle };
-            cmbTypeUtilisateur.SelectedValue = utilisateur.idTypeUtilisateur;
             this.txt_email.Text = utilisateur.email;
             this.txt_prenom.Text = utilisateur.prenom;
             this.txt_nom.Text = utilisateur.nom;
@@ -56,22 +50,6 @@ namespace Zaya.AdministrateurForms
             {
                 rdFemme.Checked = true;
             }
-        }
-
-        private void btnModifier_MouseHover(object sender, EventArgs e)
-        {
-            btnFermer.BackColor = Color.Black;
-            
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnFermer_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void passwordStatut_Click(object sender, EventArgs e)

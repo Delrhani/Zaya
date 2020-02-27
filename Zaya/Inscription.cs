@@ -10,17 +10,17 @@ using System.Configuration;
 using MaterialSkin.Controls;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using Zaya.Properties;
 
 namespace Zaya
 {
     public partial class InscriptionForm : Form
 
     {
+        private bool isVisible = false;
         public InscriptionForm()
         {
             InitializeComponent();
-        
-
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -98,9 +98,6 @@ namespace Zaya
                 if (txt_prenom.Text.Trim().Length == 0)
                     throw new Exception("Your first name should be contain 4 characters");
                 ul.prenom = txt_prenom.Text;
-                ///^[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{3})[\.-)( ]*([0-9]{4})$/
-                //showMatch(txt_phone.Text, @"^(+212)[5-7][0-9]{8,8}");
-                //throw new Exception("Your phone should be correct");
                 ul.telephone = txt_phone.Text;
                 ul.email = txt_email.Text;
                 ul.username = txt_username.Text;
@@ -124,7 +121,7 @@ namespace Zaya
            
         }
 
-        private void materialLabel1_Click(object sender, EventArgs e)
+        private void lblHaveAccount_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -135,6 +132,21 @@ namespace Zaya
             foreach (Match m in mc)
             {
                 MessageBox.Show(m.ToString());
+            }
+        }
+
+        private void passwordStatut_Click(object sender, EventArgs e)
+        {
+            isVisible = !isVisible;
+            if (isVisible)
+            {
+                passwordStatut.Image = Resources.hidePassword;
+                txt_password.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordStatut.Image = Resources.showPassword;
+                txt_password.PasswordChar = '•';
             }
         }
     }

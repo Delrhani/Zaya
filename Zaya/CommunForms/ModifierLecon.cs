@@ -52,7 +52,10 @@ namespace Zaya.CommunForms
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (DialogResult.Yes == MessageBox.Show("Voulez-vous vraiment annuler les modifications ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace Zaya.AdministrateurForms
+﻿namespace Zaya.Controls
 {
-    partial class ConsulterUtilisateur
+    partial class ModifierProfil
     {
         /// <summary>
         /// Required designer variable.
@@ -37,12 +37,10 @@
             this.txt_nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_phone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnModifier = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnFermer = new MetroFramework.Controls.MetroButton();
-            this.cmbTypeUtilisateur = new MetroFramework.Controls.MetroComboBox();
             this.passwordStatut = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rdFemme
@@ -50,8 +48,9 @@
             this.rdFemme.AutoSize = true;
             this.rdFemme.BackColor = System.Drawing.Color.White;
             this.rdFemme.Depth = 0;
-            this.rdFemme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdFemme.Location = new System.Drawing.Point(247, 170);
+            this.rdFemme.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdFemme.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.rdFemme.Location = new System.Drawing.Point(322, 213);
             this.rdFemme.Margin = new System.Windows.Forms.Padding(0);
             this.rdFemme.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdFemme.MouseState = MaterialSkin.MouseState.HOVER;
@@ -68,8 +67,9 @@
             this.rdHomme.BackColor = System.Drawing.Color.White;
             this.rdHomme.Checked = true;
             this.rdHomme.Depth = 0;
-            this.rdHomme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdHomme.Location = new System.Drawing.Point(84, 170);
+            this.rdHomme.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdHomme.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.rdHomme.Location = new System.Drawing.Point(159, 213);
             this.rdHomme.Margin = new System.Windows.Forms.Padding(0);
             this.rdHomme.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdHomme.MouseState = MaterialSkin.MouseState.HOVER;
@@ -85,9 +85,9 @@
             // 
             this.txt_password.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_password.Depth = 0;
-            this.txt_password.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txt_password.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txt_password.Hint = "Mot de passe";
-            this.txt_password.Location = new System.Drawing.Point(84, 296);
+            this.txt_password.Location = new System.Drawing.Point(159, 353);
             this.txt_password.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '•';
@@ -103,9 +103,9 @@
             // 
             this.txt_username.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_username.Depth = 0;
-            this.txt_username.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txt_username.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txt_username.Hint = "Nom d\'utilisateur";
-            this.txt_username.Location = new System.Drawing.Point(84, 267);
+            this.txt_username.Location = new System.Drawing.Point(159, 310);
             this.txt_username.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_username.Name = "txt_username";
             this.txt_username.PasswordChar = '\0';
@@ -121,9 +121,9 @@
             // 
             this.txt_email.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_email.Depth = 0;
-            this.txt_email.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txt_email.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txt_email.Hint = "Email";
-            this.txt_email.Location = new System.Drawing.Point(84, 238);
+            this.txt_email.Location = new System.Drawing.Point(159, 267);
             this.txt_email.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_email.Name = "txt_email";
             this.txt_email.PasswordChar = '\0';
@@ -139,9 +139,9 @@
             // 
             this.txt_prenom.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_prenom.Depth = 0;
-            this.txt_prenom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_prenom.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txt_prenom.Hint = "Prénom";
-            this.txt_prenom.Location = new System.Drawing.Point(84, 56);
+            this.txt_prenom.Location = new System.Drawing.Point(159, 67);
             this.txt_prenom.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_prenom.Name = "txt_prenom";
             this.txt_prenom.PasswordChar = '\0';
@@ -157,9 +157,9 @@
             // 
             this.txt_nom.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_nom.Depth = 0;
-            this.txt_nom.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txt_nom.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txt_nom.Hint = "Nom";
-            this.txt_nom.Location = new System.Drawing.Point(84, 94);
+            this.txt_nom.Location = new System.Drawing.Point(159, 117);
             this.txt_nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_nom.Name = "txt_nom";
             this.txt_nom.PasswordChar = '\0';
@@ -175,9 +175,9 @@
             // 
             this.txt_phone.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_phone.Depth = 0;
-            this.txt_phone.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txt_phone.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txt_phone.Hint = "Téléphone";
-            this.txt_phone.Location = new System.Drawing.Point(84, 132);
+            this.txt_phone.Location = new System.Drawing.Point(159, 166);
             this.txt_phone.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.PasswordChar = '\0';
@@ -192,56 +192,19 @@
             // btnModifier
             // 
             this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.Location = new System.Drawing.Point(240, 325);
+            this.btnModifier.Location = new System.Drawing.Point(315, 401);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(82, 34);
             this.btnModifier.TabIndex = 39;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
-            this.btnModifier.MouseHover += new System.EventHandler(this.btnModifier_MouseHover);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(31, 381);
-            this.panel1.TabIndex = 41;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
-            this.panel2.Location = new System.Drawing.Point(30, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(31, 417);
-            this.panel2.TabIndex = 42;
-            // 
-            // btnFermer
-            // 
-            this.btnFermer.Location = new System.Drawing.Point(352, 0);
-            this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
-            this.btnFermer.Name = "btnFermer";
-            this.btnFermer.Size = new System.Drawing.Size(32, 28);
-            this.btnFermer.TabIndex = 12;
-            this.btnFermer.Text = "X";
-            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
-            // 
-            // cmbTypeUtilisateur
-            // 
-            this.cmbTypeUtilisateur.FormattingEnabled = true;
-            this.cmbTypeUtilisateur.ItemHeight = 23;
-            this.cmbTypeUtilisateur.Location = new System.Drawing.Point(84, 203);
-            this.cmbTypeUtilisateur.Name = "cmbTypeUtilisateur";
-            this.cmbTypeUtilisateur.Size = new System.Drawing.Size(238, 29);
-            this.cmbTypeUtilisateur.TabIndex = 44;
             // 
             // passwordStatut
             // 
             this.passwordStatut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.passwordStatut.Image = global::Zaya.Properties.Resources.showPassword;
-            this.passwordStatut.Location = new System.Drawing.Point(293, 296);
+            this.passwordStatut.Location = new System.Drawing.Point(368, 353);
             this.passwordStatut.Name = "passwordStatut";
             this.passwordStatut.Size = new System.Drawing.Size(29, 23);
             this.passwordStatut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -249,33 +212,37 @@
             this.passwordStatut.TabStop = false;
             this.passwordStatut.Click += new System.EventHandler(this.passwordStatut_Click);
             // 
-            // ConsulterUtilisateur
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.btnModifier);
+            this.panel1.Controls.Add(this.passwordStatut);
+            this.panel1.Controls.Add(this.txt_phone);
+            this.panel1.Controls.Add(this.txt_nom);
+            this.panel1.Controls.Add(this.rdFemme);
+            this.panel1.Controls.Add(this.txt_prenom);
+            this.panel1.Controls.Add(this.rdHomme);
+            this.panel1.Controls.Add(this.txt_email);
+            this.panel1.Controls.Add(this.txt_password);
+            this.panel1.Controls.Add(this.txt_username);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(595, 488);
+            this.panel1.TabIndex = 44;
+            // 
+            // ModifierProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 381);
-            this.Controls.Add(this.cmbTypeUtilisateur);
-            this.Controls.Add(this.passwordStatut);
-            this.Controls.Add(this.btnFermer);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.rdFemme);
-            this.Controls.Add(this.rdHomme);
-            this.Controls.Add(this.txt_password);
-            this.Controls.Add(this.txt_username);
-            this.Controls.Add(this.txt_email);
-            this.Controls.Add(this.txt_prenom);
-            this.Controls.Add(this.txt_nom);
-            this.Controls.Add(this.txt_phone);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ConsulterUtilisateur";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulter un utilisateur";
+            this.Name = "ModifierProfil";
+            this.Size = new System.Drawing.Size(595, 488);
             this.Load += new System.EventHandler(this.ConsulterUtilisateur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -290,10 +257,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_nom;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_phone;
         private System.Windows.Forms.Button btnModifier;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private MetroFramework.Controls.MetroButton btnFermer;
         private System.Windows.Forms.PictureBox passwordStatut;
-        private MetroFramework.Controls.MetroComboBox cmbTypeUtilisateur;
+        private System.Windows.Forms.Panel panel1;
     }
 }

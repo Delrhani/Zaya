@@ -273,11 +273,12 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(521, 0);
+            this.metroButton1.Location = new System.Drawing.Point(520, 0);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
             this.metroButton1.TabIndex = 26;
             this.metroButton1.Text = "X";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // ModifierQuestion
             // 
@@ -300,7 +301,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModifierQuestion";
-            this.Text = "AjouterQuestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Modifier question";
             this.Load += new System.EventHandler(this.AjouterQuestion_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

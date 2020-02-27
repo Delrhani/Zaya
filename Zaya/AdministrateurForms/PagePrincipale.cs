@@ -147,16 +147,5 @@ namespace Zaya.AdministrateurForms
         {
             btnDeconnecte.BackColor = TRANSPARENT_COLOR;
         }
-
-        private void btnLesson_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

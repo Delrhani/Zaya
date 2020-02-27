@@ -205,7 +205,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(739, 1);
+            this.metroButton1.Location = new System.Drawing.Point(738, 1);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
             this.metroButton1.TabIndex = 8;
@@ -242,7 +242,8 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DetailsLecon";
-            this.Text = "DetailsLecon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Détails du leçon";
             this.Load += new System.EventHandler(this.DetailsLecon_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -46,6 +46,9 @@
             this.panelContenu = new System.Windows.Forms.Panel();
             this.txtNavigation = new System.Windows.Forms.Label();
             this.btnFermer = new MetroFramework.Controls.MetroButton();
+            this.btnProfil = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.btnDeconnecte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -55,10 +58,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnLesson.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.btnProfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnProfil);
             this.panel1.Controls.Add(this.btnDeconnecte);
             this.panel1.Controls.Add(this.panelLeft);
             this.panel1.Controls.Add(this.btnQuiz);
@@ -265,6 +271,41 @@
             this.btnFermer.Text = "X";
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
+            // btnProfil
+            // 
+            this.btnProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnProfil.Controls.Add(this.pictureBox5);
+            this.btnProfil.Controls.Add(this.label3);
+            this.btnProfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfil.Location = new System.Drawing.Point(3, 271);
+            this.btnProfil.Name = "btnProfil";
+            this.btnProfil.Size = new System.Drawing.Size(234, 56);
+            this.btnProfil.TabIndex = 26;
+            this.btnProfil.Click += new System.EventHandler(this.panel3_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 20;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label3.Location = new System.Drawing.Point(47, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 48);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Profil";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // PagePrincipale
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -288,6 +329,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.btnLesson.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.btnProfil.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,5 +354,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private MetroFramework.Controls.MetroButton btnFermer;
+        private System.Windows.Forms.Panel btnProfil;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label3;
     }
 }

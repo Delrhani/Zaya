@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InscriptionForm));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblHaveAccount = new MaterialSkin.Controls.MaterialLabel();
             this.btnValiderInscription = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txt_phone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txt_nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -42,8 +42,10 @@
             this.txt_password = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.rdHomme = new MaterialSkin.Controls.MaterialRadioButton();
             this.rdFemme = new MaterialSkin.Controls.MaterialRadioButton();
+            this.passwordStatut = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,27 +57,27 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.materialLabel1);
+            this.panel1.Controls.Add(this.lblHaveAccount);
             this.panel1.Location = new System.Drawing.Point(0, 362);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(507, 50);
             this.panel1.TabIndex = 11;
             // 
-            // materialLabel1
+            // lblHaveAccount
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(147, 12);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(186, 19);
-            this.materialLabel1.TabIndex = 7;
-            this.materialLabel1.Text = "I already have an account !";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
+            this.lblHaveAccount.AutoSize = true;
+            this.lblHaveAccount.BackColor = System.Drawing.Color.Transparent;
+            this.lblHaveAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHaveAccount.Depth = 0;
+            this.lblHaveAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblHaveAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblHaveAccount.Location = new System.Drawing.Point(147, 12);
+            this.lblHaveAccount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblHaveAccount.Name = "lblHaveAccount";
+            this.lblHaveAccount.Size = new System.Drawing.Size(181, 18);
+            this.lblHaveAccount.TabIndex = 7;
+            this.lblHaveAccount.Text = "I already have an account !";
+            this.lblHaveAccount.Click += new System.EventHandler(this.lblHaveAccount_Click);
             // 
             // btnValiderInscription
             // 
@@ -97,7 +99,7 @@
             this.txt_phone.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_phone.Depth = 0;
             this.txt_phone.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txt_phone.Hint = "Phone";
+            this.txt_phone.Hint = "Téléphone";
             this.txt_phone.Location = new System.Drawing.Point(133, 158);
             this.txt_phone.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_phone.Name = "txt_phone";
@@ -114,7 +116,7 @@
             this.txt_nom.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_nom.Depth = 0;
             this.txt_nom.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txt_nom.Hint = "Familly Name";
+            this.txt_nom.Hint = "Nom";
             this.txt_nom.Location = new System.Drawing.Point(133, 120);
             this.txt_nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_nom.Name = "txt_nom";
@@ -131,7 +133,7 @@
             this.txt_prenom.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_prenom.Depth = 0;
             this.txt_prenom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txt_prenom.Hint = "First Name";
+            this.txt_prenom.Hint = "Prénom";
             this.txt_prenom.Location = new System.Drawing.Point(133, 82);
             this.txt_prenom.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_prenom.Name = "txt_prenom";
@@ -165,7 +167,7 @@
             this.txt_username.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_username.Depth = 0;
             this.txt_username.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txt_username.Hint = "Username";
+            this.txt_username.Hint = "Nom d\'utilisateur";
             this.txt_username.Location = new System.Drawing.Point(133, 275);
             this.txt_username.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_username.Name = "txt_username";
@@ -182,11 +184,11 @@
             this.txt_password.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_password.Depth = 0;
             this.txt_password.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txt_password.Hint = "Password";
+            this.txt_password.Hint = "Mot de passe";
             this.txt_password.Location = new System.Drawing.Point(133, 315);
             this.txt_password.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_password.Name = "txt_password";
-            this.txt_password.PasswordChar = '\0';
+            this.txt_password.PasswordChar = '•';
             this.txt_password.SelectedText = "";
             this.txt_password.SelectionLength = 0;
             this.txt_password.SelectionStart = 0;
@@ -200,7 +202,7 @@
             this.rdHomme.BackColor = System.Drawing.Color.White;
             this.rdHomme.Checked = true;
             this.rdHomme.Depth = 0;
-            this.rdHomme.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdHomme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rdHomme.Location = new System.Drawing.Point(148, 196);
             this.rdHomme.Margin = new System.Windows.Forms.Padding(0);
             this.rdHomme.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -218,7 +220,7 @@
             this.rdFemme.AutoSize = true;
             this.rdFemme.BackColor = System.Drawing.Color.White;
             this.rdFemme.Depth = 0;
-            this.rdFemme.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdFemme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rdFemme.Location = new System.Drawing.Point(248, 196);
             this.rdFemme.Margin = new System.Windows.Forms.Padding(0);
             this.rdFemme.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -229,6 +231,18 @@
             this.rdFemme.TabIndex = 30;
             this.rdFemme.Text = "Femme";
             this.rdFemme.UseVisualStyleBackColor = false;
+            // 
+            // passwordStatut
+            // 
+            this.passwordStatut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.passwordStatut.Image = global::Zaya.Properties.Resources.showPassword;
+            this.passwordStatut.Location = new System.Drawing.Point(312, 315);
+            this.passwordStatut.Name = "passwordStatut";
+            this.passwordStatut.Size = new System.Drawing.Size(29, 23);
+            this.passwordStatut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.passwordStatut.TabIndex = 32;
+            this.passwordStatut.TabStop = false;
+            this.passwordStatut.Click += new System.EventHandler(this.passwordStatut_Click);
             // 
             // pictureBox1
             // 
@@ -246,6 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(182)))), ((int)(((byte)(203)))));
             this.ClientSize = new System.Drawing.Size(507, 411);
+            this.Controls.Add(this.passwordStatut);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rdFemme);
             this.Controls.Add(this.rdHomme);
@@ -262,10 +277,11 @@
             this.MaximumSize = new System.Drawing.Size(523, 450);
             this.Name = "InscriptionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sign up";
+            this.Text = "Inscription";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -282,10 +298,11 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_email;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_username;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_password;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel lblHaveAccount;
         private MaterialSkin.Controls.MaterialRadioButton rdHomme;
         private MaterialSkin.Controls.MaterialRadioButton rdFemme;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox passwordStatut;
     }
 }
 

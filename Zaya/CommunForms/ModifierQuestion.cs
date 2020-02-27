@@ -102,5 +102,13 @@ namespace Zaya.CommunForms
                 MessageBox.Show("Please add a question", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Voulez-vous vraiment annuler les modifications ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                this.Close();
+            }
+        }
     }
 }
