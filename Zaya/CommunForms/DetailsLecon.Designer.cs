@@ -47,6 +47,10 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.txtMatiere = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnAjouterCommentaire = new System.Windows.Forms.Button();
+            this.txtCommentaire = new MetroFramework.Controls.MetroTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelCommentaires = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -201,11 +205,10 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(771, 107);
             this.panel5.TabIndex = 5;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(738, 1);
+            this.metroButton1.Location = new System.Drawing.Point(739, -1);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
             this.metroButton1.TabIndex = 8;
@@ -225,12 +228,51 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.btnAjouterCommentaire);
+            this.panel6.Controls.Add(this.txtCommentaire);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.panelCommentaires);
             this.panel6.Controls.Add(this.txtLecon);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(125, 107);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(771, 550);
             this.panel6.TabIndex = 6;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // btnAjouterCommentaire
+            // 
+            this.btnAjouterCommentaire.Location = new System.Drawing.Point(684, 377);
+            this.btnAjouterCommentaire.Name = "btnAjouterCommentaire";
+            this.btnAjouterCommentaire.Size = new System.Drawing.Size(75, 23);
+            this.btnAjouterCommentaire.TabIndex = 7;
+            this.btnAjouterCommentaire.Text = "Commenter";
+            this.btnAjouterCommentaire.UseVisualStyleBackColor = true;
+            this.btnAjouterCommentaire.Click += new System.EventHandler(this.btnAjouterCommentaire_Click);
+            // 
+            // txtCommentaire
+            // 
+            this.txtCommentaire.Location = new System.Drawing.Point(92, 377);
+            this.txtCommentaire.Name = "txtCommentaire";
+            this.txtCommentaire.Size = new System.Drawing.Size(586, 23);
+            this.txtCommentaire.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 382);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Commentaire : ";
+            // 
+            // panelCommentaires
+            // 
+            this.panelCommentaires.AutoScroll = true;
+            this.panelCommentaires.Location = new System.Drawing.Point(0, 406);
+            this.panelCommentaires.Name = "panelCommentaires";
+            this.panelCommentaires.Size = new System.Drawing.Size(771, 144);
+            this.panelCommentaires.TabIndex = 4;
             // 
             // DetailsLecon
             // 
@@ -275,5 +317,9 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panelCommentaires;
+        private System.Windows.Forms.Button btnAjouterCommentaire;
+        private MetroFramework.Controls.MetroTextBox txtCommentaire;
+        private System.Windows.Forms.Label label1;
     }
 }

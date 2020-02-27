@@ -13,10 +13,12 @@ namespace Zaya.CommunForms
     public partial class DetailsLecon : Form
     {
         private Lecon lecon;
-        public DetailsLecon(Lecon lecon)
+        private Utilisateur utilisateur;
+        public DetailsLecon(Lecon lecon, Utilisateur utilisateur)
         {
             InitializeComponent();
             this.lecon = lecon;
+            this.utilisateur = utilisateur;
         }
 
         private void DetailsLecon_Load(object sender, EventArgs e)
@@ -38,7 +40,14 @@ namespace Zaya.CommunForms
                 }
                 text += words[i] + " ";
             }
-            txtLecon.Text += text;
+
+            LoadCommentaires();
+        }
+
+        private void LoadCommentaires()
+        {
+            panelCommentaires.Controls.Clear();
+            panelCommentaires.Controls.Add(new Controls.CommentairesModel(lecon));
         }
 
         private void button1_MouseHover(object sender, EventArgs e)
@@ -55,14 +64,20 @@ namespace Zaya.CommunForms
             new AjouterQuestion(lecon).ShowDialog();
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void btnAjouterCommentaire_Click(object sender, EventArgs e)
         {
-
+            if(DialogResult.Yes == MessageBox.Show("Voulez-vous vraiment ajouter ce commentaire ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                Commentaire commentaire = new Commentaire();
+                commentaire.dateCommentaire = DateTime.Now;
+                commentaire.Lecon = lecon;
+                commentaire.textCommentaire = txtCommentaire.Text;
+                commentaire.Utilisateur = utilisateur;
+                DataBaseConfiguration.Context.Commentaire.InsertOnSubmit(commentaire);
+                DataBaseConfiguration.Context.SubmitChanges();
+                LoadCommentaires();
+            }
         }
 
-        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

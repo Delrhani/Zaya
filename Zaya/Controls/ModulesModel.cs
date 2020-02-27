@@ -22,6 +22,17 @@ namespace Zaya.Controls
 
         private void LeconsModel_Load(object sender, EventArgs e)
         {
+            LoadMatieres();
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            new AdministrateurForms.AjouterMatiere().ShowDialog();
+            LoadMatieres();
+        }
+
+        private void LoadMatieres()
+        {
             int y = 0;
             var v = from l in DataBaseConfiguration.Context.Matiere
                     select l;
@@ -34,11 +45,6 @@ namespace Zaya.Controls
                 moduleModel.Location = p;
                 panelContenu.Controls.Add(moduleModel);
             }
-        }
-
-        private void btnAjouter_Click(object sender, EventArgs e)
-        {
-            new AdministrateurForms.AjouterMatiere().ShowDialog();
         }
 
     }

@@ -21,6 +21,11 @@ namespace Zaya.Controls
 
         private void LeconsModel_Load(object sender, EventArgs e)
         {
+            LoadLecons();
+        }
+
+        private void LoadLecons()
+        {
             var res = (from m in DataBaseConfiguration.Context.Matiere
                        select new { m.idMatiere, m.libelle }).ToList();
             res.Insert(0, new { idMatiere = 0, libelle = "Tout" });
@@ -29,10 +34,10 @@ namespace Zaya.Controls
             cmbMatieres.DisplayMember = "libelle";
             cmbMatieres.DataSource = res;
         }
-
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             new CommunForms.AjouterLecon(utilisateur).ShowDialog();
+            LoadLecons();
         }
 
         private void cmbMatieres_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,10 +51,11 @@ namespace Zaya.Controls
             int y = 0;
             var v = from l in DataBaseConfiguration.Context.Lecon
                     where selectedValue >= 1 ? l.idMatiere == selectedValue : l.idMatiere >= 1
+                    orderby l.dateAjoute ascending
                     select l;
             foreach (Lecon l in v)
             {
-                LeconModel leconModel = new LeconModel(l);
+                LeconModel leconModel = new LeconModel(l, utilisateur);
                 Point p = leconModel.Location;
                 p.Y = y;
                 y += leconModel.Height + 5;

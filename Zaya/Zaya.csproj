@@ -195,6 +195,12 @@
     <Compile Include="Controls\Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\CommentaireModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CommentaireModel.Designer.cs">
+      <DependentUpon>CommentaireModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ModifierProfil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,6 +230,12 @@
     </Compile>
     <Compile Include="Controls\QuizesModel.Designer.cs">
       <DependentUpon>QuizesModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CommentairesModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CommentairesModel.Designer.cs">
+      <DependentUpon>CommentairesModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\UtilisateursModel.cs">
       <SubType>UserControl</SubType>
@@ -393,6 +405,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuizReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CommentaireModel.resx">
+      <DependentUpon>CommentaireModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ModifierProfil.resx">
       <DependentUpon>ModifierProfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -407,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\QuizesModel.resx">
       <DependentUpon>QuizesModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CommentairesModel.resx">
+      <DependentUpon>CommentairesModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UtilisateursModel.resx">
       <DependentUpon>UtilisateursModel.cs</DependentUpon>

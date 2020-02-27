@@ -21,9 +21,21 @@ namespace Zaya.Controls
 
         private void LeconsModel_Load(object sender, EventArgs e)
         {
+            LoadQuizes();
+        }
+
+        private void btnJouer_Click(object sender, EventArgs e)
+        {
+            new CommunForms.MenuQuiz(utilisateur).ShowDialog();
+            LoadQuizes();
+        }
+
+        private void LoadQuizes()
+        {
             int y = 0;
             var v = from u in DataBaseConfiguration.Context.Quiz
                     where u.Utilisateur == utilisateur
+                    orderby u.dateQuiz ascending
                     select u;
             foreach (Quiz u in v)
             {
@@ -34,16 +46,7 @@ namespace Zaya.Controls
                 utilisateurModel.Location = p;
                 panelContenu.Controls.Add(utilisateurModel);
             }
-        }
 
-        private void panelContenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnJouer_Click(object sender, EventArgs e)
-        {
-            new CommunForms.MenuQuiz(utilisateur).ShowDialog();
         }
     }
 }
