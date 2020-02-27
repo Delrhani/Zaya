@@ -46,7 +46,6 @@ namespace Zaya.Controls
             this.txt_nom.Text = utilisateur.nom;
             this.txt_phone.Text = utilisateur.telephone;
             this.txt_username.Text = utilisateur.username;
-            this.txt_password.Text = utilisateur.pwd.ToString();
             if(utilisateur.sexe == 'F')
             {
                 rdFemme.Checked = true;
@@ -94,5 +93,11 @@ namespace Zaya.Controls
         {
             btnModifier.BackColor = Color.LightGray;
         }
+
+        private void materialFlatButton1_ForeColorChanged(object sender, EventArgs e)
+        {
+          
+        }
+
     }
 }
