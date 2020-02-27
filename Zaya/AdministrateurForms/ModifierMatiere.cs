@@ -71,5 +71,10 @@ namespace Zaya.AdministrateurForms
         {
             lastPoint = new Point(e.X, e.Y);
         }
+
+        private void ModifierMatiere_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

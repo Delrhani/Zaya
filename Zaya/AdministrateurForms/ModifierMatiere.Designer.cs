@@ -208,6 +208,7 @@
             this.Name = "ModifierMatiere";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier matiére";
+            this.Load += new System.EventHandler(this.ModifierMatiere_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ModifierMatiere_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ModifierMatiere_MouseMove);
             this.panel1.ResumeLayout(false);
