@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagePrincipale));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnProfil = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnDeconnecte = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -53,6 +56,8 @@
             this.txtNavigation = new System.Windows.Forms.Label();
             this.btnFermer = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
+            this.btnProfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.btnDeconnecte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.btnUtilisateurs.SuspendLayout();
@@ -69,6 +74,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnProfil);
             this.panel1.Controls.Add(this.btnDeconnecte);
             this.panel1.Controls.Add(this.btnUtilisateurs);
             this.panel1.Controls.Add(this.panelLeft);
@@ -81,6 +87,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 613);
             this.panel1.TabIndex = 0;
+            // 
+            // btnProfil
+            // 
+            this.btnProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnProfil.Controls.Add(this.pictureBox7);
+            this.btnProfil.Controls.Add(this.label6);
+            this.btnProfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfil.Location = new System.Drawing.Point(3, 396);
+            this.btnProfil.Name = "btnProfil";
+            this.btnProfil.Size = new System.Drawing.Size(234, 56);
+            this.btnProfil.TabIndex = 27;
+            this.btnProfil.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.btnProfil.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(34, 48);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 20;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label6.Location = new System.Drawing.Point(47, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 48);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Profil";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnDeconnecte
             // 
@@ -378,6 +420,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page principale";
             this.panel1.ResumeLayout(false);
+            this.btnProfil.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.btnDeconnecte.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.btnUtilisateurs.ResumeLayout(false);
@@ -419,5 +463,8 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label5;
         private MetroFramework.Controls.MetroButton btnFermer;
+        private System.Windows.Forms.Panel btnProfil;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label6;
     }
 }
