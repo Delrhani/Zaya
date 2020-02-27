@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagePrincipale));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnProfil = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnDeconnecte = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -46,10 +49,9 @@
             this.panelContenu = new System.Windows.Forms.Panel();
             this.txtNavigation = new System.Windows.Forms.Label();
             this.btnFermer = new MetroFramework.Controls.MetroButton();
-            this.btnProfil = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.btnProfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.btnDeconnecte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.btnQuiz.SuspendLayout();
@@ -58,8 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnLesson.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.btnProfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,6 +75,49 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 613);
             this.panel1.TabIndex = 0;
+            // 
+            // btnProfil
+            // 
+            this.btnProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnProfil.Controls.Add(this.pictureBox5);
+            this.btnProfil.Controls.Add(this.label3);
+            this.btnProfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfil.Location = new System.Drawing.Point(3, 271);
+            this.btnProfil.Name = "btnProfil";
+            this.btnProfil.Size = new System.Drawing.Size(234, 56);
+            this.btnProfil.TabIndex = 26;
+            this.btnProfil.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.btnProfil.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
+            this.btnProfil.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 20;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
+            this.pictureBox5.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
+            // 
+            // label3
+            // 
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.label3.Location = new System.Drawing.Point(47, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 48);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Profil";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.label3.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
+            this.label3.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
             // 
             // btnDeconnecte
             // 
@@ -271,43 +314,6 @@
             this.btnFermer.Text = "X";
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
-            // btnProfil
-            // 
-            this.btnProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.btnProfil.Controls.Add(this.pictureBox5);
-            this.btnProfil.Controls.Add(this.label3);
-            this.btnProfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfil.Location = new System.Drawing.Point(3, 271);
-            this.btnProfil.Name = "btnProfil";
-            this.btnProfil.Size = new System.Drawing.Size(234, 56);
-            this.btnProfil.TabIndex = 26;
-            this.btnProfil.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
-            this.btnProfil.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
-            this.btnProfil.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.label3.Location = new System.Drawing.Point(47, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 48);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Profil";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // PagePrincipale
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -323,6 +329,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page principale";
             this.panel1.ResumeLayout(false);
+            this.btnProfil.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.btnDeconnecte.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.btnQuiz.ResumeLayout(false);
@@ -331,8 +339,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.btnLesson.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.btnProfil.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }

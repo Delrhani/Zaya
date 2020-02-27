@@ -34,14 +34,18 @@ namespace Zaya.AdministrateurForms
         {
             if (txtMatiere.Text.Trim().Length > 0)
             {
-                Matiere matiere = new Matiere();
-                matiere.libelle = txtMatiere.Text;
-                DataBaseConfiguration.Context.Matiere.InsertOnSubmit(matiere);
-                DataBaseConfiguration.Context.SubmitChanges();
+                if(DialogResult.Yes == MessageBox.Show("Voulez-vous vraiment ajouter cette matière ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    Matiere matiere = new Matiere();
+                    matiere.libelle = txtMatiere.Text;
+                    DataBaseConfiguration.Context.Matiere.InsertOnSubmit(matiere);
+                    DataBaseConfiguration.Context.SubmitChanges();
+                    this.Close();
+                }
             }
             else
             {
-                MessageBox.Show("Merci de saisir un nom de la matière", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Merci de saisir un nom à la matière", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

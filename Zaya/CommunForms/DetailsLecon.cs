@@ -41,6 +41,10 @@ namespace Zaya.CommunForms
                 text += words[i] + " ";
             }
 
+            if(lecon.idUtilisateur != utilisateur.idUtilisateur && utilisateur.TypeUtilisateur.libelle != "Administrateur")
+            {
+                this.btnModifier.Visible = false;
+            }
             LoadCommentaires();
         }
 
@@ -79,5 +83,9 @@ namespace Zaya.CommunForms
             }
         }
 
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            new ModifierLecon(lecon).ShowDialog();
+        }
     }
 }

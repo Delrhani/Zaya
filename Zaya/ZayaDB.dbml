@@ -3,32 +3,12 @@
   <Table Name="dbo.Commentaire" Member="Commentaire">
     <Type Name="Commentaire">
       <Column Name="idCommentaire" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idQuiz" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="idLecon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="textCommentaire" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="dateCommentaire" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="dateCommentaire" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="idUtilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Utilisateur_Commentaire" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
       <Association Name="Lecon_Commentaire" Member="Lecon" ThisKey="idLecon" OtherKey="idLecon" Type="Lecon" IsForeignKey="true" />
-      <Association Name="Quiz_Commentaire" Member="Quiz" ThisKey="idQuiz" OtherKey="idQuiz" Type="Quiz" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Utilisateur" Member="Utilisateur">
-    <Type Name="Utilisateur">
-      <Column Name="idUtilisateur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nom" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="prenom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="telephone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="sexe" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="pwd" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="dateInscription" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="idTypeUtilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Utilisateur_Commentaire" Member="Commentaire" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Commentaire" />
-      <Association Name="Utilisateur_Lecon" Member="Lecon" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Lecon" />
-      <Association Name="Utilisateur_Quiz" Member="Quiz" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Quiz" />
-      <Association Name="TypeUtilisateur_Utilisateur" Member="TypeUtilisateur" ThisKey="idTypeUtilisateur" OtherKey="idTypeUtilisateur" Type="TypeUtilisateur" IsForeignKey="true" />
+      <Association Name="Utilisateur_Commentaire" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Lecon" Member="Lecon">
@@ -41,8 +21,8 @@
       <Column Name="dateAjoute" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="Lecon_Commentaire" Member="Commentaire" ThisKey="idLecon" OtherKey="idLecon" Type="Commentaire" />
       <Association Name="Lecon_Question" Member="Question" ThisKey="idLecon" OtherKey="idLecon" Type="Question" />
-      <Association Name="Utilisateur_Lecon" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
       <Association Name="Matiere_Lecon" Member="Matiere" ThisKey="idMatiere" OtherKey="idMatiere" Type="Matiere" IsForeignKey="true" />
+      <Association Name="Utilisateur_Lecon" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Matiere" Member="Matiere">
@@ -74,7 +54,6 @@
       <Column Name="idUtilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="dateQuiz" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="score" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Association Name="Quiz_Commentaire" Member="Commentaire" ThisKey="idQuiz" OtherKey="idQuiz" Type="Commentaire" />
       <Association Name="Quiz_ResultatQuiz" Member="ResultatQuiz" ThisKey="idQuiz" OtherKey="idQuiz" Type="ResultatQuiz" />
       <Association Name="Matiere_Quiz" Member="Matiere" ThisKey="idMatiere" OtherKey="idMatiere" Type="Matiere" IsForeignKey="true" />
       <Association Name="Utilisateur_Quiz" Member="Utilisateur" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Utilisateur" IsForeignKey="true" />
@@ -96,6 +75,8 @@
       <Column Name="idResultatQuiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idReponse" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="textReponse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isTrue" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="iconPath" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Reponse_ReponseQuiz" Member="Reponse" ThisKey="idReponse" OtherKey="idReponse" Type="Reponse" IsForeignKey="true" />
       <Association Name="ResultatQuiz_ReponseQuiz" Member="ResultatQuiz" ThisKey="idResultatQuiz" OtherKey="idResultatQuiz" Type="ResultatQuiz" IsForeignKey="true" />
     </Type>
@@ -122,6 +103,24 @@
       <Column Name="idTypeUtilisateur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="libelle" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Association Name="TypeUtilisateur_Utilisateur" Member="Utilisateur" ThisKey="idTypeUtilisateur" OtherKey="idTypeUtilisateur" Type="Utilisateur" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Utilisateur" Member="Utilisateur">
+    <Type Name="Utilisateur">
+      <Column Name="idUtilisateur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="sexe" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pwd" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="dateInscription" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="idTypeUtilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Utilisateur_Commentaire" Member="Commentaire" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Commentaire" />
+      <Association Name="Utilisateur_Lecon" Member="Lecon" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Lecon" />
+      <Association Name="Utilisateur_Quiz" Member="Quiz" ThisKey="idUtilisateur" OtherKey="idUtilisateur" Type="Quiz" />
+      <Association Name="TypeUtilisateur_Utilisateur" Member="TypeUtilisateur" ThisKey="idTypeUtilisateur" OtherKey="idTypeUtilisateur" Type="TypeUtilisateur" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.encrypt" Method="encrypt" IsComposable="true">

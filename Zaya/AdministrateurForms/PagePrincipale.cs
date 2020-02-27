@@ -55,11 +55,6 @@ namespace Zaya.AdministrateurForms
 
         }
 
-        private void JouezQuizClick(object sender, EventArgs e)
-        {
-            new CommunForms.MenuQuiz(utilisateur).ShowDialog();
-        }
-
         private void btnModels_MouseClick(object sender, MouseEventArgs e)
         {
             panelLeft.Height = btnModels.Height;
@@ -84,7 +79,6 @@ namespace Zaya.AdministrateurForms
         {
             btnModels.BackColor = HOVER_COLOR;
         }
-
 
         private void btnLesson_MouseLeave(object sender, EventArgs e)
         {
@@ -167,20 +161,6 @@ namespace Zaya.AdministrateurForms
             btnProfil.BackColor = TRANSPARENT_COLOR;
         }
 
-        private void PagePrincipale_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void PagePrincipale_MouseHover(object sender, EventArgs e)
-        {
-
-        }
         Point lastPoint;
         private void PagePrincipale_MouseMove(object sender, MouseEventArgs e)
         {

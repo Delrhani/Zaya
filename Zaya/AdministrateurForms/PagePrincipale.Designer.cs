@@ -87,7 +87,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 613);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnProfil
             // 
@@ -113,6 +112,9 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.pictureBox7.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
+            this.pictureBox7.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
             // 
             // label6
             // 
@@ -125,6 +127,9 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Profil";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.label6.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
+            this.label6.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
             // 
             // btnDeconnecte
             // 
@@ -421,7 +426,6 @@
             this.Name = "PagePrincipale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page principale";
-            this.Load += new System.EventHandler(this.PagePrincipale_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PagePrincipale_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PagePrincipale_MouseMove);
             this.panel1.ResumeLayout(false);

@@ -104,6 +104,9 @@ namespace Zaya.Controls
         private void BindingData()
         {
             this.txtTitle.Text = matiere.libelle;
+            matiere = (from m in DataBaseConfiguration.Context.Matiere
+                      where m.idMatiere == matiere.idMatiere
+                      select m).First();
             this.txtNbrLesson.Text = "Nombre de leçon : " + matiere.Lecon.Count.ToString();
         }
 

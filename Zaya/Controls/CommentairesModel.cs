@@ -23,7 +23,7 @@ namespace Zaya.Controls
         {
             int y = 0;
             var v = from c in DataBaseConfiguration.Context.Commentaire
-                    orderby c.dateCommentaire
+                    orderby c.dateCommentaire descending
                     where c.idLecon == lecon.idLecon
                     select c;
             foreach (Commentaire c in v)

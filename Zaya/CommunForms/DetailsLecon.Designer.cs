@@ -38,7 +38,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnAjouterQuestion = new MetroFramework.Controls.MetroButton();
-            this.btnCommentaires = new MetroFramework.Controls.MetroButton();
+            this.btnModifier = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -106,7 +106,7 @@
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.btnAjouterQuestion);
-            this.panel1.Controls.Add(this.btnCommentaires);
+            this.panel1.Controls.Add(this.btnModifier);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel4);
@@ -150,13 +150,14 @@
             this.btnAjouterQuestion.Text = "Ajouter Question";
             this.btnAjouterQuestion.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
-            // btnCommentaires
+            // btnModifier
             // 
-            this.btnCommentaires.Location = new System.Drawing.Point(0, 459);
-            this.btnCommentaires.Name = "btnCommentaires";
-            this.btnCommentaires.Size = new System.Drawing.Size(125, 48);
-            this.btnCommentaires.TabIndex = 3;
-            this.btnCommentaires.Text = "Commentaire";
+            this.btnModifier.Location = new System.Drawing.Point(0, 459);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(125, 48);
+            this.btnModifier.TabIndex = 3;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // pictureBox1
             // 
@@ -238,7 +239,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(771, 550);
             this.panel6.TabIndex = 6;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // btnAjouterCommentaire
             // 
@@ -313,7 +313,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton btnAjouterQuestion;
-        private MetroFramework.Controls.MetroButton btnCommentaires;
+        private MetroFramework.Controls.MetroButton btnModifier;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;

@@ -41,7 +41,20 @@ namespace Zaya.Controls
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            
+            CommunForms.QuizReport report = new CommunForms.QuizReport();
+            report.SetDatabaseLogon("sa", "123456");
+            Utilisateur utilisateur = quiz.Utilisateur;
+            report.SetParameterValue("nom", utilisateur.nom);
+            report.SetParameterValue("prenom", utilisateur.prenom);
+            report.SetParameterValue("username", utilisateur.username);
+            report.SetParameterValue("score", quiz.score + "%");
+            report.SetParameterValue("dateQuiz", quiz.dateQuiz);
+            report.SetParameterValue("libelle", quiz.Matiere.libelle);
+            report.SetParameterValue("applicationPath", Application.StartupPath + "\\");
+            CommunForms.QuizReportViewer viewer = new CommunForms.QuizReportViewer(report);
+            viewer.Viewer.SelectionFormula = "{ Quiz.idQuiz } = " + quiz.idQuiz;
+
+            viewer.ShowDialog();
         }
 
         private void txtNomProfesseur_Click(object sender, EventArgs e)

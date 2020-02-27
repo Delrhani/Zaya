@@ -177,19 +177,22 @@ namespace Zaya.CommunForms
                 {
                     case "text":
                         TextBox textBox = (TextBox)panelReponse.Controls[0];
+                        ReponseQuiz reponseQuiz = new ReponseQuiz();
                         if (question.Reponse[0].txtReponse.Equals(textBox.Text.Trim()))
                         {
                             nbrTrueQuestion++;
+                            reponseQuiz.isTrue = true;
+                            reponseQuiz.iconPath = "icons/trueQuestion.jpg";
                             quiz.score += 1.0 / NBR_QUESTION * 100;
                             AlertQuestion(AnswerLevel.ALL);
                         } 
                         else
                         {
                             nbrWrongQuestion++;
+                            reponseQuiz.isTrue = false;
+                            reponseQuiz.iconPath = "icons/falseQuestion.jpg";
                             AlertQuestion(AnswerLevel.NOTHING);
                         }
-
-                        ReponseQuiz reponseQuiz = new ReponseQuiz();
                         reponseQuiz.textReponse = textBox.Text.Trim();
                         reponseQuiz.Reponse = question.Reponse[0];
                         resultat.ReponseQuiz.Add(reponseQuiz);
@@ -203,16 +206,18 @@ namespace Zaya.CommunForms
                             if (lsReponse.GetItemChecked(i))
                             {
                                 Reponse reponse = question.Reponse[i];
-                                if(reponse.valider)
+                                reponseQuiz = new ReponseQuiz();
+                                if (reponse.valider)
                                 {
                                     hasValidAnswers = true;
+                                    reponseQuiz.iconPath = "icons/trueQuestion.jpg";
                                     quiz.score += (1.0 / (NBR_QUESTION * lsReponse.Items.Count)) * 100;
                                 }
                                 else
                                 {
                                     hasInvalidAnswers = true;
+                                    reponseQuiz.iconPath = "icons/falseQuestion.jpg";
                                 }
-                                reponseQuiz = new ReponseQuiz();
                                 reponseQuiz.Reponse = reponse;
                                 resultat.ReponseQuiz.Add(reponseQuiz);
                             }
@@ -220,16 +225,19 @@ namespace Zaya.CommunForms
                         if(hasInvalidAnswers && hasInvalidAnswers)
                         {
                             nbrWrongQuestion++;
+                            resultat.ReponseQuiz.Last().isTrue = false;
                             AlertQuestion(AnswerLevel.MEDIUM);
                         }
                         else if(hasValidAnswers)
                         {
                             nbrTrueQuestion++;
+                            resultat.ReponseQuiz.Last().isTrue = true;
                             AlertQuestion(AnswerLevel.ALL);
                         }
                         else
                         {
                             nbrWrongQuestion++;
+                            resultat.ReponseQuiz.Last().isTrue = false;
                             AlertQuestion(AnswerLevel.NOTHING);
                         }
                         break;
@@ -245,12 +253,16 @@ namespace Zaya.CommunForms
                                 if(int.Parse(rd.Name) == question.Reponse.Where(temp => temp.valider).First().idReponse)
                                 {
                                     nbrTrueQuestion++;
+                                    resultat.ReponseQuiz.Last().isTrue = true;
+                                    resultat.ReponseQuiz.Last().iconPath = "icons/trueQuestion.jpg";
                                     quiz.score += 1.0 / NBR_QUESTION * 100;
                                     AlertQuestion(AnswerLevel.ALL);
                                 }
                                 else
                                 {
                                     nbrWrongQuestion++;
+                                    resultat.ReponseQuiz.Last().isTrue = false;
+                                    resultat.ReponseQuiz.Last().iconPath = "icons/falseQuestion.jpg";
                                     AlertQuestion(AnswerLevel.NOTHING);
                                 }
                                 exists = true;
