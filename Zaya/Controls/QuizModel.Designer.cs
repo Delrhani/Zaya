@@ -131,6 +131,7 @@
             // 
             // btnModifier
             // 
+            this.btnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModifier.Location = new System.Drawing.Point(521, 34);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(37, 31);

@@ -21,6 +21,7 @@ namespace Zaya.CommunForms
 
         private void AjouterQuestion_Load(object sender, EventArgs e)
         {
+            
             var resultat = from m in DataBaseConfiguration.Context.Matiere
                            select new { m.libelle, m.idMatiere };
             cmbMatiere.DisplayMember = "libelle";
@@ -109,6 +110,20 @@ namespace Zaya.CommunForms
             {
                 this.Close();
             }
+        }
+        Point lastPoint;
+        private void ModifierQuestion_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void ModifierQuestion_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 }

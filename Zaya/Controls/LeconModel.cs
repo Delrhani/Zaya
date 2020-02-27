@@ -98,9 +98,9 @@ namespace Zaya.Controls
         private void BindingData()
         {
             string value = lecon.textLecon;
-            if (lecon.textLecon.Length > 60)
+            if (lecon.textLecon.Length > 120)
             {
-                value = value.Substring(0, 60);
+                value = value.Substring(0, 120);
                 value = value.Substring(0, value.LastIndexOf(' '));
             }
             this.txtTitle.Text = lecon.libelle;
@@ -116,14 +116,7 @@ namespace Zaya.Controls
         private void btnDetails_Click(object sender, EventArgs e)
         {
             new CommunForms.DetailsLecon(lecon).ShowDialog();
-            /*
-             aaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaavvvvv4vv
-             */
         }
-
-        private void txtNomProfesseur_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -31,6 +31,7 @@ namespace Zaya.AdministrateurForms
                 utilisateur.telephone = this.txt_phone.Text;
                 utilisateur.username = this.txt_username.Text;
                 utilisateur.idTypeUtilisateur = (int)cmbTypeUtilisateur.SelectedValue;
+                utilisateur.pwd = DataBaseConfiguration.Context.encrypt(txt_password.Text);
                 if (utilisateur.sexe == 'F')
                 {
                     utilisateur.sexe = 'M';
@@ -88,6 +89,21 @@ namespace Zaya.AdministrateurForms
                 txt_password.PasswordChar = '•';
             }
         }
+        Point lastPoint;
+        private void ConsulterUtilisateur_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
 
+        }
+
+        private void ConsulterUtilisateur_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            lastPoint = new Point(e.X, e.Y);
+        }
     }
 }

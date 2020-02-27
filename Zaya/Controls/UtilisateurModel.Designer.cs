@@ -31,8 +31,8 @@
             this.txtNom = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnModifier = new System.Windows.Forms.Button();
             this.txtTelephone = new System.Windows.Forms.Label();
+            this.btnModifier = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,16 +69,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btnModifier
-            // 
-            this.btnModifier.Location = new System.Drawing.Point(521, 34);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(37, 31);
-            this.btnModifier.TabIndex = 3;
-            this.btnModifier.Text = "...";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnDetails_Click);
-            // 
             // txtTelephone
             // 
             this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,6 +77,17 @@
             this.txtTelephone.Size = new System.Drawing.Size(263, 23);
             this.txtTelephone.TabIndex = 4;
             this.txtTelephone.Text = "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaavvvvv4vv";
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModifier.Location = new System.Drawing.Point(521, 34);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(37, 31);
+            this.btnModifier.TabIndex = 3;
+            this.btnModifier.Text = "...";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // UtilisateurModel
             // 

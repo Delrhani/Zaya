@@ -50,7 +50,7 @@
             this.rdFemme.AutoSize = true;
             this.rdFemme.BackColor = System.Drawing.Color.White;
             this.rdFemme.Depth = 0;
-            this.rdFemme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdFemme.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdFemme.Location = new System.Drawing.Point(247, 170);
             this.rdFemme.Margin = new System.Windows.Forms.Padding(0);
             this.rdFemme.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -68,7 +68,7 @@
             this.rdHomme.BackColor = System.Drawing.Color.White;
             this.rdHomme.Checked = true;
             this.rdHomme.Depth = 0;
-            this.rdHomme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdHomme.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdHomme.Location = new System.Drawing.Point(84, 170);
             this.rdHomme.Margin = new System.Windows.Forms.Padding(0);
             this.rdHomme.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -220,6 +220,7 @@
             // 
             // btnFermer
             // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFermer.Location = new System.Drawing.Point(352, 0);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
@@ -273,6 +274,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulter un utilisateur";
             this.Load += new System.EventHandler(this.ConsulterUtilisateur_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ConsulterUtilisateur_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ConsulterUtilisateur_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

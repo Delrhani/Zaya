@@ -204,6 +204,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter matiére";
             this.Load += new System.EventHandler(this.AjouterMatiere_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AjouterMatiere_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AjouterMatiere_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.txtLogin = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.lblSignUp = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.passwordStatut = new System.Windows.Forms.PictureBox();
+            this.btn_Login = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -89,23 +89,6 @@
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TabStop = false;
             this.txtPassword.UseSystemPasswordChar = false;
-            // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.AutoSize = true;
-            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialRaisedButton2.Location = new System.Drawing.Point(455, 194);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(74, 26);
-            this.materialRaisedButton2.TabIndex = 4;
-            this.materialRaisedButton2.Text = "Connect";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // materialDivider1
             // 
@@ -263,18 +246,37 @@
             this.passwordStatut.TabStop = false;
             this.passwordStatut.Click += new System.EventHandler(this.passwordStatut_Click);
             // 
+            // btn_Login
+            // 
+            this.btn_Login.AutoSize = true;
+            this.btn_Login.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Login.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Login.Depth = 0;
+            this.btn_Login.Location = new System.Drawing.Point(397, 187);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_Login.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Primary = false;
+            this.btn_Login.Size = new System.Drawing.Size(75, 36);
+            this.btn_Login.TabIndex = 34;
+            this.btn_Login.Text = "Connect";
+            this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            this.btn_Login.MouseLeave += new System.EventHandler(this.materialFlatButton1_MouseLeave);
+            this.btn_Login.MouseHover += new System.EventHandler(this.btn_Login_MouseHover);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(580, 310);
+            this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.passwordStatut);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialDivider1);
-            this.Controls.Add(this.materialRaisedButton2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
             this.ForeColor = System.Drawing.Color.White;
@@ -301,7 +303,6 @@
 
         private MaterialSkin.Controls.MaterialSingleLineTextField txtLogin;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPassword;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Label lblSignUp;
@@ -318,5 +319,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.PictureBox passwordStatut;
+        private MaterialSkin.Controls.MaterialFlatButton btn_Login;
     }
 }

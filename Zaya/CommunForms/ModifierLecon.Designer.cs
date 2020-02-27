@@ -215,6 +215,7 @@
             // 
             // btnFermer
             // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFermer.Location = new System.Drawing.Point(457, 0);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
@@ -241,6 +242,8 @@
             this.Name = "ModifierLecon";
             this.Text = "ModifierLecon";
             this.Load += new System.EventHandler(this.AjouterLecon_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ModifierLecon_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ModifierLecon_MouseMove);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);

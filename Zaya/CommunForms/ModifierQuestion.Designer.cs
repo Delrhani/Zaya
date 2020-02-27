@@ -273,6 +273,7 @@
             // 
             // metroButton1
             // 
+            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroButton1.Location = new System.Drawing.Point(520, 0);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
@@ -304,6 +305,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier question";
             this.Load += new System.EventHandler(this.AjouterQuestion_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ModifierQuestion_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ModifierQuestion_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);

@@ -180,6 +180,7 @@
             // 
             // btnFermer
             // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFermer.Location = new System.Drawing.Point(464, 0);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
@@ -205,6 +206,8 @@
             this.Name = "ModifierMatiere";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier matiére";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ModifierMatiere_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ModifierMatiere_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

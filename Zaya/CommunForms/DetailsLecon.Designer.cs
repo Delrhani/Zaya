@@ -112,6 +112,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(125, 657);
             this.panel1.TabIndex = 4;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // panel7
             // 
@@ -120,6 +122,8 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(128, 4);
             this.panel7.TabIndex = 7;
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // panel8
             // 
@@ -128,6 +132,8 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(130, 4);
             this.panel8.TabIndex = 6;
+            this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // panel9
             // 
@@ -136,9 +142,12 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(128, 4);
             this.panel9.TabIndex = 5;
+            this.panel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // btnAjouterQuestion
             // 
+            this.btnAjouterQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAjouterQuestion.Location = new System.Drawing.Point(-1, 353);
             this.btnAjouterQuestion.Name = "btnAjouterQuestion";
             this.btnAjouterQuestion.Size = new System.Drawing.Size(127, 48);
@@ -148,6 +157,7 @@
             // 
             // btnCommentaires
             // 
+            this.btnCommentaires.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCommentaires.Location = new System.Drawing.Point(0, 305);
             this.btnCommentaires.Name = "btnCommentaires";
             this.btnCommentaires.Size = new System.Drawing.Size(125, 48);
@@ -163,6 +173,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // panel3
             // 
@@ -171,6 +183,8 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(128, 4);
             this.panel3.TabIndex = 1;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // panel4
             // 
@@ -179,6 +193,8 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(130, 4);
             this.panel4.TabIndex = 1;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // panel2
             // 
@@ -187,6 +203,8 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(128, 4);
             this.panel2.TabIndex = 0;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // panel5
             // 
@@ -202,10 +220,13 @@
             this.panel5.Size = new System.Drawing.Size(771, 107);
             this.panel5.TabIndex = 5;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(738, 1);
+            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButton1.Location = new System.Drawing.Point(739, -2);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
             this.metroButton1.TabIndex = 8;
@@ -217,7 +238,7 @@
             this.txtMatiere.AutoSize = true;
             this.txtMatiere.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatiere.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtMatiere.Location = new System.Drawing.Point(65, 49);
+            this.txtMatiere.Location = new System.Drawing.Point(76, 53);
             this.txtMatiere.Name = "txtMatiere";
             this.txtMatiere.Size = new System.Drawing.Size(57, 20);
             this.txtMatiere.TabIndex = 3;
@@ -231,6 +252,8 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(771, 550);
             this.panel6.TabIndex = 6;
+            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             // 
             // DetailsLecon
             // 
@@ -245,6 +268,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Détails du leçon";
             this.Load += new System.EventHandler(this.DetailsLecon_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DetailsLecon_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);

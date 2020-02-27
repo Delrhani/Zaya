@@ -211,7 +211,8 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(796, 0);
+            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButton1.Location = new System.Drawing.Point(796, -1);
             this.metroButton1.Margin = new System.Windows.Forms.Padding(0);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
@@ -233,6 +234,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quiz";
             this.Load += new System.EventHandler(this.JouerQuiz_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.JouerQuiz_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.JouerQuiz_MouseMove);
             this.panelQuestion.ResumeLayout(false);
             this.panelQuestion.PerformLayout();
             this.panel1.ResumeLayout(false);

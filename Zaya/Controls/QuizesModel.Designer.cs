@@ -43,6 +43,7 @@
             // 
             // btnJouer
             // 
+            this.btnJouer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJouer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnJouer.Location = new System.Drawing.Point(518, 3);
             this.btnJouer.Name = "btnJouer";
