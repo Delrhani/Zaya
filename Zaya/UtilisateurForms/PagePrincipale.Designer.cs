@@ -250,7 +250,7 @@
             // 
             // txtNavigation
             // 
-            this.txtNavigation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtNavigation.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtNavigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNavigation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.txtNavigation.Location = new System.Drawing.Point(262, 19);
@@ -281,7 +281,9 @@
             this.btnProfil.Name = "btnProfil";
             this.btnProfil.Size = new System.Drawing.Size(234, 56);
             this.btnProfil.TabIndex = 26;
-            this.btnProfil.Click += new System.EventHandler(this.panel3_Click);
+            this.btnProfil.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.btnProfil.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
+            this.btnProfil.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
             // 
             // pictureBox5
             // 

@@ -56,7 +56,6 @@ namespace Zaya.CommunForms
             txtTrueQuestion.Text = "Passé " + (nbrWrongQuestion + nbrTrueQuestion) + " / " + NBR_QUESTION;
             txtWrongQuestion.Text = "Incorrect " + nbrWrongQuestion + " / " + NBR_QUESTION;
             this.Activate();
-            StartGame();
         }
 
         // Method to start the quiz
@@ -67,8 +66,11 @@ namespace Zaya.CommunForms
             {
                 this.Close();
             }
-            timer.Start();
-            NextQuestion();
+            else
+            {
+                timer.Start();
+                NextQuestion();
+            }
         }
 
         // Method to move to next question
@@ -324,7 +326,7 @@ namespace Zaya.CommunForms
 
         private void JouerQuiz_Load(object sender, EventArgs e)
         {
-
+            StartGame();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

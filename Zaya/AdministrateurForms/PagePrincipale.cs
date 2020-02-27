@@ -147,5 +147,25 @@ namespace Zaya.AdministrateurForms
         {
             btnDeconnecte.BackColor = TRANSPARENT_COLOR;
         }
+
+        private void btnProfil_Click(object sender, MouseEventArgs e)
+        {
+            panelLeft.Height = btnProfil.Height;
+            panelLeft.Top = btnProfil.Top;
+            txtNavigation.Text = "Profil";
+            panelContenu.Controls.Clear();
+            panelContenu.Controls.Add(new ModifierProfil(utilisateur));
+        }
+
+        private void btnProfil_MouseHover(object sender, EventArgs e)
+        {
+            btnProfil.BackColor = HOVER_COLOR;
+        }
+
+        private void btnProfil_MouseLeave(object sender, EventArgs e)
+        {
+            btnProfil.BackColor = TRANSPARENT_COLOR;
+        }
+
     }
 }

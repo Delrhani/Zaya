@@ -110,13 +110,23 @@ namespace Zaya.UtilisateurForms
             btnDeconnecte.BackColor = TRANSPARENT_COLOR;
         }
 
-        private void panel3_Click(object sender, EventArgs e)
+        private void btnProfil_Click(object sender, MouseEventArgs e)
         {
             panelLeft.Height = btnProfil.Height;
             panelLeft.Top = btnProfil.Top;
             txtNavigation.Text = "Profil";
             panelContenu.Controls.Clear();
             panelContenu.Controls.Add(new ModifierProfil(utilisateur));
+        }
+
+        private void btnProfil_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProfil_MouseLeave(object sender, EventArgs e)
+        {
+
         }
     }
 }
