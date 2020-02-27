@@ -30,6 +30,7 @@ namespace Zaya.Controls
                 utilisateur.nom = this.txt_nom.Text;
                 utilisateur.telephone = this.txt_phone.Text;
                 utilisateur.username = this.txt_username.Text;
+                utilisateur.pwd = DataBaseConfiguration.Context.encrypt(txt_password.Text);
                 if (utilisateur.sexe == 'F')
                 {
                     utilisateur.sexe = 'M';
@@ -45,11 +46,12 @@ namespace Zaya.Controls
             this.txt_nom.Text = utilisateur.nom;
             this.txt_phone.Text = utilisateur.telephone;
             this.txt_username.Text = utilisateur.username;
-            this.txt_password.Text = utilisateur.pwd.ToString();
             if(utilisateur.sexe == 'F')
             {
                 rdFemme.Checked = true;
             }
+            rdHomme.ForeColor = Color.White;
+            rdFemme.ForeColor = Color.White;
         }
 
         private void passwordStatut_Click(object sender, EventArgs e)
@@ -65,6 +67,36 @@ namespace Zaya.Controls
                 passwordStatut.Image = Resources.showPassword;
                 txt_password.PasswordChar = '•';
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txt_phone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_prenom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModifier_MouseHover(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.LightGray;
+        }
+
+        private void materialFlatButton1_ForeColorChanged(object sender, EventArgs e)
+        {
+          
         }
 
     }

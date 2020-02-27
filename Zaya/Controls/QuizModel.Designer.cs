@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuizModel));
             this.txtMatiere = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.score = new CircularProgressBar.CircularProgressBar();
             this.txtTempEstime = new System.Windows.Forms.Label();
             this.btnModifier = new System.Windows.Forms.Button();
-            this.score = new CircularProgressBar.CircularProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // txtDate
             // 
             this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtDate.Location = new System.Drawing.Point(132, 41);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(263, 23);
@@ -74,24 +76,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // txtTempEstime
+            // pictureBox1
             // 
-            this.txtTempEstime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTempEstime.Location = new System.Drawing.Point(132, 63);
-            this.txtTempEstime.Name = "txtTempEstime";
-            this.txtTempEstime.Size = new System.Drawing.Size(263, 23);
-            this.txtTempEstime.TabIndex = 4;
-            this.txtTempEstime.Text = "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaavvvvv4vv";
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Location = new System.Drawing.Point(521, 34);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(37, 31);
-            this.btnModifier.TabIndex = 3;
-            this.btnModifier.Text = "...";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnDetails_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // score
             // 
@@ -110,7 +103,7 @@
             this.score.OuterColor = System.Drawing.Color.Gray;
             this.score.OuterMargin = -25;
             this.score.OuterWidth = 26;
-            this.score.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.score.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(184)))), ((int)(((byte)(201)))));
             this.score.ProgressWidth = 5;
             this.score.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.score.Size = new System.Drawing.Size(75, 75);
@@ -126,13 +119,26 @@
             this.score.TextMargin = new System.Windows.Forms.Padding(0);
             this.score.Value = 68;
             // 
-            // pictureBox1
+            // txtTempEstime
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 70);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.txtTempEstime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTempEstime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtTempEstime.Location = new System.Drawing.Point(132, 63);
+            this.txtTempEstime.Name = "txtTempEstime";
+            this.txtTempEstime.Size = new System.Drawing.Size(263, 23);
+            this.txtTempEstime.TabIndex = 4;
+            this.txtTempEstime.Text = "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaavvvvv4vv";
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModifier.Location = new System.Drawing.Point(521, 34);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(37, 31);
+            this.btnModifier.TabIndex = 3;
+            this.btnModifier.Text = "...";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // QuizModel
             // 

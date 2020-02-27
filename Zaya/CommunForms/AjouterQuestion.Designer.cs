@@ -303,6 +303,7 @@
             // 
             // btnFermer
             // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFermer.Location = new System.Drawing.Point(462, 0);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(32, 28);
@@ -336,6 +337,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter un question";
             this.Load += new System.EventHandler(this.AjouterQuestion_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AjouterQuestion_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AjouterQuestion_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

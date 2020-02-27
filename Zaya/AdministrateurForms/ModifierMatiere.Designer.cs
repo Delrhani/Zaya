@@ -78,6 +78,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnnuler.Location = new System.Drawing.Point(189, 195);
@@ -93,6 +94,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(189, 156);
@@ -180,6 +182,7 @@
             // 
             // btnFermer
             // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFermer.Location = new System.Drawing.Point(464, 0);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
@@ -205,6 +208,9 @@
             this.Name = "ModifierMatiere";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier matiére";
+            this.Load += new System.EventHandler(this.ModifierMatiere_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ModifierMatiere_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ModifierMatiere_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -48,9 +48,9 @@
             // 
             // txtNbrLesson
             // 
-            this.txtNbrLesson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNbrLesson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNbrLesson.ForeColor = System.Drawing.Color.Silver;
-            this.txtNbrLesson.Location = new System.Drawing.Point(316, 19);
+            this.txtNbrLesson.Location = new System.Drawing.Point(321, 23);
             this.txtNbrLesson.Name = "txtNbrLesson";
             this.txtNbrLesson.Size = new System.Drawing.Size(199, 23);
             this.txtNbrLesson.TabIndex = 2;
@@ -70,6 +70,7 @@
             // 
             // btnModifier
             // 
+            this.btnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModifier.Location = new System.Drawing.Point(524, 16);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(37, 31);

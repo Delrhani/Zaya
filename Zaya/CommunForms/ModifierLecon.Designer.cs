@@ -198,6 +198,7 @@
             // 
             this.btnValider.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(155)))));
             this.btnValider.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(182)))), ((int)(((byte)(200)))));
+            this.btnValider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnValider.FlatAppearance.BorderSize = 0;
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValider.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,6 +216,7 @@
             // 
             // btnFermer
             // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFermer.Location = new System.Drawing.Point(457, 0);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
@@ -241,6 +243,8 @@
             this.Name = "ModifierLecon";
             this.Text = "ModifierLecon";
             this.Load += new System.EventHandler(this.AjouterLecon_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ModifierLecon_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ModifierLecon_MouseMove);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);

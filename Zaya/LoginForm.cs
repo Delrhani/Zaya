@@ -32,26 +32,6 @@ namespace Zaya
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            Utilisateur utilisateur = connect();
-
-            if (utilisateur == null)
-            {
-                MessageBox.Show("Le login ou le mot de passe est incorrect ", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            switch (utilisateur.TypeUtilisateur.libelle)
-            {
-                case "Administrateur":
-                    frm = new AdministrateurForms.PagePrincipale(utilisateur);
-                    break;
-                case "Utilisateur":
-                    frm = new UtilisateurForms.PagePrincipale(utilisateur);
-                    break;
-            }
-            this.Close();
-            Thread thread = new Thread(PagePricipale);
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
         }
 
         private void PagePricipale(object obj)
@@ -101,6 +81,40 @@ namespace Zaya
                 passwordStatut.Image = Resources.showPassword;
                 txtPassword.PasswordChar = '•';
             }
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+            Utilisateur utilisateur = connect();
+
+            if (utilisateur == null)
+            {
+                MessageBox.Show("Le login ou le mot de passe est incorrect ", "Message d'erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            switch (utilisateur.TypeUtilisateur.libelle)
+            {
+                case "Administrateur":
+                    frm = new AdministrateurForms.PagePrincipale(utilisateur);
+                    break;
+                case "Utilisateur":
+                    frm = new UtilisateurForms.PagePrincipale(utilisateur);
+                    break;
+            }
+            this.Close();
+            Thread thread = new Thread(PagePricipale);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+        }
+
+        private void materialFlatButton1_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Login.BackColor = Color.LightGray;
+        }
+        private void btn_Login_MouseHover(object sender, EventArgs e)
+        {
+            btn_Login.BackColor = Color.DarkGray;
         }
     }
 }

@@ -179,6 +179,7 @@
             // 
             // btnFermer
             // 
+            this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFermer.Location = new System.Drawing.Point(457, 0);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
@@ -226,6 +227,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AjouterLecon";
             this.Load += new System.EventHandler(this.AjouterLecon_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AjouterLecon_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AjouterLecon_MouseMove);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

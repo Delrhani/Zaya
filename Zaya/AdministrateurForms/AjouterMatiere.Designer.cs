@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 55);
+            this.label1.Location = new System.Drawing.Point(148, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 0;
@@ -64,7 +64,7 @@
             this.txtMatiere.Font = new System.Drawing.Font("Microsoft Tai Le", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatiere.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtMatiere.Hint = "Type Subject";
-            this.txtMatiere.Location = new System.Drawing.Point(234, 51);
+            this.txtMatiere.Location = new System.Drawing.Point(234, 60);
             this.txtMatiere.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMatiere.Name = "txtMatiere";
             this.txtMatiere.PasswordChar = '\0';
@@ -79,10 +79,11 @@
             // btnValider
             // 
             this.btnValider.BackColor = System.Drawing.Color.Transparent;
+            this.btnValider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnValider.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValider.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValider.Location = new System.Drawing.Point(187, 151);
+            this.btnValider.Location = new System.Drawing.Point(187, 157);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(206, 27);
             this.btnValider.TabIndex = 7;
@@ -95,10 +96,11 @@
             // btnAnnuler
             // 
             this.btnAnnuler.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnnuler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.Location = new System.Drawing.Point(187, 188);
+            this.btnAnnuler.Location = new System.Drawing.Point(187, 194);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(206, 27);
             this.btnAnnuler.TabIndex = 8;
@@ -112,7 +114,7 @@
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(141, 113);
+            this.materialDivider1.Location = new System.Drawing.Point(141, 122);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(326, 1);
@@ -204,6 +206,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter matiére";
             this.Load += new System.EventHandler(this.AjouterMatiere_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AjouterMatiere_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AjouterMatiere_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

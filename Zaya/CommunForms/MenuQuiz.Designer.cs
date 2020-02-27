@@ -53,6 +53,7 @@
             // 
             // btnStart
             // 
+            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.Location = new System.Drawing.Point(312, 260);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(141, 23);
@@ -63,6 +64,7 @@
             // 
             // btnAnnuler
             // 
+            this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.Location = new System.Drawing.Point(312, 289);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(141, 23);
@@ -187,6 +189,7 @@
             // 
             // metroButton1
             // 
+            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroButton1.Location = new System.Drawing.Point(451, 0);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(32, 28);
@@ -213,6 +216,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "O";
             this.Load += new System.EventHandler(this.MenuQuiz_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuQuiz_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MenuQuiz_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);

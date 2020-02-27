@@ -23,20 +23,7 @@ namespace Zaya.AdministrateurForms
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Voulez-vous vraiment valider les changement ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                utilisateur.email = this.txt_email.Text;
-                utilisateur.prenom = this.txt_prenom.Text;
-                utilisateur.nom = this.txt_nom.Text;
-                utilisateur.telephone = this.txt_phone.Text;
-                utilisateur.username = this.txt_username.Text;
-                utilisateur.idTypeUtilisateur = (int)cmbTypeUtilisateur.SelectedValue;
-                if (utilisateur.sexe == 'F')
-                {
-                    utilisateur.sexe = 'M';
-                }
-                DataBaseConfiguration.Context.SubmitChanges();
-            }
+          
         }
 
         private void ConsulterUtilisateur_Load(object sender, EventArgs e)
@@ -51,7 +38,6 @@ namespace Zaya.AdministrateurForms
             this.txt_nom.Text = utilisateur.nom;
             this.txt_phone.Text = utilisateur.telephone;
             this.txt_username.Text = utilisateur.username;
-            this.txt_password.Text = utilisateur.pwd.ToString();
             if(utilisateur.sexe == 'F')
             {
                 rdFemme.Checked = true;
@@ -88,6 +74,40 @@ namespace Zaya.AdministrateurForms
                 txt_password.PasswordChar = '•';
             }
         }
+        Point lastPoint;
+        private void ConsulterUtilisateur_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
 
+        }
+
+        private void ConsulterUtilisateur_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voulez-vous vraiment valider les changement ?", "Message de confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                utilisateur.email = this.txt_email.Text;
+                utilisateur.prenom = this.txt_prenom.Text;
+                utilisateur.nom = this.txt_nom.Text;
+                utilisateur.telephone = this.txt_phone.Text;
+                utilisateur.username = this.txt_username.Text;
+                utilisateur.idTypeUtilisateur = (int)cmbTypeUtilisateur.SelectedValue;
+                utilisateur.pwd = DataBaseConfiguration.Context.encrypt(txt_password.Text);
+                if (utilisateur.sexe == 'F')
+                {
+                    utilisateur.sexe = 'M';
+                }
+                DataBaseConfiguration.Context.SubmitChanges();
+            }
+        }
     }
 }

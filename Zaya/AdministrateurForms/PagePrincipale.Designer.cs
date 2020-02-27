@@ -87,6 +87,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 613);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnProfil
             // 
@@ -99,6 +100,7 @@
             this.btnProfil.Size = new System.Drawing.Size(234, 56);
             this.btnProfil.TabIndex = 27;
             this.btnProfil.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnProfil_Click);
+            this.btnProfil.MouseLeave += new System.EventHandler(this.btnProfil_MouseLeave);
             this.btnProfil.MouseHover += new System.EventHandler(this.btnProfil_MouseHover);
             // 
             // pictureBox7
@@ -397,7 +399,7 @@
             // btnFermer
             // 
             this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFermer.Location = new System.Drawing.Point(819, 0);
+            this.btnFermer.Location = new System.Drawing.Point(819, -1);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(32, 28);
@@ -419,6 +421,9 @@
             this.Name = "PagePrincipale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page principale";
+            this.Load += new System.EventHandler(this.PagePrincipale_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PagePrincipale_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PagePrincipale_MouseMove);
             this.panel1.ResumeLayout(false);
             this.btnProfil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

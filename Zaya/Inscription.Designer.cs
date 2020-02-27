@@ -69,12 +69,12 @@
             this.lblHaveAccount.BackColor = System.Drawing.Color.Transparent;
             this.lblHaveAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblHaveAccount.Depth = 0;
-            this.lblHaveAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblHaveAccount.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblHaveAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblHaveAccount.Location = new System.Drawing.Point(147, 12);
             this.lblHaveAccount.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblHaveAccount.Name = "lblHaveAccount";
-            this.lblHaveAccount.Size = new System.Drawing.Size(181, 18);
+            this.lblHaveAccount.Size = new System.Drawing.Size(186, 19);
             this.lblHaveAccount.TabIndex = 7;
             this.lblHaveAccount.Text = "I already have an account !";
             this.lblHaveAccount.Click += new System.EventHandler(this.lblHaveAccount_Click);
@@ -202,7 +202,7 @@
             this.rdHomme.BackColor = System.Drawing.Color.White;
             this.rdHomme.Checked = true;
             this.rdHomme.Depth = 0;
-            this.rdHomme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdHomme.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdHomme.Location = new System.Drawing.Point(148, 196);
             this.rdHomme.Margin = new System.Windows.Forms.Padding(0);
             this.rdHomme.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -220,7 +220,7 @@
             this.rdFemme.AutoSize = true;
             this.rdFemme.BackColor = System.Drawing.Color.White;
             this.rdFemme.Depth = 0;
-            this.rdFemme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdFemme.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdFemme.Location = new System.Drawing.Point(248, 196);
             this.rdFemme.Margin = new System.Windows.Forms.Padding(0);
             this.rdFemme.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -279,6 +279,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inscription";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InscriptionForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.InscriptionForm_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordStatut)).EndInit();
