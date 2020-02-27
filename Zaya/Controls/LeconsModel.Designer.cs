@@ -51,6 +51,7 @@
             this.panelContenu.Name = "panelContenu";
             this.panelContenu.Size = new System.Drawing.Size(589, 447);
             this.panelContenu.TabIndex = 2;
+
             // 
             // btnAjouter
             // 

@@ -74,6 +74,7 @@
             this.rdHomme.Ripple = true;
             this.rdHomme.Size = new System.Drawing.Size(78, 30);
             this.rdHomme.TabIndex = 37;
+            this.rdHomme.TabStop = true;
             this.rdHomme.Text = "Homme";
             this.rdHomme.UseVisualStyleBackColor = false;
             // 
@@ -135,7 +136,7 @@
             // 
             this.txt_prenom.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_prenom.Depth = 0;
-            this.txt_prenom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_prenom.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.txt_prenom.Hint = "First Name";
             this.txt_prenom.Location = new System.Drawing.Point(84, 56);
             this.txt_prenom.MouseState = MaterialSkin.MouseState.HOVER;

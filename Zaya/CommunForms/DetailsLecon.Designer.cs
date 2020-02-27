@@ -116,7 +116,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel7.Location = new System.Drawing.Point(-2, 404);
+            this.panel7.Location = new System.Drawing.Point(-2, 250);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(128, 4);
             this.panel7.TabIndex = 7;
@@ -124,7 +124,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel8.Location = new System.Drawing.Point(-3, 436);
+            this.panel8.Location = new System.Drawing.Point(-3, 282);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(130, 4);
             this.panel8.TabIndex = 6;
@@ -132,14 +132,14 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel9.Location = new System.Drawing.Point(-2, 420);
+            this.panel9.Location = new System.Drawing.Point(-2, 266);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(128, 4);
             this.panel9.TabIndex = 5;
             // 
             // btnAjouterQuestion
             // 
-            this.btnAjouterQuestion.Location = new System.Drawing.Point(-1, 507);
+            this.btnAjouterQuestion.Location = new System.Drawing.Point(-1, 353);
             this.btnAjouterQuestion.Name = "btnAjouterQuestion";
             this.btnAjouterQuestion.Size = new System.Drawing.Size(127, 48);
             this.btnAjouterQuestion.TabIndex = 4;
@@ -148,7 +148,7 @@
             // 
             // btnCommentaires
             // 
-            this.btnCommentaires.Location = new System.Drawing.Point(0, 459);
+            this.btnCommentaires.Location = new System.Drawing.Point(0, 305);
             this.btnCommentaires.Name = "btnCommentaires";
             this.btnCommentaires.Size = new System.Drawing.Size(125, 48);
             this.btnCommentaires.TabIndex = 3;
@@ -167,7 +167,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Location = new System.Drawing.Point(0, 575);
+            this.panel3.Location = new System.Drawing.Point(0, 421);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(128, 4);
             this.panel3.TabIndex = 1;
@@ -175,7 +175,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel4.Location = new System.Drawing.Point(-1, 607);
+            this.panel4.Location = new System.Drawing.Point(-1, 453);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(130, 4);
             this.panel4.TabIndex = 1;
@@ -183,7 +183,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.Location = new System.Drawing.Point(0, 591);
+            this.panel2.Location = new System.Drawing.Point(0, 437);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(128, 4);
             this.panel2.TabIndex = 0;

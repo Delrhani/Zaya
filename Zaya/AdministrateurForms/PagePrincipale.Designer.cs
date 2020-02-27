@@ -357,7 +357,7 @@
             // btnFermer
             // 
             this.btnFermer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFermer.Location = new System.Drawing.Point(819, 0);
+            this.btnFermer.Location = new System.Drawing.Point(819, -1);
             this.btnFermer.Margin = new System.Windows.Forms.Padding(0);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(32, 28);
